@@ -11,6 +11,8 @@ import successivegrade from '@/views/firstnavigation/successivegrade'
 import paperanalysis from '@/views/firstnavigation/paperanalysis'
 import userfeedback from '@/views/firstnavigation/userfeedback'
 import firstpagemain from '@/views/secondmain/firstpagemain'
+import beyondself from '@/views/firstnavigation/beyondsefl'
+import heropk from '@/views/firstnavigation/heropk'
 import allgradeoverview from '@/views/firstnavigation/allgradeoverview'
 import classgradetable from '@/views/firstnavigation/classgradetable'
 import weakspot from '@/views/firstnavigation/weakspot'
@@ -52,7 +54,15 @@ export default new Router({
             component: successivegrade
           }, {
             path: '/gradereport/gradeandtargetcontent',
-            component: gradeandtargetcontent
+            component: gradeandtargetcontent,
+            redirect: '/gradereport/gradeandtargetcontent/beyondself',
+            children: [{
+              path: '/gradereport/gradeandtargetcontent/beyondself',
+              component: beyondself
+            }, {
+              path: '/gradereport/gradeandtargetcontent/heropk',
+              component: heropk
+            }]
           }, {
             path: '/gradereport/gradeanalyzecontent',
             component: gradeanalyzecontent,
