@@ -5,6 +5,7 @@
     <h3>这也是成绩目标组件</h3>
     <h3>这也是成绩目标组件</h3>
     <h3>这也是成绩目标组件</h3>
+    <h3>fuzhi</h3>
   </div>
 </template>
 
@@ -15,5 +16,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
