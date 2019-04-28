@@ -1,0 +1,97 @@
+<template>
+  <el-table-column
+    prop="date"
+    label="序号"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="name"
+    label="考号"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="姓名"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="班级/行政班"
+    width="100">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="总分"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="班名次"
+    width="65">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="进步/后退"
+    width="100">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="语文"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="数学"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="英语"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="三科总分"
+    width="100">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="物理"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="化学"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="生物"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="历史"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="地理"
+    width="60">
+  </el-table-column>
+  <el-table-column
+    prop="address"
+    label="政治"
+    width="60">
+  </el-table-column>
+</template>
+
+<script>
+export default {
+  name: 'test'
+}
+</script>
+
+<style scoped>
+
+</style>
