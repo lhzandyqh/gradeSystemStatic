@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\beyondself.png'
+import imgUrl from '/Users/lannister/WebstormProjects/gradeSystemStatic/static/images/beyondself.png'
 export default {
   name: 'beyondsefl',
   data () {
