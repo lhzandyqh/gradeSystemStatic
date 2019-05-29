@@ -24,11 +24,10 @@
 
 <script>
 import classmatePkTable from '@/components/tables/classmatePkTable'
-import heroPkChart from '@/components/charts/heroPkChart'
 import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\herospk.png'
 export default {
   name: 'heropk',
-  components: {classmatePkTable, heroPkChart},
+  components: {classmatePkTable},
   data () {
     return {
       imgUrl: imgUrl
