@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\surpassrate.png'
+import imgUrl from '/Users/lannister/WebstormProjects/gradeSystemStatic/static/images/surpassrate.png'
 export default {
   name: 'surpassrate',
   data () {

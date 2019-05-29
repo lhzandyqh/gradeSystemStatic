@@ -24,7 +24,7 @@
 
 <script>
 import classmatePkTable from '@/components/tables/classmatePkTable'
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\herospk.png'
+import imgUrl from '/Users/lannister/WebstormProjects/gradeSystemStatic/static/images/herospk.png'
 export default {
   name: 'heropk',
   components: {classmatePkTable},

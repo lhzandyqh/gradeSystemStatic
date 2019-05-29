@@ -4,7 +4,7 @@
       <el-table
         :data="tableData"
         border
-        style="width: 95%">
+        style="width: 100%">
         <el-table-column
           prop="serialnumber"
           label="序号"
@@ -33,7 +33,7 @@
         <el-table-column
           prop="classrank"
           label="班级占位"
-          width="120">
+          width="100">
         </el-table-column>
         <el-table-column
           prop="schoolrank"
