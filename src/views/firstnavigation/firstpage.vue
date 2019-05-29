@@ -11,14 +11,14 @@
               <div class="informationcontent">
                 <span>本次成绩</span>
                 <br>
-                <span>484.5</span>
+                <span>{{this.gradeInformation[0].coversionTotal}}</span>
               </div>
             </el-card>
             <el-card class="box-card-son">
               <div class="informationcontent">
                 <span>班级占位</span><br>
-                <span style="font-size: 20px">20</span><br>
-                <span>年级占位:303</span>
+                <span style="font-size: 20px">{{this.gradeInformation[0].classIndex}}</span><br>
+                <span>年级占位:{{this.gradeInformation[0].schoolIndex}}</span>
               </div>
             </el-card>
             <el-card class="box-card-son">
@@ -46,11 +46,11 @@
             </div>
             <div class="studentself">
               <table style="margin: auto;padding-top: 30px">
-                <tr><td><a> <span>姓名：</span><span style="color: #19c237">赵寒</span><br></a></td></tr>
-                <tr><td><a> <span>学籍号：</span><span style="color: #19c237">08052210</span><br></a></td></tr>
-                <tr><td><a> <span>考试号：</span><span style="color: #19c237">51315</span><br></a></td></tr>
-                <tr><td><a> <span>年级：</span><span style="color: #19c237">高二</span><br></a></td></tr>
-                <tr><td><a> <span>班级：</span><span style="color: #19c237">13班</span><br></a></td></tr>
+                <tr><td><a> <span>姓名：</span><span style="color: #19c237">{{this.studentInformation[0].studentName}}</span><br></a></td></tr>
+                <tr><td><a> <span>学籍号：</span><span style="color: #19c237">{{this.studentInformation[0].studentNumber}}</span><br></a></td></tr>
+                <tr><td><a> <span>考试号：</span><span style="color: #19c237">{{this.studentInformation[0].id}}</span><br></a></td></tr>
+                <tr><td><a> <span>年级：</span><span style="color: #19c237">{{this.studentInformation[0].gradeName}}</span><br></a></td></tr>
+                <tr><td><a> <span>班级：</span><span style="color: #19c237">{{this.studentInformation[0].className}}</span><br></a></td></tr>
               </table>
             </div>
           </el-card>
@@ -65,10 +65,6 @@
                 <el-timeline-item
                   v-for="(activity, index) in activities"
                   :key="index"
-                  :icon="activity.icon"
-                  :type="activity.type"
-                  :color="activity.color"
-                  :size="activity.size"
                   :timestamp="activity.timestamp">
                   <div class="examreport">
                     <span style="font-weight: bold">{{activity.content}}</span>  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看报告</span>
@@ -84,28 +80,108 @@
 </template>
 
 <script>
+import { getUserInformation, getUserGrade, getExamInformation } from '@/api/studentGetData'
 export default {
   name: 'firstpage',
+  mounted () {
+    this.getStudentInformation()
+    this.getStudentGrade()
+    this.getStudentExam()
+  },
+  methods: {
+    getStudentInformation: function () {
+      const prams = {
+        userID: 1
+      }
+      getUserInformation(prams).then(response => {
+        // console.log(response.data.errmsg)
+        // console.log(response.data.info)
+        // this.studentInformation = response.data.info
+        // console.log('第二次输出')
+        // console.log(this.studentInformation)
+        // console.log(response.data.info.studentName)
+        this.dataSpace = response.data.info
+        // console.log(this.dataSpace)
+        // console.log(this.dataSpace[0].studentName)
+        this.$set(this.studentInformation, 0, {studentName: this.dataSpace[0].studentName, studentNumber: this.dataSpace[0].studentNumber, id: this.dataSpace[0].id, gradeName: this.dataSpace[0].gradeName, className: this.dataSpace[0].className})
+      })
+      // console.log(this.studentInformation)
+      // eslint-disable-next-line no-undef
+      // this.$set(this.studentInformation, 0, {studentName: response.data.info.studentName})
+    },
+    getStudentGrade: function () {
+      const prams = {
+        userID: 1
+      }
+      getUserGrade(prams).then(response => {
+        this.dataSpaceGrade = response.data.info
+        this.$set(this.gradeInformation, 0, {coversionTotal: this.dataSpaceGrade.coversionTotal, schoolIndex: this.dataSpaceGrade.schoolIndex, classIndex: this.dataSpaceGrade.classIndex})
+      })
+      // console.log(this.gradeInformation)
+    },
+    getStudentExam: function () {
+      const prams = {
+        userID: 1
+      }
+      getExamInformation(prams).then(response => {
+        this.dataSpaceExam = response.data.info
+        this.dataSpaceExam.push(response.data.info)
+        this.dataSpaceExam.pop()
+        console.log(response.data.info)
+        console.log(this.dataSpaceExam)
+        console.log(this.timeFormat(this.dataSpaceExam[0].examDate))
+        this.$set(this.activities, 0, {content: this.dataSpaceExam[0].examName, timestamp: this.timeFormat(this.dataSpaceExam[0].examDate)})
+        this.$set(this.activities, 1, {content: this.dataSpaceExam[1].examName, timestamp: this.timeFormat(this.dataSpaceExam[1].examDate)})
+        this.$set(this.activities, 2, {content: this.dataSpaceExam[2].examName, timestamp: this.timeFormat(this.dataSpaceExam[2].examDate)})
+        this.$set(this.activities, 3, {content: this.dataSpaceExam[3].examName, timestamp: this.timeFormat(this.dataSpaceExam[3].examDate)})
+      })
+      console.log(this.dataSpaceExam)
+    },
+    timeFormat: function (timestamp) {
+      var time = new Date(timestamp)
+      var y = time.getFullYear()
+      var m = time.getMonth() + 1
+      var d = time.getDate()
+      return y + '-' + m + '-' + d
+    }
+  },
   data () {
     return {
       activities: [{
         content: '2017-2018学年第一学期七年级期末考试',
-        timestamp: '2017-12-30',
-        size: 'large',
-        color: '#0bbd87'
+        timestamp: '2017-12-30'
       }, {
         content: '2017-2018学年第一学期七年级期中考试',
-        timestamp: '2017-11-30',
-        size: 'large'
+        timestamp: '2017-11-30'
       }, {
         content: '2017-2018学年第一学期七年级二次月考',
-        timestamp: '2017-10-30',
-        size: 'large'
+        timestamp: '2017-10-30'
       }, {
         content: '2017-2018学年第一学期七年级一次月考',
-        size: 'large',
-        timestamp: '2017-9-30'
-      }]
+        size: 'large'
+      }],
+      // 成绩信息
+      gradeInformation: [{
+        coversionTotal: '',
+        schoolIndex: '',
+        classIndex: ''
+      }],
+      // 学生个人信息
+      studentInformation: [{
+        studentName: '',
+        studentNumber: '',
+        id: '',
+        gradeName: '',
+        className: ''
+      }],
+      // 考试信息
+      examInformation: [],
+      // 个人信息数据暂存表
+      dataSpace: [],
+      // 成绩数据暂存表
+      dataSpaceGrade: [],
+      // 成绩信息暂存表
+      dataSpaceExam: []
     }
   }
 }

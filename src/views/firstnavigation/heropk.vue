@@ -11,7 +11,12 @@
     </el-row>
     <el-row style="margin-top: 50px">
       <div class="picturecontainer">
-        <img v-bind:src="imgUrl" width="80%" style="margin-left: 0%">
+        <img v-bind:src="imgUrl" width="80%">
+      </div>
+    </el-row>
+    <el-row>
+      <div class="chartcontainer">
+        <hero-pk-chart style="width: 100%;height: 500px"></hero-pk-chart>
       </div>
     </el-row>
   </div>
@@ -19,10 +24,11 @@
 
 <script>
 import classmatePkTable from '@/components/tables/classmatePkTable'
+import heroPkChart from '@/components/charts/heroPkChart'
 import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\herospk.png'
 export default {
   name: 'heropk',
-  components: {classmatePkTable},
+  components: {classmatePkTable, heroPkChart},
   data () {
     return {
       imgUrl: imgUrl
