@@ -71,3 +71,12 @@ export function getSuccessiveGradeTable (parems) {
     params: parems
   })
 }
+
+// 获取学校和班级的超越率
+export function getSchoolAndClassRate (parems) {
+  return request({
+    url: '/api/byondrate/total_byond_rate',
+    method: 'get',
+    params: parems
+  })
+}

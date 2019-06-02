@@ -5,6 +5,7 @@
       :data="allGradeTableData"
       :align="center"
       border
+      height="400"
       style="width: 100%">
       <el-table-column
         prop="id"
