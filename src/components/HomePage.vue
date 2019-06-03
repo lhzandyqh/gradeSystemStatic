@@ -8,29 +8,29 @@
           <el-col :span="2">
             <div class="navigationoption">
               <img src="../assets/icon/u133.png">
-<!--              <span v-on:click="gofisrtpage">首页</span>-->
-              <router-link to="/fisrtpage">首页</router-link>
+              <span v-on:click="gofisrtpage">首页</span>
+<!--              <router-link to="/fisrtpage">首页</router-link>-->
             </div>
           </el-col>
           <el-col :span="2">
             <div class="navigationoption">
               <img src="../assets/icon/u110.png">
-<!--              <span v-on:click="gogradereport">成绩报告</span>-->
-              <router-link to="/gradereport">成绩报告</router-link>
+              <span v-on:click="gogradereport">成绩报告</span>
+<!--              <router-link to="/gradereport">成绩报告</router-link>-->
             </div>
           </el-col>
           <el-col :span="2">
             <div class="navigationoption">
               <img src="../assets/icon/u114.png">
-<!--              <span v-on:click="gopaperanalysis">试卷分析</span>-->
-              <router-link to="/paperanalysis">试卷分析</router-link>
+              <span v-on:click="gopaperanalysis">试卷分析</span>
+<!--              <router-link to="/paperanalysis">试卷分析</router-link>-->
             </div>
           </el-col>
           <el-col :span="2">
             <div class="navigationoption">
               <img src="../assets/icon/u110.png">
-<!--              <span v-on:click="gouserfeedback">用户反馈</span>-->
-              <router-link to="/userfeedback">用户反馈</router-link>
+              <span v-on:click="gouserfeedback">用户反馈</span>
+<!--              <router-link to="/userfeedback">用户反馈</router-link>-->
             </div>
           </el-col>
           <el-col :span="3" offset="2">
@@ -73,16 +73,20 @@ export default {
   name: 'HomePage',
   methods: {
     gofisrtpage: function () {
-      this.$router.go('/fisrtpage')
+      // this.$router.go('/fisrtpage')
+      this.$router.push('/fisrtpage')
     },
     gogradereport: function () {
-      this.$router.go('/fisrtpage')
+      // this.$router.go('/fisrtpage')
+      this.$router.push('/gradereport')
     },
     gopaperanalysis: function () {
-      this.$router.go('/paperanalysis')
+      // this.$router.go('/paperanalysis')
+      this.$router.push('/paperanalysis')
     },
     gouserfeedback: function () {
-      this.$router.go('/userfeedback')
+      // this.$router.go('/userfeedback')
+      this.$router.push('/userfeedback')
     }
   }
 }
@@ -116,6 +120,9 @@ export default {
     width: 100%;
     height: 600px;
     text-align: center;
+  }
+  .navigationoption {
+    cursor:pointer
   }
 
 </style>

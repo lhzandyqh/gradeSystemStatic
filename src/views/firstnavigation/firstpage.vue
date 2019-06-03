@@ -61,13 +61,80 @@
               <span  style="color: #19c237;font-weight: bold">考试列表</span>
             </div>
             <div class="block">
+<!--              <el-timeline>-->
+<!--                <el-timeline-item-->
+<!--                  v-for="(activity, index) in activities"-->
+<!--                  :key="index"-->
+<!--                  :timestamp="activity.timestamp">-->
+<!--                  <div class="examreport">-->
+<!--                    <span style="font-weight: bold">{{activity.content}}</span>  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看报告</span>-->
+<!--                  </div>-->
+<!--                </el-timeline-item>-->
+<!--              </el-timeline>-->
               <el-timeline>
-                <el-timeline-item
-                  v-for="(activity, index) in activities"
-                  :key="index"
-                  :timestamp="activity.timestamp">
-                  <div class="examreport">
-                    <span style="font-weight: bold">{{activity.content}}</span>  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看报告</span>
+                <el-timeline-item>
+                  <div class="timelinecontainer">
+                    <div class="exam">
+                      <span style="font-weight: bold">{{activities[0].content}}</span>
+                    </div>
+                    <div class="timestamp">
+                      <span style="font-weight: bold">{{activities[0].timestamp}}</span>
+                    </div>
+                    <div class="report">
+                      <span style="padding-right: 100px">查看报告</span>
+                    </div>
+                  </div>
+                </el-timeline-item>
+                <el-timeline-item>
+                  <div class="timelinecontainer">
+                    <div class="exam">
+                      <span style="font-weight: bold">{{activities[1].content}}</span>
+                    </div>
+                    <div class="timestamp">
+                      <span style="font-weight: bold">{{activities[1].timestamp}}</span>
+                    </div>
+                    <div class="report">
+                      <span style="padding-right: 100px">查看报告</span>
+                    </div>
+                  </div>
+                </el-timeline-item>
+                <el-timeline-item>
+                  <div class="timelinecontainer">
+                    <div class="exam">
+                      <span style="font-weight: bold">{{activities[2].content}}</span>
+                    </div>
+                    <div class="timestamp">
+                      <span style="font-weight: bold">{{activities[2].timestamp}}</span>
+                    </div>
+                    <div class="report">
+                      <span style="padding-right: 100px">查看报告</span>
+                    </div>
+                  </div>
+                </el-timeline-item>
+                <el-timeline-item>
+                  <div class="timelinecontainer">
+                    <div class="exam">
+                      <span style="font-weight: bold">{{activities[3].content}}</span>
+                    </div>
+                    <div class="timestamp">
+                      <span style="font-weight: bold">{{activities[3].timestamp}}</span>
+                    </div>
+                    <div class="report">
+                      <span style="padding-right: 100px">查看报告</span>
+                    </div>
+                  </div>
+                </el-timeline-item>
+                <el-timeline-item>
+                  <div class="timelinecontainer">
+                    <div class="exam">
+                      <span style="font-weight: bold">{{activities[4].content}}</span>
+                    </div>
+                    <div class="timestamp">
+                      <span style="font-weight: bold">{{activities[4].timestamp}}</span>
+                    </div>
+                    <div class="report">
+                      <span style="padding-right: 100px">查看报告</span>
+                    </div>
                   </div>
                 </el-timeline-item>
               </el-timeline>
@@ -134,6 +201,7 @@ export default {
         this.$set(this.activities, 1, {content: this.dataSpaceExam[1].examName, timestamp: this.timeFormat(this.dataSpaceExam[1].examDate)})
         this.$set(this.activities, 2, {content: this.dataSpaceExam[2].examName, timestamp: this.timeFormat(this.dataSpaceExam[2].examDate)})
         this.$set(this.activities, 3, {content: this.dataSpaceExam[3].examName, timestamp: this.timeFormat(this.dataSpaceExam[3].examDate)})
+        this.$set(this.activities, 4, {content: this.dataSpaceExam[4].examName, timestamp: this.timeFormat(this.dataSpaceExam[4].examDate)})
       })
       console.log(this.dataSpaceExam)
     },
@@ -158,7 +226,10 @@ export default {
         timestamp: '2017-10-30'
       }, {
         content: '2017-2018学年第一学期七年级一次月考',
-        size: 'large'
+        timestamp: '2017-10-30'
+      }, {
+        content: '2017-2018学年第一学期七年级一次月考',
+        timestamp: '2017-10-30'
       }],
       // 成绩信息
       gradeInformation: [{
@@ -224,5 +295,20 @@ export default {
   .box-card{
   }
   .studentself{
+  }
+  .timelinecontainer{
+    display:inline;
+  }
+  .exam{
+    display:inline;
+    float: left;
+    width: 300px;
+  }
+  .report{
+    float: right;
+    display:inline;
+  }
+  .timestamp{
+    display: inline;
   }
 </style>

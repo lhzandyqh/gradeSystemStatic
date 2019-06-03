@@ -5,7 +5,12 @@
 
 <script>
 export default {
-  name: 'navigationTitle'
+  name: 'navigationTitle',
+  data () {
+    return {
+      nav: [{title: '首页'}, {title: '成绩报告'}, {title: '试卷分析'}, {title: '用户反馈'}]
+    }
+  }
 }
 </script>
 
