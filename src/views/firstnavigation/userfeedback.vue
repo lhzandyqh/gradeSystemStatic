@@ -6,7 +6,8 @@
     </el-row>
     <el-row style="padding-top: 30px">
       <div class="buttonContainer">
-        <el-button type="success"  icon="el-icon-s-platform" plain>查看我的总结</el-button>
+<!--        <el-button type="success"  icon="el-icon-notebook-1" plain>查看我的总结</el-button>-->
+        <student-summary-book></student-summary-book>
       </div>
     </el-row>
     <el-row :gutter="5" style="padding-top: 30px">
@@ -123,12 +124,19 @@
         </div>
       </el-row>
     </el-row>
+    <el-row style="padding-top: 30px">
+      <div class="submitButton">
+        <el-button type="primary"  icon="el-icon-finished" plain>提交总结</el-button>
+      </div>
+    </el-row>
   </div>
 </template>
 
 <script>
+import studentSummaryBook from '@/components/dialog/studentSummaryBook'
 export default {
   name: 'userfeedback',
+  components: {studentSummaryBook},
   data () {
     return {
       goodSubjectList: [],
