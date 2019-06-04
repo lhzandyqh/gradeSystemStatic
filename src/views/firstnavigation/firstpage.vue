@@ -46,11 +46,31 @@
             </div>
             <div class="studentself">
               <table style="margin: auto;padding-top: 30px">
-                <tr><td><a> <span>姓名：</span><span style="color: #19c237">{{this.studentInformation[0].studentName}}</span><br></a></td></tr>
-                <tr><td><a> <span>学籍号：</span><span style="color: #19c237">{{this.studentInformation[0].studentNumber}}</span><br></a></td></tr>
-                <tr><td><a> <span>考试号：</span><span style="color: #19c237">{{this.studentInformation[0].id}}</span><br></a></td></tr>
-                <tr><td><a> <span>年级：</span><span style="color: #19c237">{{this.studentInformation[0].gradeName}}</span><br></a></td></tr>
-                <tr><td><a> <span>班级：</span><span style="color: #19c237">{{this.studentInformation[0].className}}</span><br></a></td></tr>
+                <tr>
+                  <td style="text-align: left"><span>姓名：</span></td>
+                  <td><span style="color: #19c237">{{this.studentInformation[0].studentName}}</span></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left"><span>学籍号：</span></td>
+                  <td><span style="color: #19c237">{{this.studentInformation[0].studentNumber}}</span></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left"><span>考试号：</span></td>
+                  <td><span style="color: #19c237">{{this.studentInformation[0].id}}</span></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left"><span>年级：</span></td>
+                  <td><span style="color: #19c237">{{this.studentInformation[0].gradeName}}</span></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left"><span>班级：</span></td>
+                  <td><span style="color: #19c237">{{this.studentInformation[0].className}}</span></td>
+                </tr>
+<!--                <tr><td><a> <span>姓名：</span><span style="color: #19c237">{{this.studentInformation[0].studentName}}</span></a></td></tr>-->
+<!--                <tr><td><a> <span>学籍号：</span><span style="color: #19c237">{{this.studentInformation[0].studentNumber}}</span></a></td></tr>-->
+<!--                <tr><td><a> <span>考试号：</span><span style="color: #19c237">{{this.studentInformation[0].id}}</span><br></a></td></tr>-->
+<!--                <tr><td><a> <span>年级：</span><span style="color: #19c237">{{this.studentInformation[0].gradeName}}</span><br></a></td></tr>-->
+<!--                <tr><td><a> <span>班级：</span><span style="color: #19c237">{{this.studentInformation[0].className}}</span><br></a></td></tr>-->
               </table>
             </div>
           </el-card>
