@@ -25,7 +25,7 @@ export default {
   components: {classmatePkTable},
   data () {
     return {
-      imgUrl: require('../../../static/images/herospk.png')
+      imgUrl: require('../../../../static/images/herospk.png')
     }
   }
 }

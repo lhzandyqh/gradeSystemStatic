@@ -19,7 +19,7 @@ export default {
   name: 'surpassrate',
   data () {
     return {
-      imgUrl: require('../../../static/images/surpassrate.png')
+      imgUrl: require('../../../../static/images/surpassrate.png')
     }
   }
 }

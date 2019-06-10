@@ -20,7 +20,7 @@ export default {
   name: 'beyondsefl',
   data () {
     return {
-      imgUrl: require('../../../static/images/beyondself.png')
+      imgUrl: require('../../../../static/images/beyondself.png')
     }
   }
 }

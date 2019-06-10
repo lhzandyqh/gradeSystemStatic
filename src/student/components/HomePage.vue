@@ -1,0 +1,121 @@
+<template>
+  <div class="container" >
+    <el-container class="con_section">
+      <el-header class="header">
+        <div class="navigationcontainer"><h3 class="logoclass">LOGO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中科智禾-学生端</h3></div>
+        <div class="navigationcontainer">
+        <el-row :gutter="6">
+          <el-col :span="2">
+            <div class="navigationoption">
+              <img src="../assets/icon/u133.png">
+<!--              <span v-on:click="gofisrtpage">首页</span>-->
+              <router-link to="/fisrtpage">首页</router-link>
+            </div>
+          </el-col>
+          <el-col :span="2">
+            <div class="navigationoption">
+              <img src="../assets/icon/u110.png">
+<!--              <span v-on:click="gogradereport">成绩报告</span>-->
+              <router-link to="/gradereport">成绩报告</router-link>
+            </div>
+          </el-col>
+          <el-col :span="2">
+            <div class="navigationoption">
+              <img src="../assets/icon/u114.png">
+<!--              <span v-on:click="gopaperanalysis">试卷分析</span>-->
+              <router-link to="/paperanalysis">试卷分析</router-link>
+            </div>
+          </el-col>
+          <el-col :span="2">
+            <div class="navigationoption">
+              <img src="../assets/icon/u110.png">
+<!--              <span v-on:click="gouserfeedback">用户反馈</span>-->
+              <router-link to="/userfeedback">用户反馈</router-link>
+            </div>
+          </el-col>
+          <el-col :span="3" offset="2">
+            <div class="navigationoption">
+              <span>当前用户：杨启航</span>
+            </div>
+          </el-col>
+          <el-col :span="1" offset="2">
+              <img src="../assets/icon/u131.png">
+          </el-col>
+          <el-col :span="1">
+            <div class="navigationoption">
+              <img src="../assets/icon/u125.png">
+            </div>
+          </el-col>
+          <el-col :span="1">
+            <div class="navigationoption">
+              <img src="../assets/icon/u127.png">
+            </div>
+          </el-col>
+        </el-row>
+        </div>
+      </el-header>
+      <el-container class="containerone">
+<!--        <el-aside width="200px">-->
+<!--          <router-view></router-view>-->
+<!--        </el-aside>-->
+        <el-main class="main">
+          <div class="maincontent" style="text-align: center">
+            <router-view></router-view>
+          </div>
+        </el-main>
+      </el-container>
+    </el-container>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HomePage',
+  methods: {
+    gofisrtpage: function () {
+      this.$router.go('/fisrtpage')
+    },
+    gogradereport: function () {
+      this.$router.go('/fisrtpage')
+    },
+    gopaperanalysis: function () {
+      this.$router.go('/paperanalysis')
+    },
+    gouserfeedback: function () {
+      this.$router.go('/userfeedback')
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .con_section{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left:0px;
+    width:100%;
+  }
+  .header {
+    height: 80px;
+    line-height: 60px;
+    background: rgba(76, 191, 65, 0.84);
+    color: #fff;
+  }
+  .logoclass{
+    float: left;
+    height: 60px;
+    margin: 0 20px;
+    width: 300px;
+  }
+  .main{
+    background-color: honeydew;
+    text-align: center;
+  }
+  .containerone{
+    width: 100%;
+    height: 600px;
+    text-align: center;
+  }
+
+</style>
