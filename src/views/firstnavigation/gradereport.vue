@@ -2,7 +2,7 @@
   <div class="app-container">
 <!--    <h1>这是成绩报告组件</h1>-->
     <el-container>
-      <el-aside width="250x">
+      <el-aside width="200px">
         <el-row class="tac">
           <el-col :span="24">
             <el-menu
@@ -51,7 +51,7 @@ export default {
 
 <style scoped>
   .app-container{
-    width: 98%;
+    width: 93%;
     padding-bottom:10px;
     background-color: #ffffff;
     margin-left: 4%;
@@ -59,5 +59,6 @@ export default {
   }
   .functioncontainer{
     text-align: center;
+    width:200px
   }
 </style>

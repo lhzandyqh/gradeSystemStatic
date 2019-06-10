@@ -2,13 +2,18 @@
   <div class="container" >
     <el-container class="con_section">
       <el-header class="header">
-        <div class="navigationcontainer"><h3 class="logoclass">LOGO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中科智禾</h3></div>
+<!--        <div class="navigationcontainer"><h3 class="logoclass">LOGO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中科智禾</h3></div>-->
         <div class="navigationcontainer">
         <el-row :gutter="6">
-          <el-col :span="2">
+          <el-col :span="5">
+            <div class="logoContainer">
+              <img v-bind:src="imgUrl" width="100%" height="80%">
+            </div>
+          </el-col>
+          <el-col :span="2" :offset="1">
             <div class="navigationoption">
               <img src="../assets/icon/u133.png">
-              <span v-on:click="gofisrtpage">首页</span>
+              <span v-on:click="gofisrtpage">网站首页</span>
 <!--              <router-link to="/fisrtpage">首页</router-link>-->
             </div>
           </el-col>
@@ -29,13 +34,13 @@
           <el-col :span="2">
             <div class="navigationoption">
               <img src="../assets/icon/u110.png">
-              <span v-on:click="gouserfeedback">用户反馈</span>
+              <span v-on:click="gouserfeedback">考试总结</span>
 <!--              <router-link to="/userfeedback">用户反馈</router-link>-->
             </div>
           </el-col>
           <el-col :span="3" offset="2">
             <div class="navigationoption">
-              <span>当前用户：杨启航</span>
+              <span>当前用户：卫梦佳</span>
             </div>
           </el-col>
           <el-col :span="1" offset="2">
@@ -62,6 +67,9 @@
           <div class="maincontent" style="text-align: center">
             <router-view></router-view>
           </div>
+          <div class="copyrightContainer">
+            <span style="font-size: 12px">Copyright&nbsp;&nbsp;&nbsp;中科智禾教育大数据中心   ©2019</span>
+          </div>
         </el-main>
       </el-container>
     </el-container>
@@ -69,8 +77,14 @@
 </template>
 
 <script>
+import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\homepagelogo.png'
 export default {
   name: 'HomePage',
+  data () {
+    return {
+      imgUrl
+    }
+  },
   methods: {
     gofisrtpage: function () {
       // this.$router.go('/fisrtpage')
@@ -101,7 +115,7 @@ export default {
     width:100%;
   }
   .header {
-    height: 80px;
+    height: 300px;
     line-height: 60px;
     background: rgba(76, 191, 65, 0.84);
     color: #fff;
@@ -123,6 +137,10 @@ export default {
   }
   .navigationoption {
     cursor:pointer
+  }
+  .copyrightContainer{
+    padding-top: 20px;
+    text-align: center;
   }
 
 </style>

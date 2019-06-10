@@ -13,7 +13,7 @@
     <el-row :gutter="5" style="padding-top: 30px">
       <el-col :span="6">
         <div class="title">
-          <span style="color: #19c237;font-weight: bolder;font-size: 15px;text-align: left">本次考试考的好的科目</span>
+          <span style="color: #19c237;font-weight: bolder;font-size: 15px;text-align: left">本次考试发挥良好的科目</span>
         </div>
       </el-col>
       <el-col :span="14">
@@ -33,7 +33,7 @@
     <el-row :gutter="5" style="padding-top: 30px">
       <el-col :span="6">
         <div class="title">
-          <span style="color: #19c237;font-weight: bolder;font-size: 15px;">本次考试考的不好的科目</span>
+          <span style="color: #19c237;font-weight: bolder;font-size: 15px;">本次考试发挥欠佳的科目</span>
         </div>
       </el-col>
       <el-col :span="14">

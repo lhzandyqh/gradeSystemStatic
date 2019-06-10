@@ -80,3 +80,12 @@ export function getSchoolAndClassRate (parems) {
     params: parems
   })
 }
+
+// 输入成绩信息重新排名
+export function getNewGradeRank (parems) {
+  return request({
+    url: '/api/score/aims_score_rank',
+    method: 'get',
+    params: parems
+  })
+}

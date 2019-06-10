@@ -7,7 +7,7 @@
       <el-table
         :data="successiveData"
         border
-        style="width: 73%">
+        style="width: 82%">
         <el-table-column
           prop="time"
           label="时间"

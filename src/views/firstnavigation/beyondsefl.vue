@@ -12,7 +12,7 @@
 <!--      </div>-->
 <!--    </el-row>-->
     <el-row>
-      <beyond-self-table></beyond-self-table>
+      <beyond-self-table :subjectTableData="subjectTableData"></beyond-self-table>
     </el-row>
   </div>
 </template>
@@ -20,12 +20,27 @@
 <script>
 import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\beyondself.png'
 import beyondSelfTable from '@/components/tables/beyondSelfTable'
+import {getSubjectGradeTable} from '@/api/studentGetData'
 export default {
   name: 'beyondsefl',
   components: {beyondSelfTable},
+  mounted () {
+    this.getSubjectData()
+  },
   data () {
     return {
-      imgUrl: imgUrl
+      imgUrl: imgUrl,
+      subjectTableData: []
+    }
+  },
+  methods: {
+    getSubjectData: function () {
+      const prams = {
+        userID: 1
+      }
+      getSubjectGradeTable(prams).then(response => {
+        this.subjectTableData = response.data.info
+      })
     }
   }
 }

@@ -1,17 +1,17 @@
 <template>
   <el-table
-    :data="tableData"
+    :data="subjectTableData"
     height="400"
     stripe
-    style="width: 100%">
+    style="width: 1000px">
     <el-table-column
-      prop="date"
+      prop="subjectName"
       align="center"
       label="学科"
       width="80">
     </el-table-column>
     <el-table-column
-      prop="name"
+      prop="score"
       align="center"
       label="原分数"
       width="80">
@@ -28,29 +28,29 @@
       label="理想分数"
       width="100">
       <template slot-scope="scope">
-        <el-input></el-input>
+        <el-input v-model="input[scope.$index]"></el-input>
       </template>
     </el-table-column>
     <el-table-column
-      prop="name"
+      prop="classIndex"
       align="center"
       label="原班级排名"
       width="120">
     </el-table-column>
     <el-table-column
-      prop="name"
+      prop="newclassrank"
       align="center"
       label="新班级排名"
       width="120">
     </el-table-column>
     <el-table-column
-      prop="name"
+      prop="schoolIndex"
       align="center"
       label="原学校排名"
       width="120">
     </el-table-column>
     <el-table-column
-      prop="address"
+      prop="newschoolrank"
       align="center"
       label="新学校排名"
       width="120">
@@ -59,7 +59,7 @@
       <template slot-scope="scope">
         <el-button
           size="mini"
-          @click="handleEdit(scope.$index, scope.row)">查询</el-button>
+          @click="inquireNewRank(scope.$index, scope.row)">查询</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -67,52 +67,32 @@
 
 <script>
 import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\jiantou.png'
+// import {getNewGradeRank} from '@/api/studentGetData'
 export default {
   name: 'beyondSelfTable',
+  props: {
+    subjectTableData: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
       imgUrl: imgUrl,
-      tableData: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1517 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1516 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-      }]
+      input: ['', '', '', '', '', '', '', '', ''],
+      newRank: ['', '']
+    }
+  },
+  methods: {
+    inquireNewRank: function (index, content) {
+      this.$emit('updateprop', this.input[index])
+      console.log(this.input[index])
+      console.log(content.subjectName)
+      // const prams = {
+      //   userID: 1,
+      //   subjectName: content.subjectName,
+      //   subjectAimsScore: this.input[index],
+      // }
     }
   }
 }

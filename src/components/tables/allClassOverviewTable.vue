@@ -9,7 +9,7 @@
         <el-table
           :data="subjectTableData"
           border
-          style="width: 70%;align-content: center">
+          style="width: 80%;align-content: center">
           <el-table-column
             prop="subjectName"
             label="学科"
