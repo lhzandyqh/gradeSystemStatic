@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\beyondself.png'
+// import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\beyondself.png'
 export default {
   name: 'beyondsefl',
   data () {
     return {
-      imgUrl: imgUrl
+      imgUrl: require('../../../static/images/beyondself.png')
     }
   }
 }

@@ -19,13 +19,13 @@
 
 <script>
 import classmatePkTable from '@/components/tables/classmatePkTable'
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\herospk.png'
+// import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\herospk.png'
 export default {
   name: 'heropk',
   components: {classmatePkTable},
   data () {
     return {
-      imgUrl: imgUrl
+      imgUrl: require('../../../static/images/herospk.png')
     }
   }
 }

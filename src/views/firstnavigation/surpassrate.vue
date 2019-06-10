@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\surpassrate.png'
+// import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\surpassrate.png'
 export default {
   name: 'surpassrate',
   data () {
     return {
-      imgUrl: imgUrl
+      imgUrl: require('../../../static/images/surpassrate.png')
     }
   }
 }
