@@ -89,3 +89,12 @@ export function getNewGradeRank (parems) {
     params: parems
   })
 }
+
+// 个人成绩详情查询
+export function getSelfGradeDetails (parems) {
+  return request({
+    url: '/importinit/findPreviousGradebyUser_id',
+    method: 'get',
+    params: parems
+  })
+}
