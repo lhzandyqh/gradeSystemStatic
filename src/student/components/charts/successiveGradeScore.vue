@@ -4,7 +4,7 @@
 
 <script>
 import echarts from 'echarts'
-import { getSuccessiveGradeTable } from '@/api/studentGetData'
+import { getSuccessiveGradeTable } from '~/api/studentGetData'
 export default {
   name: 'successiveGradeScore',
   data () {

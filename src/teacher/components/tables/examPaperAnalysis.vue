@@ -5,46 +5,46 @@
       <el-table
         :data="tableData"
         border
-        style="width: 80%">
+        style="width: 100%">
         <el-table-column
           prop="questionnum"
           label="题号"
-          width="50">
+          width="60">
         </el-table-column>
         <el-table-column
           prop="fullscore"
           label="满分"
-          width="50">
+          width="60">
         </el-table-column>
         <el-table-column
           prop="difficulty"
           label="难度"
-          width="50">
+          width="60">
         </el-table-column>
         <el-table-column
           prop="dividing"
           label="区分度"
-          width="70">
+          width="65">
         </el-table-column>
         <el-table-column
           prop="classaverage"
           label="班均分"
-          width="70">
+          width="65">
         </el-table-column>
         <el-table-column
           prop="schoolaverage"
           label="校均分"
-          width="70">
+          width="65">
         </el-table-column>
         <el-table-column
           prop="knowledgepoint"
           label="知识点"
-          width="180">
+          width="65">
         </el-table-column>
         <el-table-column
           prop="testability"
           label="考察能力"
-          width="180">
+          width="80">
         </el-table-column>
         <el-table-column
           prop="analysis"

@@ -66,8 +66,7 @@
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\jiantou.png'
-// import {getNewGradeRank} from '@/api/studentGetData'
+// import {getNewGradeRank} from '~/api/studentGetData'
 export default {
   name: 'beyondSelfTable',
   props: {
@@ -78,7 +77,7 @@ export default {
   },
   data () {
     return {
-      imgUrl: imgUrl,
+      imgUrl: require('../../../../static/images/jiantou.png'),
       input: ['', '', '', '', '', '', '', '', ''],
       newRank: ['', '']
     }

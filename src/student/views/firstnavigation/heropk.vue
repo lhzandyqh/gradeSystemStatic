@@ -106,8 +106,8 @@
 </template>
 
 <script>
-import classmatePkTable from '@/components/tables/classmatePkTable'
-import pkWithClassmates from '@//components/charts/pkWithClassmates'
+import classmatePkTable from '~/components/tables/classmatePkTable'
+import pkWithClassmates from '~//components/charts/pkWithClassmates'
 export default {
   name: 'heropk',
   components: {classmatePkTable, pkWithClassmates},
@@ -133,7 +133,7 @@ export default {
   },
   data () {
     return {
-      imgUrl: require('../../../static/images/herospk.png'),
+      imgUrl: require('../../../../static/images/herospk.png'),
       dialogVisible: false,
       myScore: [],
       classmateScore: [

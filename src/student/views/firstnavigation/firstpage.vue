@@ -167,7 +167,7 @@
 </template>
 
 <script>
-import { getUserInformation, getUserGrade, getExamInformation } from '@/api/studentGetData'
+import { getUserInformation, getUserGrade, getExamInformation } from '~/api/studentGetData'
 export default {
   name: 'firstpage',
   mounted () {

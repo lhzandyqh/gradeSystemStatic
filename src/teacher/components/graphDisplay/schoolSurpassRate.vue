@@ -38,9 +38,6 @@
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\student.png'
-import peopleUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\people.png'
-import schoolUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\school.png'
 import { getSchoolAndClassRate } from '@/api/studentGetData'
 export default {
   name: 'schoolSurpassRate',
@@ -61,9 +58,9 @@ export default {
   },
   data () {
     return {
-      imgUrl: imgUrl,
-      peopleUrl: peopleUrl,
-      schoolUrl: schoolUrl,
+      imgUrl: require('../../../../static/images/student.png'),
+      peopleUrl: require('../../../../static/images/people.png'),
+      schoolUrl: require('../../../../static/images/school.png'),
       surpassRate: []
     }
   }

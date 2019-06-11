@@ -4,7 +4,7 @@
 
 <script>
 import echarts from 'echarts'
-import { getSubjectGradeTable } from '@/api/studentGetData'
+import { getSubjectGradeTable } from '~/api/studentGetData'
 export default {
   name: 'pkWithClassmates',
   props: {

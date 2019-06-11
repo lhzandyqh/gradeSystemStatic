@@ -28,7 +28,7 @@ export default {
   },
   data () {
     return {
-      imgUrl: require('../../../static/images/beyondself.png'),
+      imgUrl: require('../../../../static/images/beyondself.png'),
       subjectTableData: []
     }
   },

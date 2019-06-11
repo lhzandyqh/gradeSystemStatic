@@ -9,10 +9,6 @@
       <span style="font-weight: bold;font-size: 20px">各科目超越率雷达图</span>
     </el-row>
     <el-row style="margin-top: 20px">
-      <el-radio-group v-model="radio">
-        <el-radio :label="1">班级</el-radio>
-        <el-radio :label="2">学校</el-radio>
-      </el-radio-group>
     </el-row>
     <el-row style="margin-top: 30px;margin-left: 27%">
       <myweakspot style="width: 60%;height: 500px"></myweakspot>

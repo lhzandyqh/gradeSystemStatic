@@ -133,7 +133,7 @@ export default {
   },
   data () {
     return {
-      imgUrl: require('../../../static/images/herospk.png'),
+      imgUrl: require('../../../../static/images/herospk.png'),
       dialogVisible: false,
       myScore: [],
       classmateScore: [

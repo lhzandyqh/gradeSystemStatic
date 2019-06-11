@@ -18,6 +18,7 @@ import classgradetable from '~/views/firstnavigation/classgradetable'
 import weakspot from '~/views/firstnavigation/weakspot'
 import surpassrate from '~/views/firstnavigation/surpassrate'
 import gradeandtargetcontent from '~/views/firstnavigation/gradeandtargetcontent'
+import personalGradeDetails from '~/views/firstnavigation/personalGradeDetails'
 
 Vue.use(Router)
 
@@ -44,6 +45,8 @@ export default new Router({
             component: gradereportcontent,
             redirect: '/gradereport/gradereportcontent/classgradetable',
             children: [{
+              path: '/gradereport/gradereportcontent/personalGradeDetails',
+              component: personalGradeDetails}, {
               path: '/gradereport/gradereportcontent/classgradetable',
               component: classgradetable}, {
               path: '/gradereport/gradereportcontent/allgradeoverview',

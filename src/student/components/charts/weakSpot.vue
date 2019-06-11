@@ -10,7 +10,7 @@
 
 <script>
 import echarts from 'echarts'
-import { getClassGradeByondRate, getSchoolGradeByondRate } from '@/api/studentGetData'
+import { getClassGradeByondRate, getSchoolGradeByondRate } from '~/api/studentGetData'
 export default {
   name: 'weakSpot',
   data () {

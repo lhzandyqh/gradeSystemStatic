@@ -77,12 +77,11 @@
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\homepagelogo.png'
 export default {
   name: 'HomePage',
   data () {
     return {
-      imgUrl
+      imgUrl: require('../../../static/images/homepagelogo.png')
     }
   },
   methods: {

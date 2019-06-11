@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import myweakspot from '@/components/charts/weakSpot'
+import myweakspot from '~/components/charts/weakSpot'
 export default {
   name: 'weakspot',
   components: {myweakspot},

@@ -123,8 +123,8 @@
 </template>
 
 <script>
-import examPaperAnalysis from '@/components/tables/examPaperAnalysis'
-import studentExamAnalyze from '@/components/dialog/studentExamAnalyze'
+import examPaperAnalysis from '~/components/tables/examPaperAnalysis'
+import studentExamAnalyze from '~/components/dialog/studentExamAnalyze'
 export default {
   name: 'paperanalysis',
   components: {examPaperAnalysis, studentExamAnalyze},

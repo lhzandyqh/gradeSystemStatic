@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import allClassGradeTable from '@/components/tables/allClassGradeTable'
-import {getClassGradeTable} from '@/api/studentGetData'
+import allClassGradeTable from '~/components/tables/allClassGradeTable'
+import {getClassGradeTable} from '~/api/studentGetData'
 export default {
   name: 'classgradetable',
   components: {allClassGradeTable},

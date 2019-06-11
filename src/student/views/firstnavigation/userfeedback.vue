@@ -133,7 +133,7 @@
 </template>
 
 <script>
-import studentSummaryBook from '@/components/dialog/studentSummaryBook'
+import studentSummaryBook from '~/components/dialog/studentSummaryBook'
 export default {
   name: 'userfeedback',
   components: {studentSummaryBook},

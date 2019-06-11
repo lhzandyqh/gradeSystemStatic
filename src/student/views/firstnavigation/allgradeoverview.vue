@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import allClassOverviewTable from '@/components/tables/allClassOverviewTable'
-import subjectGradeComparison from '@/components/charts/subjectGradeComparison'
-import {getSubjectGradeTable} from '@/api/studentGetData'
+import allClassOverviewTable from '~/components/tables/allClassOverviewTable'
+import subjectGradeComparison from '~/components/charts/subjectGradeComparison'
+import {getSubjectGradeTable} from '~/api/studentGetData'
 export default {
   name: 'allgradeoverview',
   components: {allClassOverviewTable, subjectGradeComparison},

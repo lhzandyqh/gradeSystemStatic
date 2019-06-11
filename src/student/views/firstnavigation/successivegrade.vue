@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import successiveGradeTable from '@/components/tables/successiveGradeTable'
-import successiveGradeScore from '@/components/charts/successiveGradeScore'
-import { getSuccessiveGradeTable } from '@/api/studentGetData'
+import successiveGradeTable from '~/components/tables/successiveGradeTable'
+import successiveGradeScore from '~/components/charts/successiveGradeScore'
+import { getSuccessiveGradeTable } from '~/api/studentGetData'
 export default {
   name: 'successivegrade',
   components: {successiveGradeTable, successiveGradeScore},
