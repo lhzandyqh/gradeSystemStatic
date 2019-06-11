@@ -4,7 +4,7 @@
       <el-table
         :data="tableData"
         border
-        style="width: 95%">
+        style="width: 100%">
         <el-table-column
           prop="serialnumber"
           label="序号"
@@ -33,12 +33,12 @@
         <el-table-column
           prop="classrank"
           label="班级占位"
-          width="120">
+          width="80">
         </el-table-column>
         <el-table-column
           prop="schoolrank"
           label="校占位"
-          width="100">
+          width="80">
         </el-table-column>
         <el-table-column
           prop="chinese"
@@ -82,7 +82,18 @@
         </el-table-column>
         <el-table-column
           prop="political"
-          label="政治">
+          label="政治"
+          width="60">
+        </el-table-column>
+        <el-table-column
+          prop="political"
+          label="操作">
+          <template slot-scope="scope">
+            <el-button
+              size="mini"
+              type="danger"
+              @click="handleEdit(scope.$index, scope.row)">PK</el-button>
+          </template>
         </el-table-column>
       </el-table>
     </el-row>

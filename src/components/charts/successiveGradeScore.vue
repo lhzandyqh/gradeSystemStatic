@@ -4,20 +4,13 @@
 
 <script>
 import echarts from 'echarts'
+import { getSuccessiveGradeTable } from '@/api/studentGetData'
 export default {
   name: 'successiveGradeScore',
   data () {
     return {
-      chart: null
-    }
-  },
-  mounted () {
-    this.initChart()
-  },
-  methods: {
-    initChart () {
-      this.chart = echarts.init(document.getElementById('successivegrade'))
-      this.chart.setOption({
+      chart: null,
+      option: {
         tooltip: {
           trigger: 'axis',
           axisPointer: {
@@ -28,7 +21,7 @@ export default {
           }
         },
         legend: {
-          data: ['班级等级分', '学校等级分']
+          data: ['成绩原始分']
         },
         toolbox: {
           feature: {
@@ -45,7 +38,7 @@ export default {
           {
             type: 'category',
             boundaryGap: false,
-            data: ['第一次月考', '第二次月考', '期中考试', '期末考试']
+            data: []
           }
         ],
         yAxis: [
@@ -55,22 +48,33 @@ export default {
         ],
         series: [
           {
-            name: '班级等级分',
+            name: '成绩原始分',
             type: 'line',
             stack: '总量',
             areaStyle: {},
-            data: [83, 78, 91, 87, 90]
-          },
-          {
-            name: '学校等级分',
-            type: 'line',
-            stack: '总量',
-            areaStyle: {},
-            data: [76, 74, 83, 86]
+            data: []
           }
         ]
       }
-      )
+    }
+  },
+  mounted () {
+    this.initChart()
+  },
+  methods: {
+    initChart () {
+      const prams = {
+        userID: 1
+      }
+      getSuccessiveGradeTable(prams).then(response => {
+        var k = ''
+        for (k in response.data.info) {
+          this.option.xAxis[0].data.push(response.data.info[k].examName)
+          this.option.series[0].data.push(response.data.info[k].coversionTotal)
+        }
+        this.chart = echarts.init(document.getElementById('successivegrade'))
+        this.chart.setOption(this.option)
+      })
     }
   }
 }
