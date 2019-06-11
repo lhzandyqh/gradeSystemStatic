@@ -31,6 +31,7 @@ export default {
 
 <style scoped>
   .app-container{
+    margin-left: 0%;
   }
 
 </style>

@@ -7,11 +7,11 @@
     </el-row>
     <el-row>
         <el-table
-          :data="tableData"
+          :data="subjectTableData"
           border
-          style="width: 70%;align-content: center">
+          style="width: 80%;align-content: center">
           <el-table-column
-            prop="subject"
+            prop="subjectName"
             label="学科"
             width="100">
           </el-table-column>
@@ -21,22 +21,22 @@
             width="100">
           </el-table-column>
           <el-table-column
-            prop="classrank"
+            prop="classIndex"
             label="班级排名"
             width="100">
           </el-table-column>
           <el-table-column
-            prop="classaverage"
+            prop="classArg"
             label="班级平均分"
             width="100">
           </el-table-column>
           <el-table-column
-            prop="schoolrank"
+            prop="schoolIndex"
             label="学校排名"
             width="100">
           </el-table-column>
           <el-table-column
-            prop="schoolaverage"
+            prop="schoolArg"
             label="学校平均分">
           </el-table-column>
         </el-table>
@@ -47,6 +47,12 @@
 <script>
 export default {
   name: 'allClassOverviewTable',
+  props: {
+    subjectTableData: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
       tableData: [{

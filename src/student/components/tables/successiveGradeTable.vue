@@ -5,16 +5,16 @@
     </el-row>
     <el-row>
       <el-table
-        :data="tableData"
+        :data="successiveData"
         border
-        style="width: 73%">
+        style="width: 82%">
         <el-table-column
           prop="time"
           label="时间"
           width="100">
         </el-table-column>
         <el-table-column
-          prop="name"
+          prop="examName"
           label="名称"
           width="240">
         </el-table-column>
@@ -24,7 +24,7 @@
           width="80">
         </el-table-column>
         <el-table-column
-          prop="myscroe"
+          prop="coversionTotal"
           label="我的得分"
           width="80">
         </el-table-column>
@@ -34,12 +34,12 @@
           width="80">
         </el-table-column>
         <el-table-column
-          prop="classrank"
+          prop="classIndex"
           label="班级排名"
           width="80">
         </el-table-column>
         <el-table-column
-          prop="schoolrank"
+          prop="schoolIndex"
           label="本校排名">
         </el-table-column>
       </el-table>
@@ -50,41 +50,15 @@
 <script>
 export default {
   name: 'successiveGradeTable',
+  props: {
+    successiveData: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
-      tableData: [{
-        time: '2019-01-15',
-        name: '2019级高一第一学期第一次月考',
-        fullscore: '700',
-        myscroe: '620',
-        ratedscore: '75',
-        classrank: '5',
-        schoolrank: '70'
-      }, {
-        time: '2019-01-15',
-        name: '2019级高一第一学期第二次月考',
-        fullscore: '700',
-        myscroe: '600',
-        ratedscore: '82',
-        classrank: '4',
-        schoolrank: '64'
-      }, {
-        time: '2019-01-15',
-        name: '2019级高一第一学期期中考试',
-        fullscore: '700',
-        myscroe: '630',
-        ratedscore: '85',
-        classrank: '3',
-        schoolrank: '25'
-      }, {
-        time: '2019-01-15',
-        name: '2019级高一第一学期期末考试',
-        fullscore: '700',
-        myscroe: '650',
-        ratedscore: '90',
-        classrank: '1',
-        schoolrank: '15'
-      }]
+      // tableData: this.successiveData[0]
     }
   }
 }

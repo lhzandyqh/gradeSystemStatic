@@ -14,7 +14,6 @@
 </template>
 
 <script>
-// import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\surpassrate.png'
 export default {
   name: 'surpassrate',
   data () {
