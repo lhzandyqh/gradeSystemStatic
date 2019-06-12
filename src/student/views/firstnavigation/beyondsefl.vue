@@ -12,15 +12,14 @@
 <!--      </div>-->
 <!--    </el-row>-->
     <el-row>
-      <beyond-self-table :subjectTableData="subjectTableData" v-on:updateprop = 'zidingyi($event)'></beyond-self-table>
+      <beyond-self-table :subjectTableData="subjectTableData"></beyond-self-table>
     </el-row>
   </div>
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\beyondself.png'
-import beyondSelfTable from '@/components/tables/beyondSelfTable'
-import {getSubjectGradeTable} from '@/api/studentGetData'
+import beyondSelfTable from '~/components/tables/beyondSelfTable'
+import {getSubjectGradeTable} from '~/api/studentGetData'
 export default {
   name: 'beyondsefl',
   components: {beyondSelfTable},
@@ -29,7 +28,7 @@ export default {
   },
   data () {
     return {
-      imgUrl: imgUrl,
+      imgUrl: require('../../../../static/images/beyondself.png'),
       subjectTableData: []
     }
   },
@@ -41,9 +40,6 @@ export default {
       getSubjectGradeTable(prams).then(response => {
         this.subjectTableData = response.data.info
       })
-    },
-    zidingyi: function (newData) {
-      this.subjectTableData = newData
     }
   }
 }

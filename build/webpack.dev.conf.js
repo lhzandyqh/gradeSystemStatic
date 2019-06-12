@@ -52,10 +52,20 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['manifest'],
+    }),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
+      chunks: ['teacher', 'manifest'],
       template: 'index.html',
-      inject: true
+      filename: path.resolve(__dirname, '../dist/teacher.html'),
+      // filename: './page/index.html',
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['student', 'manifest'],
+      template: 'index.html',
+      filename: path.resolve(__dirname, '../dist/student.html'),
+      // filename: './page/login.html'
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

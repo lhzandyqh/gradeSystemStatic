@@ -20,14 +20,13 @@
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\surpassrate.png'
-import schoolSurpassRate from '@/components/graphDisplay/schoolSurpassRate'
+import schoolSurpassRate from '~/components/graphDisplay/schoolSurpassRate'
 export default {
   name: 'surpassrate',
   components: { schoolSurpassRate },
   data () {
     return {
-      imgUrl: imgUrl
+      imgUrl: require('../../../../static/images/surpassrate.png')
     }
   }
 }

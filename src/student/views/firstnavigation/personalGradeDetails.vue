@@ -3,7 +3,7 @@
     <el-row style="padding-top: 30px">
       <span style="font-weight: bold;color: #19c237">个人历次考试详情</span>
     </el-row>
-    <el-row style="padding-top: 30px">
+    <el-row style="padding-top: 80px">
       <div class="tableContainer">
         <grade-details-table :selfDetails="selfDetails" style="margin-left: 15%"></grade-details-table>
       </div>

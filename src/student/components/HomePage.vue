@@ -38,12 +38,12 @@
 <!--              <router-link to="/userfeedback">用户反馈</router-link>-->
             </div>
           </el-col>
-          <el-col :span="3" offset="2">
+          <el-col :span="3" :offset="2">
             <div class="navigationoption">
               <span>当前用户：卫梦佳</span>
             </div>
           </el-col>
-          <el-col :span="1" offset="2">
+          <el-col :span="1" :offset="2">
               <img src="../assets/icon/u131.png">
           </el-col>
           <el-col :span="1">
@@ -77,12 +77,11 @@
 </template>
 
 <script>
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\homepagelogo.png'
 export default {
   name: 'HomePage',
   data () {
     return {
-      imgUrl
+      imgUrl: require('../../../static/images/homepagelogo.png')
     }
   },
   methods: {

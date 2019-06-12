@@ -106,9 +106,8 @@
 </template>
 
 <script>
-import classmatePkTable from '@/components/tables/classmatePkTable'
-import pkWithClassmates from '@//components/charts/pkWithClassmates'
-import imgUrl from 'D:\\VueProject\\gradeSystemStatic\\static\\images\\herospk.png'
+import classmatePkTable from '~/components/tables/classmatePkTable'
+import pkWithClassmates from '~//components/charts/pkWithClassmates'
 export default {
   name: 'heropk',
   components: {classmatePkTable, pkWithClassmates},
@@ -134,9 +133,9 @@ export default {
   },
   data () {
     return {
+      imgUrl: require('../../../../static/images/herospk.png'),
       dialogVisible: false,
       myScore: [],
-      imgUrl: imgUrl,
       classmateScore: [
         {yuwen: ''},
         {shuxue: ''},
