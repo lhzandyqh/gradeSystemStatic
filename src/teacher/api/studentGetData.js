@@ -1,5 +1,5 @@
-import request from '@/utils/request'
 
+import request from '@/utils/request'
 // 获取用户信息
 export function getUserInformation (parems) {
   return request({
@@ -85,6 +85,15 @@ export function getSchoolAndClassRate (parems) {
 export function getNewGradeRank (parems) {
   return request({
     url: '/api/score/aims_score_rank',
+    method: 'get',
+    params: parems
+  })
+}
+
+// 个人成绩详情查询
+export function getSelfGradeDetails (parems) {
+  return request({
+    url: '/importinit/findPreviousGradebyUser_id',
     method: 'get',
     params: parems
   })

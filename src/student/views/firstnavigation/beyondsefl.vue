@@ -18,8 +18,16 @@
 </template>
 
 <script>
+
 import beyondSelfTable from '~/components/tables/beyondSelfTable'
 import {getSubjectGradeTable} from '~/api/studentGetData'
+
+// import beyondSelfTable from '@/components/tables/beyondSelfTable'
+// import {getSubjectGradeTable} from '@/api/studentGetData'
+//
+// import beyondSelfTable from '~/components/tables/beyondSelfTable'
+// import {getSubjectGradeTable} from '~/api/studentGetData'
+
 export default {
   name: 'beyondsefl',
   components: {beyondSelfTable},
