@@ -29,7 +29,8 @@ export default {
   data () {
     return {
       radio: 1,
-      subjectTableData: []
+      subjectTableData: [],
+      processedData: []
     }
   },
   methods: {
@@ -39,6 +40,16 @@ export default {
       }
       getSubjectGradeTable(prams).then(response => {
         this.subjectTableData = response.data.info
+        console.log('要准备处理数据了，先输出要处理的数据')
+        console.log(this.subjectTableData)
+        console.log(this.subjectTableData.length)
+        let i = 1
+        while (i < this.subjectTableData.length) {
+          this.processedData.push(this.subjectTableData[i])
+          i++
+        }
+        console.log('输出处理好的数据')
+        console.log(this.processedData)
       })
     }
   }

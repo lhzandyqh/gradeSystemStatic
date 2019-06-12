@@ -4,9 +4,8 @@
       <el-table
         :data="selfDetails"
         border
-        style="width: 80%">
+        style="width: 100%">
         <el-table-column
-          fixed
           align="center"
           prop="examType"
           label="考试名称"
@@ -81,8 +80,7 @@
         <el-table-column
           align="center"
           prop="schoolIndex"
-          label="校排名"
-          width="80">
+          label="校排名">
         </el-table-column>
       </el-table>
     </el-row>

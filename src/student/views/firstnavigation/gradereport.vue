@@ -13,11 +13,7 @@
               @close="handleClose">
               <el-menu-item index="/gradereport/gradereportcontent">
                 <i class="el-icon-news"></i>
-                <span slot="title">成绩概况</span>
-              </el-menu-item>
-              <el-menu-item index="/gradereport/successivegrade">
-                <i class="el-icon-menu"></i>
-                <span slot="title">历次成绩</span>
+                <span slot="title">本次成绩</span>
               </el-menu-item>
               <el-menu-item index="/gradereport/gradeanalyzecontent">
                 <i class="el-icon-document"></i>
@@ -26,6 +22,10 @@
               <el-menu-item index="/gradereport/gradeandtargetcontent">
                 <i class="el-icon-star-on"></i>
                 <span slot="title">成绩目标</span>
+              </el-menu-item>
+              <el-menu-item index="/gradereport/successivegrade">
+                <i class="el-icon-menu"></i>
+                <span slot="title">历次成绩</span>
               </el-menu-item>
             </el-menu>
           </el-col>

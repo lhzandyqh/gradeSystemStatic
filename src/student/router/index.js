@@ -39,11 +39,11 @@ export default new Router({
         {path: '/gradereport',
           component: gradereport,
           name: gradereport,
-          redirect: '/gradereport/gradereportcontent/classgradetable',
+          redirect: '/gradereport/gradereportcontent/personalGradeDetails',
           children: [{
             path: '/gradereport/gradereportcontent',
             component: gradereportcontent,
-            redirect: '/gradereport/gradereportcontent/classgradetable',
+            redirect: '/gradereport/gradereportcontent/personalGradeDetails',
             children: [{
               path: '/gradereport/gradereportcontent/personalGradeDetails',
               component: personalGradeDetails}, {

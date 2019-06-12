@@ -10,6 +10,7 @@ export default {
   data () {
     return {
       chart: null,
+      processedData: [],
       chartData: [],
       option: {
         tooltip: {
@@ -94,14 +95,19 @@ export default {
       }
       getSubjectGradeTable(prams).then(response => {
         this.chartData = response.data.info
+        let i = 1
+        while (i < this.chartData.length) {
+          this.processedData.push(this.chartData[i])
+          i++
+        }
         console.log(this.chartData)
         // eslint-disable-next-line no-unused-vars
         var k = ''
-        for (k in response.data.info) {
-          this.option.xAxis[0].data.push(response.data.info[k].subjectName)
-          this.option.series[0].data.push(response.data.info[k].score)
-          this.option.series[1].data.push(response.data.info[k].classArg)
-          this.option.series[2].data.push(response.data.info[k].schoolArg)
+        for (k in this.processedData) {
+          this.option.xAxis[0].data.push(this.processedData[k].subjectName)
+          this.option.series[0].data.push(this.processedData[k].score)
+          this.option.series[1].data.push(this.processedData[k].classArg)
+          this.option.series[2].data.push(this.processedData[k].schoolArg)
         }
         console.log(this.option.xAxis[0].data)
         console.log(this.option.series[0].data)

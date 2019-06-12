@@ -13,7 +13,7 @@
           <el-col :span="2" :offset="1">
             <div class="navigationoption">
               <img src="../assets/icon/u133.png">
-              <span v-on:click="gofisrtpage">网站首页</span>
+              <span v-on:click="gofisrtpage">平台首页</span>
 <!--              <router-link to="/fisrtpage">首页</router-link>-->
             </div>
           </el-col>
@@ -27,7 +27,7 @@
           <el-col :span="2">
             <div class="navigationoption">
               <img src="../assets/icon/u114.png">
-              <span v-on:click="gopaperanalysis">试卷分析</span>
+              <span v-on:click="gopaperanalysis">错题总结</span>
 <!--              <router-link to="/paperanalysis">试卷分析</router-link>-->
             </div>
           </el-col>

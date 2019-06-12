@@ -1,24 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
-import HomePage from '@/components/HomePage'
-import fisrtpage from '@/views/firstnavigation/firstpage'
-import gradereport from '@/views/firstnavigation/gradereport'
-import gradereportcontent from '@/views/firstnavigation/gradereportcontent'
-import gradeanalyzecontent from '@/views/firstnavigation/gradeanalyzecontent'
-import successivegrade from '@/views/firstnavigation/successivegrade'
-// import gradeanalyze from '@/views/firstnavigation/gradeanalyze'
-import paperanalysis from '@/views/firstnavigation/paperanalysis'
-import userfeedback from '@/views/firstnavigation/userfeedback'
-import firstpagemain from '@/views/secondmain/firstpagemain'
-import beyondself from '@/views/firstnavigation/beyondsefl'
-import heropk from '@/views/firstnavigation/heropk'
-import allgradeoverview from '@/views/firstnavigation/allgradeoverview'
-import classgradetable from '@/views/firstnavigation/classgradetable'
-import weakspot from '@/views/firstnavigation/weakspot'
-import surpassrate from '@/views/firstnavigation/surpassrate'
-import gradeandtargetcontent from '@/views/firstnavigation/gradeandtargetcontent'
-import personalGradeDetails from '@/views/firstnavigation/personalGradeDetails'
+// import HelloWorld from '~/components/HelloWorld'
+import HomePage from '~/components/HomePage'
+import fisrtpage from '~/views/firstnavigation/firstpage'
+import gradereport from '~/views/firstnavigation/gradereport'
+import gradereportcontent from '~/views/firstnavigation/gradereportcontent'
+import gradeanalyzecontent from '~/views/firstnavigation/gradeanalyzecontent'
+import successivegrade from '~/views/firstnavigation/successivegrade'
+// import gradeanalyze from '~/views/firstnavigation/gradeanalyze'
+import paperanalysis from '~/views/firstnavigation/paperanalysis'
+import userfeedback from '~/views/firstnavigation/userfeedback'
+import firstpagemain from '~/views/secondmain/firstpagemain'
+import beyondself from '~/views/firstnavigation/beyondsefl'
+import heropk from '~/views/firstnavigation/heropk'
+import allgradeoverview from '~/views/firstnavigation/allgradeoverview'
+import classgradetable from '~/views/firstnavigation/classgradetable'
+import weakspot from '~/views/firstnavigation/weakspot'
+import surpassrate from '~/views/firstnavigation/surpassrate'
+import gradeandtargetcontent from '~/views/firstnavigation/gradeandtargetcontent'
+import personalGradeDetails from '~/views/firstnavigation/personalGradeDetails'
 
 Vue.use(Router)
 
@@ -39,11 +39,11 @@ export default new Router({
         {path: '/gradereport',
           component: gradereport,
           name: gradereport,
-          redirect: '/gradereport/gradereportcontent/classgradetable',
+          redirect: '/gradereport/gradereportcontent/personalGradeDetails',
           children: [{
             path: '/gradereport/gradereportcontent',
             component: gradereportcontent,
-            redirect: '/gradereport/gradereportcontent/classgradetable',
+            redirect: '/gradereport/gradereportcontent/personalGradeDetails',
             children: [{
               path: '/gradereport/gradereportcontent/personalGradeDetails',
               component: personalGradeDetails}, {
