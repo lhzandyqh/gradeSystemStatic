@@ -1,74 +1,75 @@
 <template>
-  <div class="container" >
+  <div class="container">
     <el-container class="con_section">
       <el-header class="header">
-<!--        <div class="navigationcontainer"><h3 class="logoclass">LOGO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中科智禾</h3></div>-->
+        <!--        <div class="navigationcontainer"><h3 class="logoclass">LOGO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中科智禾</h3></div>-->
         <div class="navigationcontainer">
-        <el-row :gutter="6">
-          <el-col :span="5">
-            <div class="logoContainer">
-              <img v-bind:src="imgUrl" width="100%" height="80%">
-            </div>
-          </el-col>
-          <el-col :span="2" :offset="1">
-            <div class="navigationoption">
-              <img src="../assets/icon/u133.png">
-              <span v-on:click="gofisrtpage">网站首页</span>
-<!--              <router-link to="/fisrtpage">首页</router-link>-->
-            </div>
-          </el-col>
-          <el-col :span="2">
-            <div class="navigationoption">
-              <img src="../assets/icon/u110.png">
-              <span v-on:click="gogradereport">成绩报告</span>
-<!--              <router-link to="/gradereport">成绩报告</router-link>-->
-            </div>
-          </el-col>
-          <el-col :span="2">
-            <div class="navigationoption">
-              <img src="../assets/icon/u114.png">
-              <span v-on:click="gopaperanalysis">试卷分析</span>
-<!--              <router-link to="/paperanalysis">试卷分析</router-link>-->
-            </div>
-          </el-col>
-          <el-col :span="2">
-            <div class="navigationoption">
-              <img src="../assets/icon/u110.png">
-              <span v-on:click="gouserfeedback">考试总结</span>
-<!--              <router-link to="/userfeedback">用户反馈</router-link>-->
-            </div>
-          </el-col>
-          <el-col :span="3" offset="2">
-            <div class="navigationoption">
-              <span>当前用户：卫梦佳</span>
-            </div>
-          </el-col>
-          <el-col :span="1" offset="2">
-              <img src="../assets/icon/u131.png">
-          </el-col>
-          <el-col :span="1">
-            <div class="navigationoption">
-              <img src="../assets/icon/u125.png">
-            </div>
-          </el-col>
-          <el-col :span="1">
-            <div class="navigationoption">
-              <img src="../assets/icon/u127.png">
-            </div>
-          </el-col>
-        </el-row>
+          <el-row :gutter="6">
+            <el-col :span="5">
+              <div class="logoContainer">
+                <img src="../assets/jpg/schoolLogo.jpg"  style="width:50px;height:50px;border-radius:50%" >
+                <span>中科智禾</span>
+              </div>
+            </el-col>
+            <el-col :span="2" :offset="1">
+              <div class="navigationoption">
+                <img src="../assets/icon/u133.png">
+                <span v-on:click="gofisrtpage">网站首页</span>
+                <!--              <router-link to="/fisrtpage">首页</router-link>-->
+              </div>
+            </el-col>
+            <el-col :span="2">
+              <div class="navigationoption">
+                <img src="../assets/icon/u110.png">
+                <span v-on:click="gogradereport">成绩报告</span>
+                <!--              <router-link to="/gradereport">成绩报告</router-link>-->
+              </div>
+            </el-col>
+            <el-col :span="2">
+              <div class="navigationoption">
+                <img src="../assets/icon/u114.png">
+                <span v-on:click="gopaperanalysis">试卷分析</span>
+                <!--              <router-link to="/paperanalysis">试卷分析</router-link>-->
+              </div>
+            </el-col>
+            <el-col :span="2">
+              <div class="navigationoption">
+                <img src="../assets/icon/u110.png">
+                <span v-on:click="gouserfeedback">考试总结</span>
+                <!--              <router-link to="/userfeedback">用户反馈</router-link>-->
+              </div>
+            </el-col>
+            <el-col :span="3" offset="2">
+              <div class="navigationoption">
+                <span>当前用户：卫梦佳</span>
+              </div>
+            </el-col>
+            <el-col :span="1" offset="2">
+             <div class="navigationoption"> <img src="../assets/icon/u131.png"></div>
+            </el-col>
+            <el-col :span="1">
+              <div class="navigationoption">
+                <img src="../assets/icon/u125.png">
+              </div>
+            </el-col>
+            <el-col :span="1">
+              <div class="navigationoption">
+                <img src="../assets/icon/u127.png">
+              </div>
+            </el-col>
+          </el-row>
         </div>
       </el-header>
       <el-container class="containerone">
-<!--        <el-aside width="200px">-->
-<!--          <router-view></router-view>-->
-<!--        </el-aside>-->
+        <!--        <el-aside width="200px">-->
+        <!--          <router-view></router-view>-->
+        <!--        </el-aside>-->
         <el-main class="main">
           <div class="maincontent" style="text-align: center">
             <router-view></router-view>
           </div>
           <div class="copyrightContainer">
-            <span style="font-size: 12px">Copyright&nbsp;&nbsp;&nbsp;中科智禾教育大数据中心   ©2019</span>
+            <span style="font-size: 12px">Copyright&nbsp;&nbsp;&nbsp;中科智禾教育大数据中心 ©2019</span>
           </div>
         </el-main>
       </el-container>
@@ -81,7 +82,7 @@ export default {
   name: 'HomePage',
   data () {
     return {
-      imgUrl: require('../../../static/images/homepagelogo.png')
+      imgUrl: '../assets/icon/u127.png'
     }
   },
   methods: {
@@ -106,40 +107,56 @@ export default {
 </script>
 
 <style scoped>
-  .con_section{
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left:0px;
-    width:100%;
-  }
-  .header {
-    height: 300px;
-    line-height: 60px;
-    background: rgba(76, 191, 65, 0.84);
-    color: #fff;
-  }
-  .logoclass{
-    float: left;
-    height: 60px;
-    margin: 0 20px;
-    width: 300px;
-  }
-  .main{
-    background-color: honeydew;
-    text-align: center;
-  }
-  .containerone{
-    width: 100%;
-    height: 600px;
-    text-align: center;
-  }
-  .navigationoption {
-    cursor:pointer
-  }
-  .copyrightContainer{
-    padding-top: 20px;
-    text-align: center;
-  }
+.con_section {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+.header {
+  height: 300px;
+  line-height: 60px;
+  background: #18a689;
+  color: #fff;
+}
+.logoclass {
+  float: left;
+  height: 60px;
+  margin: 0 20px;
+  width: 300px;
 
+}
+.main {
+  background-color: honeydew;
+  text-align: center;
+}
+.containerone {
+  width: 100%;
+  height: 600px;
+  text-align: center;
+}
+.navigationoption {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  line-height: 60px;
+}
+.navigationoption span {
+  margin-left: 10px;
+}
+.copyrightContainer {
+  padding-top: 20px;
+  text-align: center;
+}
+.logoContainer{
+  display: flex;
+  align-items: center;
+
+}
+.logoContainer span{
+  margin-left: 10px;
+  font-weight: 600;
+}
 </style>
