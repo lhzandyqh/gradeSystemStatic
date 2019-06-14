@@ -5,7 +5,7 @@
       <el-aside>
         <el-col>
           <el-menu
-            default-active="2"
+            default-active="/gradereport/gradereportcontent"
             class="el-menu-vertical-demo"
             @open="handleOpen"
             @close="handleClose"
@@ -21,8 +21,8 @@
                 <span>年级概况</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="/gradereport/gradereportcontent" :unique-opened="true">年级成绩单</el-menu-item>
-                <el-menu-item index="/gradereport/successivegrade">行政班单科成绩</el-menu-item>
+                <el-menu-item index="/gradereport/gradereportcontent" >年级成绩单</el-menu-item>
+                <el-menu-item index="1-2">行政班单科成绩</el-menu-item>
                 <el-menu-item index="1-3">教学班单科成绩</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
@@ -42,13 +42,13 @@
                 <span>班级分析</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1">行政班</el-menu-item>
-                <el-menu-item index="1-2">物理教学班</el-menu-item>
-                <el-menu-item index="1-3">化学教学班</el-menu-item>
-                <el-menu-item index="1-4">生物教学班</el-menu-item>
-                <el-menu-item index="1-5">历史教学班</el-menu-item>
-                <el-menu-item index="1-6">地理教学班</el-menu-item>
-                <el-menu-item index="1-7">政治教学班</el-menu-item>
+                <el-menu-item index="3-1">行政班</el-menu-item>
+                <el-menu-item index="3-2">物理教学班</el-menu-item>
+                <el-menu-item index="3-3">化学教学班</el-menu-item>
+                <el-menu-item index="3-4">生物教学班</el-menu-item>
+                <el-menu-item index="3-5">历史教学班</el-menu-item>
+                <el-menu-item index="3-6">地理教学班</el-menu-item>
+                <el-menu-item index="3-7">政治教学班</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="4">
@@ -57,13 +57,13 @@
                 <span>班级对比</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1">行政班</el-menu-item>
-                <el-menu-item index="1-2">物理教学班</el-menu-item>
-                <el-menu-item index="1-3">化学教学班</el-menu-item>
-                <el-menu-item index="1-4">生物教学班</el-menu-item>
-                <el-menu-item index="1-5">历史教学班</el-menu-item>
-                <el-menu-item index="1-6">地理教学班</el-menu-item>
-                <el-menu-item index="1-7">政治教学班</el-menu-item>
+                <el-menu-item index="4-1">行政班</el-menu-item>
+                <el-menu-item index="4-2">物理教学班</el-menu-item>
+                <el-menu-item index="4-3">化学教学班</el-menu-item>
+                <el-menu-item index="4-4">生物教学班</el-menu-item>
+                <el-menu-item index="4-5">历史教学班</el-menu-item>
+                <el-menu-item index="4-6">地理教学班</el-menu-item>
+                <el-menu-item index="4-7">政治教学班</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="5">
@@ -72,15 +72,15 @@
                 <span>单科分析</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1">语文</el-menu-item>
-                <el-menu-item index="1-2">数学</el-menu-item>
-                <el-menu-item index="1-3">英语</el-menu-item>
-                <el-menu-item index="1-4">物理</el-menu-item>
-                <el-menu-item index="1-5">化学</el-menu-item>
-                <el-menu-item index="1-6">生物</el-menu-item>
-                <el-menu-item index="1-7">历史</el-menu-item>
-                <el-menu-item index="1-8">地理</el-menu-item>
-                <el-menu-item index="1-9">政治</el-menu-item>
+                <el-menu-item index="5-1">语文</el-menu-item>
+                <el-menu-item index="5-2">数学</el-menu-item>
+                <el-menu-item index="5-3">英语</el-menu-item>
+                <el-menu-item index="5-4">物理</el-menu-item>
+                <el-menu-item index="5-5">化学</el-menu-item>
+                <el-menu-item index="5-6">生物</el-menu-item>
+                <el-menu-item index="5-7">历史</el-menu-item>
+                <el-menu-item index="5-8">地理</el-menu-item>
+                <el-menu-item index="5-9">政治</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="6">
@@ -89,15 +89,15 @@
                 <span>单科对比</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1">语文</el-menu-item>
-                <el-menu-item index="1-2">数学</el-menu-item>
-                <el-menu-item index="1-3">英语</el-menu-item>
-                <el-menu-item index="1-4">物理</el-menu-item>
-                <el-menu-item index="1-5">化学</el-menu-item>
-                <el-menu-item index="1-6">生物</el-menu-item>
-                <el-menu-item index="1-7">历史</el-menu-item>
-                <el-menu-item index="1-8">地理</el-menu-item>
-                <el-menu-item index="1-9">政治</el-menu-item>
+                <el-menu-item index="6-1">语文</el-menu-item>
+                <el-menu-item index="6-2">数学</el-menu-item>
+                <el-menu-item index="6-3">英语</el-menu-item>
+                <el-menu-item index="6-4">物理</el-menu-item>
+                <el-menu-item index="6-5">化学</el-menu-item>
+                <el-menu-item index="6-6">生物</el-menu-item>
+                <el-menu-item index="6-7">历史</el-menu-item>
+                <el-menu-item index="6-8">地理</el-menu-item>
+                <el-menu-item index="6-9">政治</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
           </el-menu>
