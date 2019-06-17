@@ -42,8 +42,9 @@
 export default {
   name: 'gradereport',
   methods: {
-    handleOpen: {
-
+    handleOpen () {
+    },
+    handleClose () {
     }
   }
 }
