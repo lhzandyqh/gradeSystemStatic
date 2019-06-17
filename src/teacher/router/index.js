@@ -3,6 +3,7 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import HomePage from '@/components/HomePage'
 import fisrtpage from '@/views/firstnavigation/firstpage'
+import login from '@/views/login/index'
 import gradereport from '@/views/firstnavigation/gradereport'
 import gradereportcontent from '@/views/firstnavigation/gradereportcontent'
 import gradeanalyzecontent from '@/views/firstnavigation/gradeanalyzecontent'
@@ -15,6 +16,7 @@ import beyondself from '@/views/firstnavigation/beyondsefl'
 import heropk from '@/views/firstnavigation/heropk'
 import allgradeoverview from '@/views/firstnavigation/allgradeoverview'
 import classgradetable from '@/views/firstnavigation/classgradetable'
+import classAdministrative from '@/views/firstnavigation/classAdministrative' // 行政班单科成绩列表
 import weakspot from '@/views/firstnavigation/weakspot'
 import surpassrate from '@/views/firstnavigation/surpassrate'
 import gradeandtargetcontent from '@/views/firstnavigation/gradeandtargetcontent'
@@ -26,60 +28,99 @@ export default new Router({
   routes: [
     {
       path: '/',
+      component: login,
+      name: login
+    },
+    {
+      path: '/',
       name: 'HomePage',
       component: HomePage,
       redirect: '/fisrtpage/firstpagemain',
+
       children: [
-        {path: '/fisrtpage',
+        {
+          path: '/fisrtpage',
           component: fisrtpage,
-          children: [{
-            path: '/fisrtpage/firstpagemain',
-            component: firstpagemain
-          }]},
-        {path: '/gradereport',
+          children: [
+            {
+              path: '/fisrtpage/firstpagemain',
+              component: firstpagemain
+            }
+          ]
+        },
+
+        // 以下成绩报告
+        {
+          path: '/gradereport',
           component: gradereport,
           name: gradereport,
           redirect: '/gradereport/gradereportcontent/classgradetable',
-          children: [{
-            path: '/gradereport/gradereportcontent',
-            component: gradereportcontent,
-            redirect: '/gradereport/gradereportcontent/classgradetable',
-            children: [{
-              path: '/gradereport/gradereportcontent/personalGradeDetails',
-              component: personalGradeDetails}, {
-              path: '/gradereport/gradereportcontent/classgradetable',
-              component: classgradetable}, {
-              path: '/gradereport/gradereportcontent/allgradeoverview',
-              component: allgradeoverview
-            }]
-          }, {
-            path: '/gradereport/successivegrade',
-            component: successivegrade
-          }, {
-            path: '/gradereport/gradeandtargetcontent',
-            component: gradeandtargetcontent,
-            redirect: '/gradereport/gradeandtargetcontent/beyondself',
-            children: [{
-              path: '/gradereport/gradeandtargetcontent/beyondself',
-              component: beyondself
-            }, {
-              path: '/gradereport/gradeandtargetcontent/heropk',
-              component: heropk
-            }]
-          }, {
-            path: '/gradereport/gradeanalyzecontent',
-            component: gradeanalyzecontent,
-            redirect: '/gradereport/gradeanalyzecontent/surpassrate',
-            children: [{
-              path: '/gradereport/gradeanalyzecontent/surpassrate',
-              component: surpassrate
-            }, {
-              path: '/gradereport/gradeanalyzecontent/weakspot',
-              component: weakspot
-            }]
-          }]},
-        {path: '/paperanalysis', component: paperanalysis, name: paperanalysis},
-        {path: '/userfeedback', component: userfeedback, name: userfeedback}
+          children: [
+            {
+              path: '/gradereport/gradereportcontent',
+              component: gradereportcontent,
+              redirect: '/gradereport/gradereportcontent/classgradetable', // 成绩报告页面
+              children: [
+                {
+                  path: '/gradereport/gradereportcontent/personalGradeDetails',
+                  component: personalGradeDetails
+                },
+                {
+                  path: '/gradereport/gradereportcontent/classgradetable',
+                  component: classgradetable
+                },
+                {
+                  path: '/gradereport/gradereportcontent/allgradeoverview',
+                  component: allgradeoverview
+                }
+              ]
+            },
+            {
+              path: '/gradereport/successivegrade', // 行政班单科成绩
+              component: successivegrade
+            },
+            {
+              path: '/gradereport/classAdministrative',
+              component: classAdministrative
+            },
+            {
+              path: '/gradereport/gradeandtargetcontent',
+              component: gradeandtargetcontent,
+              redirect: '/gradereport/gradeandtargetcontent/beyondself',
+              children: [
+                {
+                  path: '/gradereport/gradeandtargetcontent/beyondself',
+                  component: beyondself
+                },
+                {
+                  path: '/gradereport/gradeandtargetcontent/heropk',
+                  component: heropk
+                }
+              ]
+            },
+            {
+              path: '/gradereport/gradeanalyzecontent',
+              component: gradeanalyzecontent,
+              redirect: '/gradereport/gradeanalyzecontent/surpassrate',
+              children: [
+                {
+                  path: '/gradereport/gradeanalyzecontent/surpassrate',
+                  component: surpassrate
+                },
+                {
+                  path: '/gradereport/gradeanalyzecontent/weakspot',
+                  component: weakspot
+                }
+              ]
+            }
+          ]
+        },
+        {
+          path: '/paperanalysis',
+          component: paperanalysis,
+          name: paperanalysis
+        },
+        { path: '/userfeedback', component: userfeedback, name: userfeedback }
       ]
     }
   ]

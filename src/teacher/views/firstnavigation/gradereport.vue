@@ -21,9 +21,9 @@
                 <span>年级概况</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="/gradereport/gradereportcontent" >年级成绩单</el-menu-item>
-                <el-menu-item index="1-2">行政班单科成绩</el-menu-item>
-                <el-menu-item index="1-3">教学班单科成绩</el-menu-item>
+                <el-menu-item index="/gradereport/gradereportcontent">年级成绩单</el-menu-item>
+                <el-menu-item index="/gradereport/classAdministrative">行政班单科成绩</el-menu-item>
+                <el-menu-item index="/login">教学班单科成绩</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="2">
@@ -33,7 +33,7 @@
               </template>
               <el-menu-item-group>
                 <el-menu-item>最新成绩分析</el-menu-item>
-                <el-menu-item index="/gradereport/successivegrade">历次成绩分析</el-menu-item>
+                <el-menu-item >历次成绩分析</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="3">
@@ -141,6 +141,11 @@
 <script>
 export default {
   name: 'gradereport',
+  data () {
+    return {
+      type: 1
+    }
+  },
   methods: {
     handleOpen (key, keyPath) {
       console.log(key, keyPath)

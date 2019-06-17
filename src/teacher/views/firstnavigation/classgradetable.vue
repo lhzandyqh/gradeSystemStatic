@@ -74,7 +74,8 @@ ul li {
 }
 .all-subject {
   border-top: 1px solid #18a689;
-  margin: 40px 105px 0 105px;
+  margin: 40px 0 0 0;
+  width: 100%;
 }
 .subject {
   display: flex;
@@ -82,7 +83,8 @@ ul li {
   padding: 0;
 }
 .subject li {
-  padding: 10px 38px;
+  width: 11%;
+  padding: 2% 0;
 }
 .subject li:hover {
   color: #fff;

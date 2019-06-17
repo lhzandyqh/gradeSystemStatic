@@ -14,49 +14,8 @@
       </div>
     </div>
     <el-row>
-      <!-- <el-row>
-        <div class="informationclass">
-
-          <el-card class="box-card-father">
-            <span class="informationtitle">个人最新成绩信息</span>
-            <br>
-            <el-card class="box-card-son">
-              <div class="informationcontent">
-                <span>本次成绩</span>
-                <br>
-                <span>{{this.gradeInformation[0].coversionTotal}}</span>
-              </div>
-            </el-card>
-            <el-card class="box-card-son">
-              <div class="informationcontent">
-                <span>班级占位</span>
-                <br>
-                <span style="font-size: 20px">{{this.gradeInformation[0].classIndex}}</span>
-                <br>
-                <span>年级占位:{{this.gradeInformation[0].schoolIndex}}</span>
-              </div>
-            </el-card>
-            <el-card class="box-card-son">
-              <div class="informationcontent">
-                <span>进步最快学科</span>
-                <br>
-                <br>
-                <span style="font-size: 20px">数学</span>
-              </div>
-            </el-card>
-            <el-card class="box-card-son">
-              <div class="informationcontent">
-                <span>需提高科目</span>
-                <br>
-                <br>
-                <span style="font-size: 20px">化学</span>
-              </div>
-            </el-card>
-          </el-card>
-        </div>
-      </el-row>-->
       <el-row :gutter="20" style="margin-top:20px">
-        <el-col span="4" offset="2">
+        <el-col :span="4" :offset="2">
           <el-card class="box-card" style="height: 350px">
             <div slot="header" class="clearfix">
               <span style="color: #18a689;font-weight: bold">教师信息</span>

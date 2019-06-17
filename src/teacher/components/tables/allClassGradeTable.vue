@@ -28,7 +28,7 @@
       <el-table-column prop="zhengzhiCoversion" label="政治"></el-table-column>
     </el-table>
     <el-pagination
-    style="margin-top:20px;"
+      style="margin-top:20px;"
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page="currentPage4"
@@ -196,6 +196,11 @@ export default {
     handleCurrentChange (val) {
       console.log(`当前页: ${val}`)
     }
+  },
+  mounted () {
+    console.log(11111, '555')
+    let type = this.$route.query.type
+    console.log(type, '88888')
   }
 }
 </script>
