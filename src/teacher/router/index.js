@@ -27,7 +27,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/login',
       component: login,
       name: login
     },
