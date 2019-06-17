@@ -33,13 +33,39 @@ export default {
   },
   methods: {
     loginBtn () {
+      if(this.username===""){
+        this.$message({
+           message: "请输入用户名",
+          type: 'warning'
+        })
+        return
+      }if(this.password===''){
+        this.$message({
+          message:'请输入密码'
+        })
+        return
+      }
       const prams = {
         username: this.username,
         password: this.password
       }
+
       login(prams).then(res => {
-        if (res.errno === 0) {
-        }
+        // console.log(res.data.rolename,'8888888')
+
+          console.log(res.data.rolename==='学生','hehheheh')
+          if(res.data.rolename==='学生'){
+            this.$router.push({
+              path:'window.location.hrefwindow.location.href="http://58.119.112.12:11008/teacher.html#/fisrtpage'
+            })
+          }if(res.data.rolename==='任课教师'){
+            this.$router.push({
+              path:'',
+            })
+          }
+        // if (res.errno === 200) {
+        
+        // }
       })
     }
   }
