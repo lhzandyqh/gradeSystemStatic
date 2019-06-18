@@ -16,8 +16,9 @@
             placeholder="请输入密码"
             prefix-icon="el-icon-attract"
           ></el-input>
-          <el-button type="primary" class="input_" @click="loginBtn">登录</el-button>
+          <el-button type="primary" class="input_" style="margin-top:20px;" @click="loginBtn">登录</el-button>
         </div>
+        <span class="Password">忘记密码？</span>
       </div>
     </div>
   </div>
@@ -33,15 +34,17 @@ export default {
   },
   methods: {
     loginBtn () {
-      if(this.username===""){
+      if (this.username === '') {
         this.$message({
-           message: "请输入用户名",
+          message: '请输入用户名',
           type: 'warning'
         })
         return
-      }if(this.password===''){
+      }
+      if (this.password === '') {
         this.$message({
-          message:'请输入密码'
+          message: '请输入密码',
+          type: 'warning'
         })
         return
       }
@@ -51,27 +54,36 @@ export default {
       }
 
       login(prams).then(res => {
-        // console.log(res.data.rolename,'8888888')
-
-          console.log(res.data.rolename==='学生','hehheheh')
-          if(res.data.rolename==='学生'){
+        if (res.data.errno === 200) {
+          if (res.data.rolename === '学生') {
             this.$router.push({
-              path:'window.location.hrefwindow.location.href="http://58.119.112.12:11008/teacher.html#/fisrtpage'
-            })
-          }if(res.data.rolename==='任课教师'){
-            this.$router.push({
-              path:'',
+              path:
+                'window.location.hrefwindow.location.href="http://58.119.112.12:11008/teacher.html#/fisrtpage'
             })
           }
-        // if (res.errno === 200) {
-        
-        // }
+          if (res.data.rolename === '任课教师') {
+            this.$router.push({
+              path: ''
+            })
+          }
+        }
       })
     }
   }
 }
 </script>
 <style >
+.Password {
+  position: absolute;
+  font-size: 14px;
+  color: red;
+  bottom: 215px;
+  right: 60px;
+  cursor: pointer;
+}
+body {
+  margin: 0;
+}
 .login-all {
   position: relative;
   width: 100%;
@@ -91,8 +103,8 @@ export default {
   height: 460px;
   background: #fff;
   border-radius: 20px;
-  top: 220px;
-  right: 100px;
+  bottom: 100px;
+  right: 150px;
 }
 .input_ {
   width: 75%;
