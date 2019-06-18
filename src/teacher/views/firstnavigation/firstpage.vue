@@ -14,57 +14,8 @@
       </div>
     </div>
     <el-row>
-      <div class="block">
-        <!-- <span class="demonstration">Click 指示器触发</span> -->
-        <el-carousel trigger="click" height="270px" style="width:83%;margin:0 auto">
-          <el-carousel-item v-for="(item,index) in imgList" :key="index">
-            <img :src="item.url" style="width:100%;height:100%" alt>
-          </el-carousel-item>
-        </el-carousel>
-      </div>
-      <el-row>
-        <div class="informationclass">
-          <!--          <span>个人最新成绩</span>-->
-          <el-card class="box-card-father">
-            <span class="informationtitle">个人最新成绩信息</span>
-            <br>
-            <el-card class="box-card-son">
-              <div class="informationcontent">
-                <span>本次成绩</span>
-                <br>
-                <span>{{this.gradeInformation[0].coversionTotal}}</span>
-              </div>
-            </el-card>
-            <el-card class="box-card-son">
-              <div class="informationcontent">
-                <span>班级占位</span>
-                <br>
-                <span style="font-size: 20px">{{this.gradeInformation[0].classIndex}}</span>
-                <br>
-                <span>年级占位:{{this.gradeInformation[0].schoolIndex}}</span>
-              </div>
-            </el-card>
-            <el-card class="box-card-son">
-              <div class="informationcontent">
-                <span>进步最快学科</span>
-                <br>
-                <br>
-                <span style="font-size: 20px">数学</span>
-              </div>
-            </el-card>
-            <el-card class="box-card-son">
-              <div class="informationcontent">
-                <span>需提高科目</span>
-                <br>
-                <br>
-                <span style="font-size: 20px">化学</span>
-              </div>
-            </el-card>
-          </el-card>
-        </div>
-      </el-row>
-      <el-row :gutter="20">
-        <el-col span="4" offset="2">
+      <el-row :gutter="20" style="margin-top:20px">
+        <el-col :span="4" :offset="2">
           <el-card class="box-card" style="height: 350px">
             <div slot="header" class="clearfix">
               <span style="color: #18a689;font-weight: bold">教师信息</span>
@@ -76,23 +27,15 @@
                     <span>姓名：</span>
                   </td>
                   <td>
-                    <span style="color: #19c237">{{this.studentInformation[0].studentName}}</span>
+                    <span style="color: #18a689">{{this.studentInformation[0].studentName}}</span>
                   </td>
                 </tr>
                 <tr>
                   <td style="text-align: left">
-                    <span>学籍号：</span>
+                    <span>工号：</span>
                   </td>
                   <td>
-                    <span style="color: #19c237">{{this.studentInformation[0].studentNumber}}</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">
-                    <span>考试号：</span>
-                  </td>
-                  <td>
-                    <span style="color: #19c237">{{this.studentInformation[0].id}}</span>
+                    <span style="color: #18a689">{{this.studentInformation[0].studentNumber}}</span>
                   </td>
                 </tr>
                 <tr>
@@ -100,15 +43,23 @@
                     <span>年级：</span>
                   </td>
                   <td>
-                    <span style="color: #19c237">{{this.studentInformation[0].gradeName}}</span>
+                    <span style="color: #18a689">{{this.studentInformation[0].id}}</span>
                   </td>
                 </tr>
                 <tr>
                   <td style="text-align: left">
-                    <span>班级：</span>
+                    <span>所属科目：</span>
                   </td>
                   <td>
-                    <span style="color: #19c237">{{this.studentInformation[0].className}}</span>
+                    <span style="color: #18a689">{{this.studentInformation[0].gradeName}}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">
+                    <span>所带班级：</span>
+                  </td>
+                  <td>
+                    <span style="color: #18a689">{{this.studentInformation[0].className}}</span>
                   </td>
                 </tr>
                 <!--                <tr><td><a> <span>姓名：</span><span style="color: #19c237">{{this.studentInformation[0].studentName}}</span></a></td></tr>-->
@@ -123,7 +74,7 @@
         <el-col span="16">
           <el-card class="box-card" style="height: 350px">
             <div slot="header" class="clearfix">
-              <span style="color: #19c237;font-weight: bold">考试列表</span>
+              <span style="color: #18a689;font-weight: bold">考试列表</span>
             </div>
             <div class="block">
               <!--              <el-timeline>-->
@@ -237,8 +188,6 @@ export default {
       getUserInformation(prams).then(response => {
         console.log(response, '5555')
         this.dataSpace = response.data.info
-        // console.log(this.dataSpace)
-        // console.log(this.dataSpace[0].studentName)
         this.$set(this.studentInformation, 0, {
           studentName: this.dataSpace[0].studentName,
           studentNumber: this.dataSpace[0].studentNumber,
@@ -311,13 +260,16 @@ export default {
     return {
       imgList: [
         {
-          url: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1876995142,1367928220&fm=27&gp=0.jpg'
+          url: require('../../assets/jpg/u46.jpg'),
+          text: '点击查看上次考试成绩报告'
         },
         {
-          url: '/src/teacher/assets/icon/u46.jpg'
+          url: require('../../assets/jpg/u44.jpg'),
+          text: '点击查看最新的考试成绩信息'
         },
         {
-          url: '/src/teacher/assets/icon/u46.jpg'
+          url: require('../../assets/jpg/u48.jpg'),
+          text: '点击查看下一次的考试时间和要求'
         }
       ],
       activities: [
@@ -401,6 +353,13 @@ export default {
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
 }
+.table tr {
+  line-height: 40px;
+}
+.report span {
+  color: #18a689;
+  cursor: pointer;
+}
 .informationclass {
   display: flex;
   text-align: center;
@@ -449,8 +408,32 @@ export default {
 .report {
   float: right;
   display: inline;
+  display: flex;
+  align-items: center;
 }
 .timestamp {
   display: inline;
+}
+.card-model {
+  margin: 0 auto;
+  width: 83%;
+  height: 300px;
+}
+.card-tips {
+  position: absolute;
+  background: #18a689;
+  opacity: 0.9;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: #fff975;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+.card-tips:hover {
+  color: #fff;
+  opacity: 0.8;
 }
 </style>

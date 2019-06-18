@@ -7,14 +7,14 @@
           <el-row :gutter="6">
             <el-col :span="5">
               <div class="logoContainer">
-                <img src="../assets/icon/u133.png" class="schoolLogo">
-                <span style="font-weight:600;margin-left:10px">中科智禾</span>
+                <img src="../assets/jpg/schoolLogo.jpg"  style="width:50px;height:50px;border-radius:50%" >
+                <span>中科智禾</span>
               </div>
             </el-col>
             <el-col :span="2" :offset="1">
               <div class="navigationoption">
                 <img src="../assets/icon/u133.png">
-                <span v-on:click="gofisrtpage">首页</span>
+                <span v-on:click="gofisrtpage">网站首页</span>
                 <!--              <router-link to="/fisrtpage">首页</router-link>-->
               </div>
             </el-col>
@@ -27,29 +27,27 @@
             </el-col>
             <el-col :span="2">
               <div class="navigationoption">
-                <img src="../assets/icon/u112.png">
+                <img src="../assets/icon/u114.png">
                 <span v-on:click="gopaperanalysis">试卷分析</span>
                 <!--              <router-link to="/paperanalysis">试卷分析</router-link>-->
               </div>
             </el-col>
             <el-col :span="2">
               <div class="navigationoption">
-                <img src="../assets/icon/u114.png">
-                <span v-on:click="gouserfeedback">用户反馈</span>
+                <img src="../assets/icon/u110.png">
+                <span v-on:click="gouserfeedback">考试总结</span>
                 <!--              <router-link to="/userfeedback">用户反馈</router-link>-->
               </div>
             </el-col>
-            <el-col :span="3" offset="2">
+            <el-col :span="3" :offset="2">
               <div class="navigationoption">
                 <span>当前用户：卫梦佳</span>
               </div>
             </el-col>
-            <el-col :span="1" offset="2">
-              <div class="navigationoption">
-                <img src="../assets/icon/u131.png">
-              </div>
+            <el-col :span="1" :offset="2">
+             <div class="navigationoption"> <img src="../assets/icon/u131.png"></div>
             </el-col>
-            <el-col :span="1" >
+            <el-col :span="1">
               <div class="navigationoption">
                 <img src="../assets/icon/u125.png">
               </div>
@@ -84,7 +82,7 @@ export default {
   name: 'HomePage',
   data () {
     return {
-      // imgUrl: require('../../../static/images/homepagelogo.png')
+      imgUrl: '../assets/icon/u127.png'
     }
   },
   methods: {
@@ -119,7 +117,7 @@ export default {
 .header {
   height: 300px;
   line-height: 60px;
-  background: rgba(76, 191, 65, 0.84);
+  background: #18a689;
   color: #fff;
 }
 .logoclass {
@@ -144,22 +142,20 @@ export default {
   height: 60px;
   line-height: 60px;
 }
-.navigationoption img{
-  margin-right: 10px;
-  flex: none;
+.navigationoption span {
+  margin-left: 10px;
 }
 .copyrightContainer {
   padding-top: 20px;
   text-align: center;
 }
-.schoolLogo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #fff;
-}
 .logoContainer{
   display: flex;
   align-items: center;
+
+}
+.logoContainer span{
+  margin-left: 10px;
+  font-weight: 600;
 }
 </style>
