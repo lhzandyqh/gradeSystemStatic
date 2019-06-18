@@ -9,7 +9,15 @@
         </el-menu>
       </el-header>
       <el-main>
+
         <router-view></router-view>
+
+        <div class="inner-container">
+          <div class="content">
+            <router-view></router-view>
+          </div>
+        </div>
+
       </el-main>
     </el-container>
   </div>
@@ -33,6 +41,10 @@ export default {
 <style scoped>
   .app-container{
     margin-left: 0%;
+    height: 600px;
+  }
+  .inner-container::-webkit-scrollbar {
+    display: none;
   }
 
 </style>
