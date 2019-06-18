@@ -4,23 +4,24 @@
       <img src="../../assets/jpg/login-logo.png" class="login-logo" alt>
 
       <img src="../../assets/jpg/login_b_t.jpg" class="login-bg" alt>
-      <div class="login-input">
+      <div class="login-input" style="opacity: .9;">
+        <div class="loginTitle">用户登录</div>
         <div class="login-center">
           <el-input
             v-model="username"
-            class="input_"
+            class="input_ input1"
             placeholder="请输入用户名"
             prefix-icon="el-icon-user"
           ></el-input>
           <el-input
             v-model="password"
-            class="input_"
+            class="input_ input2"
             placeholder="请输入密码"
             prefix-icon="el-icon-attract"
           ></el-input>
-          <el-button type="primary" class="input_" style="margin-top:20px;" @click="loginBtn">登录</el-button>
         </div>
-        <span class="Password">忘记密码？</span>
+        <div class="forget">忘记密码？</div>
+        <el-button type="primary" class="subBtn" @click="loginBtn">登录</el-button>
       </div>
     </div>
   </div>
@@ -70,7 +71,24 @@ export default {
 }
 </script>
 <style >
-
+  .subBtn{
+    width: 80%;
+    margin-left: 10%;
+  }
+  .forget{
+    font-size: 13px;
+    color: red;
+    width: 80%;
+    margin: 0px auto;
+    text-align: right;
+    margin-top: -20px;
+    margin-bottom: 30px;
+  }
+.loginTitle{
+  text-align: center;
+  font-size: 18px;
+  margin-top: 50px;
+}
 .login-bg{
   width: 100%;
   height: 100%;
@@ -101,19 +119,35 @@ body {
 }
 .login-center {
   text-align: center;
-  margin: 100px auto;
+  width: 80%;
+  margin: 40px auto;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 .login-input {
   position: absolute;
-  width: 500px;
-  height: 460px;
-  background: #fff;
+  width: 400px;
+  height: 360px;
+  background: #e1edf8;
   border-radius: 10px;
   bottom: 100px;
   right: 150px;
 }
 .input_ {
-  width: 75%;
-  margin-bottom: 40px;
+  border: none;
+}
+  input{
+    border: none!important;
+  }
+.input1 input{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input2 input{
+  border-top: 1px solid #ccc!important;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 </style>
