@@ -116,7 +116,7 @@ export default {
   .header {
     height: 300px;
     line-height: 60px;
-    background: rgba(76, 191, 65, 0.84);
+    background: rgba(26, 169, 76, 0.84);
     color: #fff;
   }
   .logoclass{

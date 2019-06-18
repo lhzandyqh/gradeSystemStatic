@@ -13,8 +13,11 @@
     <el-row style="margin-top: 30px;margin-left: 27%">
       <myweakspot style="width: 60%;height: 500px"></myweakspot>
     </el-row>
+    <el-row style="padding-top: 20px">
+      <weak-spot-details></weak-spot-details>
+    </el-row>
     <el-row style="margin-top: 20px">
-      <span style="font-weight: bold;float: left">1.红色线代表总成绩超过多少同学，黑色线代表单科成绩超过多少同学</span><br>
+      <span style="font-weight: bold;float: left;text-align: center">1.红色线代表总成绩超过多少同学，黑色线代表单科成绩超过多少同学</span><br>
       <span style="font-weight: bold;float: left">2.红色线面积越大代表成绩越好，红色线上的点离中心越远越优秀</span><br>
       <span style="font-weight: bold;float: left">3.黑线上的点在红线外，则表示该科目在拉高总分，黑线上的点在红线外，则表示该科目在拉低总分。</span>
     </el-row>
@@ -23,9 +26,10 @@
 
 <script>
 import myweakspot from '~/components/charts/weakSpot'
+import weakSpotDetails from '~/components/dialog/weakSpotDetails'
 export default {
   name: 'weakspot',
-  components: {myweakspot},
+  components: {myweakspot, weakSpotDetails},
   data () {
     return {
       radio: 1

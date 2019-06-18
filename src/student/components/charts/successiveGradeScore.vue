@@ -21,7 +21,7 @@ export default {
           }
         },
         legend: {
-          data: ['成绩原始分']
+          data: ['成绩原始分', '班级排名']
         },
         toolbox: {
           feature: {
@@ -53,6 +53,13 @@ export default {
             stack: '总量',
             areaStyle: {},
             data: []
+          },
+          {
+            name: '班级排名',
+            type: 'line',
+            stack: '总量',
+            areaStyle: {},
+            data: []
           }
         ]
       }
@@ -71,6 +78,7 @@ export default {
         for (k in response.data.info) {
           this.option.xAxis[0].data.push(response.data.info[k].examName)
           this.option.series[0].data.push(response.data.info[k].coversionTotal)
+          this.option.series[1].data.push(response.data.info[k].classIndex)
         }
         this.chart = echarts.init(document.getElementById('successivegrade'))
         this.chart.setOption(this.option)

@@ -68,7 +68,7 @@
             <router-view></router-view>
           </div>
           <div class="copyrightContainer">
-            <span style="font-size: 12px">Copyright&nbsp;&nbsp;&nbsp;中科智禾教育大数据中心   ©2019</span>
+            <span style="font-size: 12px">Copyright&nbsp;&nbsp;&nbsp;中科智禾教育大大数据中心   ©2019</span>
           </div>
         </el-main>
       </el-container>
@@ -117,7 +117,7 @@ export default {
     height: 300px;
     line-height: 60px;
     background: rgba(76, 191, 65, 0.84);
-    color: #fff;
+    color: #ffffff;
   }
   .logoclass{
     float: left;
