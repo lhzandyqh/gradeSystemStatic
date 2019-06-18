@@ -1,3 +1,12 @@
+const os = require('os')
+let localhost = ''
+try {
+  const network = os.networkInterfaces()
+  localhost = network[Object.keys(network)[0]][1].address
+} catch (e) {
+  localhost = 'localhost'
+}
+
 'use strict'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
@@ -14,7 +23,7 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8083, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

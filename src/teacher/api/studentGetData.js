@@ -98,3 +98,12 @@ export function getSelfGradeDetails (parems) {
     params: parems
   })
 }
+
+export function login (parems) {
+  // 登录
+  return request({
+    url: '/accout/login',
+    method: 'POST',
+    params: parems
+  })
+}

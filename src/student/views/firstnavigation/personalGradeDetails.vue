@@ -17,7 +17,7 @@
 
 <script>
 import gradeDetailsTable from '@/components/tables/gradeDetailsTable'
-import {getSelfGradeDetails} from '@/api/studentGetData'
+import { getSelfGradeDetails } from '@/api/studentGetData'
 export default {
   name: 'personalGradeDetails',
   components: {gradeDetailsTable},
