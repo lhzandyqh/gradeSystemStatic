@@ -1,3 +1,12 @@
+const os = require('os')
+let localhost = ''
+try {
+  const network = os.networkInterfaces()
+  localhost = network[Object.keys(network)[0]][1].address
+} catch (e) {
+  localhost = 'localhost'
+}
+
 'use strict'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.

@@ -1,24 +1,27 @@
 <template>
   <div>
     <div class="login-all">
-      <img src="../../assets/jpg/login_b.jpg" class="login" alt>
-      <div class="login-input">
-        <div class="login-center">
-          <el-input
-            v-model="username"
-            class="input_"
-            placeholder="请输入用户名"
-            prefix-icon="el-icon-user"
-          ></el-input>
-          <el-input
-            v-model="password"
-            class="input_"
-            placeholder="请输入密码"
-            prefix-icon="el-icon-attract"
-          ></el-input>
-          <el-button type="primary" class="input_" style="margin-top:20px;" @click="loginBtn">登录</el-button>
+      <img src="../../assets/jpg/login-logo.jpg" class="login-logo" alt>
+      <div class="login_">
+        <img src="../../assets/jpg/login.jpg" class="login-bg" alt>
+        <div class="login-input">
+          <div class="login-center">
+            <el-input
+              v-model="username"
+              class="input_"
+              placeholder="请输入用户名"
+              prefix-icon="el-icon-user"
+            ></el-input>
+            <el-input
+              v-model="password"
+              class="input_"
+              placeholder="请输入密码"
+              prefix-icon="el-icon-attract"
+            ></el-input>
+            <el-button type="primary" class="input_" style="margin-top:20px;" @click="loginBtn">登录</el-button>
+          </div>
+          <span class="Password">忘记密码？</span>
         </div>
-        <span class="Password">忘记密码？</span>
       </div>
     </div>
   </div>
@@ -33,6 +36,7 @@ export default {
     }
   },
   methods: {
+    // 登录
     loginBtn () {
       if (this.username === '') {
         this.$message({
@@ -56,15 +60,12 @@ export default {
       login(prams).then(res => {
         if (res.data.errno === 200) {
           if (res.data.rolename === '学生') {
-            this.$router.push({
-              path:
-                'window.location.hrefwindow.location.href="http://58.119.112.12:11008/teacher.html#/fisrtpage'
-            })
+            // let localhost = 'localhost/teacher.html#/fisrtpage'
+            // console.log(localhost, 'test')
+            window.location.href = '/student.html#/fisrtpage'
           }
           if (res.data.rolename === '任课教师') {
-            this.$router.push({
-              path: ''
-            })
+            window.location.href = '/teacher.html#/fisrtpage'
           }
         }
       })
@@ -73,6 +74,16 @@ export default {
 }
 </script>
 <style >
+.login_ {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.login-logo {
+  width: 550px;
+  height: 100px;
+  margin: 20px;
+}
 .Password {
   position: absolute;
   font-size: 14px;
@@ -85,9 +96,7 @@ body {
   margin: 0;
 }
 .login-all {
-  position: relative;
   width: 100%;
-  height: 800px;
 }
 .login-center {
   text-align: center;
