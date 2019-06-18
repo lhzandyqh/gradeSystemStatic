@@ -66,7 +66,6 @@
 </template>
 
 <script>
-// import {getNewGradeRank} from '~/api/studentGetData'
 export default {
   name: 'beyondSelfTable',
   props: {

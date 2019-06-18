@@ -1,13 +1,13 @@
 <template>
   <div class="app-container">
     <el-container>
-      <el-header>
+      <!-- <el-header>
         <el-menu   router :default-active="$route.path" class="el-menu-demo" mode="horizontal" @select="handleSelect">
           <el-menu-item index="/gradereport/gradereportcontent/classgradetable">班成绩单</el-menu-item>
           <el-menu-item index="/gradereport/gradereportcontent/personalGradeDetails">个人成绩详情</el-menu-item>
           <el-menu-item index="/gradereport/gradereportcontent/allgradeoverview">全科成绩概况</el-menu-item>
         </el-menu>
-      </el-header>
+      </el-header> -->
       <el-main>
         <router-view></router-view>
       </el-main>
