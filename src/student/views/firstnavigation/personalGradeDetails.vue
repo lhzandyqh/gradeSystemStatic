@@ -18,7 +18,7 @@
 
 <script>
 import gradeDetailsTable from '~/components/tables/gradeDetailsTable'
-import {getSelfGradeDetails} from '~/api/studentGetData'
+import {getUserGrade} from '~/api/studentGetData'
 export default {
   name: 'personalGradeDetails',
   components: {gradeDetailsTable},
@@ -33,10 +33,11 @@ export default {
   methods: {
     getSelfGradeDetails: function () {
       const prams = {
-        user_id: 1
+        userID: 1
       }
-      getSelfGradeDetails(prams).then(response => {
-        this.selfDetails = response.data.info
+      getUserGrade(prams).then(response => {
+        this.selfDetails.push(response.data.info)
+        console.log(this.selfDetails)
       })
     },
     printTable: function () {
