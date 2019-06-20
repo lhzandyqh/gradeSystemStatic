@@ -32,7 +32,7 @@
                 <span>年级分析</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item>最新成绩分析</el-menu-item>
+                <el-menu-item index="/gradereport/newestAnalysis">最新成绩分析</el-menu-item>
                 <el-menu-item >历次成绩分析</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
@@ -102,34 +102,6 @@
             </el-submenu>
           </el-menu>
         </el-col>
-        <!-- <el-row class="tac">
-          <el-col :span="24">
-            <el-menu
-              router
-              :default-active="$route.path"
-              class="el-menu-vertical-demo"
-              @open="handleOpen"
-              @close="handleClose"
-            >
-              <el-menu-item index="/gradereport/gradereportcontent">
-                <i class="el-icon-news"></i>
-                <span slot="title">年级成绩单</span>
-              </el-menu-item>
-              <el-menu-item index="/gradereport/successivegrade">
-                <i class="el-icon-menu"></i>
-                <span slot="title">历次成绩</span>
-              </el-menu-item>
-              <el-menu-item index="/gradereport/gradeanalyzecontent">
-                <i class="el-icon-document"></i>
-                <span slot="title">成绩分析</span>
-              </el-menu-item>
-              <el-menu-item index="/gradereport/gradeandtargetcontent">
-                <i class="el-icon-star-on"></i>
-                <span slot="title">成绩目标</span>
-              </el-menu-item>
-            </el-menu>
-          </el-col>
-        </el-row>-->
       </el-aside>
       <el-main class="functioncontainer">
         <router-view></router-view>

@@ -18,6 +18,7 @@ import allgradeoverview from '@/views/firstnavigation/allgradeoverview'
 import classgradetable from '@/views/firstnavigation/classgradetable'
 import classAdministrative from '@/views/firstnavigation/classAdministrative' // 行政班单科成绩列表
 import classTeaching from '@/views/firstnavigation/classTeaching' // 教学班单科成绩
+import newestAnalysis from '@/views/firstnavigation/newestAnalysis' // 最新成绩分析
 import weakspot from '@/views/firstnavigation/weakspot'
 import surpassrate from '@/views/firstnavigation/surpassrate'
 import gradeandtargetcontent from '@/views/firstnavigation/gradeandtargetcontent'
@@ -87,6 +88,10 @@ export default new Router({
             {
               path: '/gradereport/classTeaching', // 教学班单科成绩
               component: classTeaching
+            },
+            {
+              path: '/gradereport/newestAnalysis', // 最新成绩分析
+              component: newestAnalysis
             },
             {
               path: '/gradereport/gradeandtargetcontent',
