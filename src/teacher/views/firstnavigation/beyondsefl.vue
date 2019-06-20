@@ -12,6 +12,7 @@
 <!--      </div>-->
 <!--    </el-row>-->
     <el-row>
+      <beyond-self-table :subjectTableData="subjectTableData"></beyond-self-table>
       <beyond-self-table :subjectTableData="subjectTableData" v-on:updateprop = 'zidingyi($event)'></beyond-self-table>
     </el-row>
   </div>

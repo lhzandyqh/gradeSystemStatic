@@ -1,5 +1,5 @@
-import request from '@/utils/request'
 
+import request from '@/utils/request'
 // 获取用户信息
 export function getUserInformation (parems) {
   return request({
@@ -95,6 +95,15 @@ export function getSelfGradeDetails (parems) {
   return request({
     url: '/importinit/findPreviousGradebyUser_id',
     method: 'get',
+    params: parems
+  })
+}
+
+export function login (parems) {
+  // 登录
+  return request({
+    url: '/accout/login',
+    method: 'POST',
     params: parems
   })
 }

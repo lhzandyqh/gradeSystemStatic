@@ -126,7 +126,11 @@
     </el-row>
     <el-row style="padding-top: 30px">
       <div class="submitButton">
+
+        <el-button type="primary"  icon="el-icon-finished" plain>提交总结</el-button>
+
         <el-button type="primary"  icon="el-icon-finished" @click="notice" plain>提交总结</el-button>
+
       </div>
     </el-row>
   </div>
@@ -137,6 +141,7 @@ import studentSummaryBook from '~/components/dialog/studentSummaryBook'
 export default {
   name: 'userfeedback',
   components: {studentSummaryBook},
+
   methods: {
     notice: function () {
       this.$message({
@@ -145,6 +150,7 @@ export default {
       })
     }
   },
+
   data () {
     return {
       goodSubjectList: [],
@@ -164,7 +170,9 @@ export default {
     background-color: #ffffff;
     margin-left: 4%;
     border-radius:10px;
+    border-radius:10px;
     height: 600px;
+
   }
   .title{
     text-align: left;

@@ -10,7 +10,11 @@
           <student-exam-analyze></student-exam-analyze>
         </div>
         <div class="buttonContainer">
+
+          <el-button type="success"   icon="el-icon-edit" plain>已保存分析</el-button>
+
           <el-button type="success" icon="el-icon-edit" @click="dialogVisible = true" plain>已保存分析</el-button>
+
         </div>
       </div>
     </el-row>
@@ -114,11 +118,16 @@
         </el-row>
         <el-row style="padding-top: 20px">
           <div class="save">
+
+            <el-button type="primary"  icon="el-icon-finished" plain>保存</el-button>
+
             <el-button type="primary"  icon="el-icon-finished" @click="notice" plain>保存</el-button>
+
           </div>
         </el-row>
       </el-card>
     </el-row>
+
     <el-dialog
       title="我的分析"
       :visible.sync="dialogVisible"
@@ -129,6 +138,7 @@
     <el-button type="primary" @click="dialogVisible = false">提 交</el-button>
   </span>
     </el-dialog>
+>>>>>>> newyangqihang
   </div>
 </template>
 
@@ -137,6 +147,7 @@ import examPaperAnalysis from '~/components/tables/examPaperAnalysis'
 import studentExamAnalyze from '~/components/dialog/studentExamAnalyze'
 export default {
   name: 'paperanalysis',
+
   methods: {
     notice: function () {
       this.$message({
@@ -145,11 +156,14 @@ export default {
       })
     }
   },
+
   components: {examPaperAnalysis, studentExamAnalyze},
   data () {
     return {
       radio: 1,
+
       dialogVisible: false,
+
       problemNum: '',
       options: [{
         value: '选项1',
@@ -184,7 +198,9 @@ export default {
     background-color: #ffffff;
     margin-left: 4%;
     border-radius:10px;
+
     height: 600px;
+
   }
   .tableContainer{
     padding-right: 20%;

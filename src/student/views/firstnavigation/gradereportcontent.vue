@@ -42,4 +42,5 @@ export default {
   .inner-container::-webkit-scrollbar {
     display: none;
   }
+
 </style>

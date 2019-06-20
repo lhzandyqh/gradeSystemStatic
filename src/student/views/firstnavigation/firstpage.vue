@@ -39,7 +39,7 @@
         </div>
       </el-row>
       <el-row :gutter="20">
-        <el-col span="4" offset="2">
+        <el-col span="4" :offset="2">
           <el-card class="box-card" style="height: 350px">
             <div slot="header" class="clearfix">
               <span style="color: #19c237;font-weight: bold">学生信息</span>

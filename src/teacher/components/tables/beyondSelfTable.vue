@@ -38,7 +38,6 @@
       width="120">
     </el-table-column>
     <el-table-column
-      prop="aimsClassIndex"
       align="center"
       label="新班级排名"
       width="120">
@@ -50,7 +49,6 @@
       width="120">
     </el-table-column>
     <el-table-column
-      prop="aimsSchoolIndex"
       align="center"
       label="新学校排名"
       width="120">
@@ -77,14 +75,22 @@ export default {
   },
   data () {
     return {
+      imgUrl: require('../../../../static/images/jiantou.png'),
       input: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
       newData: [],
-      imgUrl: require('../../../../static/images/jiantou.png'),
       newRank: ['', '']
     }
   },
   methods: {
     inquireNewRank: function (index, content) {
+      this.$emit('updateprop', this.input[index])
+      console.log(this.input[index])
+      console.log(content.subjectName)
+      // const prams = {
+      //   userID: 1,
+      //   subjectName: content.subjectName,
+      //   subjectAimsScore: this.input[index],
+      // }
       const prams = {
         userID: 1,
         yuwen: this.input[1],
