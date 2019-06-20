@@ -23,7 +23,7 @@
               <el-menu-item-group>
                 <el-menu-item index="/gradereport/gradereportcontent">年级成绩单</el-menu-item>
                 <el-menu-item index="/gradereport/classAdministrative">行政班单科成绩</el-menu-item>
-                <el-menu-item index="/login">教学班单科成绩</el-menu-item>
+                <el-menu-item index="/gradereport/classTeaching">教学班单科成绩</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="2">
