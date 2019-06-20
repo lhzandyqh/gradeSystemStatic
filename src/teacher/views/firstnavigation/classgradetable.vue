@@ -1,52 +1,51 @@
 <template>
   <div class="appcontainer">
+    <!-- 科目类别 + 查询 -->
     <el-row>
-      <h4>2017-2018学年第一学期七年级期中考试</h4>
-      <span style="font-weight: bold;color: #18a689">─班级成绩单─</span>
+      <subjectTable></subjectTable>
     </el-row>
-    <el-row>
-      <div class="all-subject">
-        <ul class="subject">
-          <li>全科</li>
-          <li>语文</li>
-          <li>数学</li>
-          <li>英语</li>
-          <li>物理</li>
-          <li>化学</li>
-          <li>生物</li>
-          <li>历史</li>
-          <li>地理</li>
-          <li>政治</li>
-        </ul>
-      </div>
-    </el-row>
-    <el-row>
-      <div class="query">
-        <el-input placeholder="请输入学生考号/姓名" style="width:250px;">
-          <el-button slot="append" icon="el-icon-search"></el-button>
-        </el-input>
-        <el-button>导出年级报表</el-button>
-      </div>
-    </el-row>
+
+    <!-- 列表 -->
     <el-row style="margin-top: 20px;">
-      <all-class-grade-table :allGradeTableData="allGradeTableData"></all-class-grade-table>
+      <all-class-grade-table :allGradeTableData="allGradeTableData" :tableHeader="tableInfo"></all-class-grade-table>
     </el-row>
   </div>
 </template>
 
 <script>
 import allClassGradeTable from '@/components/tables/allClassGradeTable'
+import subjectTable from '@/components/tables/subjectTable'
 import { getClassGradeTable } from '@/api/studentGetData'
 export default {
   name: 'classgradetable',
-  components: { allClassGradeTable },
+  components: { allClassGradeTable, subjectTable },
   mounted () {
     this.getGradeTableData()
   },
   data () {
     return {
       radio: 1,
-      allGradeTableData: []
+      allGradeTableData: [],
+      tableInfo: [
+        { prop: 'id', lable: '序号' },
+        { prop: 'studentMachineCard', lable: '考号' },
+        {prop: 'studentName', lable: '姓名'},
+        { prop: 'classId', lable: '班级/行政班' },
+        { prop: 'coversionTotal', lable: '总分' },
+        { prop: 'classIndex', lable: '班名次' },
+        { prop: 'classIndex', lable: '校名次' },
+        { prop: 'advancefall', lable: '进步/后退' },
+        { prop: 'yuwenScore', lable: '语文' },
+        { prop: 'shuxueScore', lable: '数学' },
+        { prop: 'yingyuScore', lable: '英语' },
+        { prop: 'threeScore', lable: '三科总分' },
+        { prop: 'physics', lable: '物理' },
+        { prop: 'huaxueCoversion', lable: '化学' },
+        { prop: 'shengwuCoversion', lable: '生物' },
+        { prop: 'lishiCoversion', lable: '历史' },
+        { prop: 'diliCoversion', lable: '地理' },
+        { prop: 'zhengzhiCoversion', lable: '政治' }
+      ]
     }
   },
   methods: {
@@ -63,36 +62,4 @@ export default {
 </script>
 
 <style scoped>
-ul li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  color: #666;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.all-subject {
-  border-top: 1px solid #18a689;
-  margin: 40px 0 0 0;
-  width: 100%;
-}
-.subject {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-.subject li {
-  width: 11%;
-  padding: 2% 0;
-}
-.subject li:hover {
-  color: #fff;
-  background-color: #18a689;
-}
-.query{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
 </style>

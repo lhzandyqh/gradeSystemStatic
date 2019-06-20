@@ -32,8 +32,12 @@ export default {
   data () {
     return {
       username: '',
-      password: ''
+      password: '',
+      id: null
     }
+  },
+  mounted () {
+
   },
   methods: {
     // 登录
@@ -58,6 +62,8 @@ export default {
       }
       login(prams).then(res => {
         if (res.data.errno === 200) {
+          this.id = res.data.id
+          window.localStorage.setItem('id', this.id) // 把id存入缓存
           if (res.data.rolename === '学生') {
             window.location.href = '/student.html#/fisrtpage'
           }
@@ -71,32 +77,32 @@ export default {
 }
 </script>
 <style >
-  .subBtn{
-    width: 80%;
-    margin-left: 10%;
-  }
-  .forget{
-    font-size: 13px;
-    color: red;
-    width: 80%;
-    margin: 0px auto;
-    text-align: right;
-    margin-top: -20px;
-    margin-bottom: 30px;
-  }
-.loginTitle{
+.subBtn {
+  width: 80%;
+  margin-left: 10%;
+}
+.forget {
+  font-size: 13px;
+  color: red;
+  width: 80%;
+  margin: 0px auto;
+  text-align: right;
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+.loginTitle {
   text-align: center;
   font-size: 18px;
   margin-top: 50px;
 }
-.login-bg{
+.login-bg {
   width: 100%;
   height: 100%;
 }
 .login-logo {
- position: absolute;
- top: 0;
- left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 550px;
   height: 100px;
   margin: 20px;
@@ -138,15 +144,15 @@ body {
 .input_ {
   border: none;
 }
-  input{
-    border: none!important;
-  }
-.input1 input{
+input {
+  border: none !important;
+}
+.input1 input {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.input2 input{
-  border-top: 1px solid #ccc!important;
+.input2 input {
+  border-top: 1px solid #ccc !important;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
