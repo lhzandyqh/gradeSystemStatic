@@ -178,7 +178,7 @@ export default {
   methods: {
     getStudentInformation: function () {
       const prams = {
-        userID: 1
+        userID: 235
       }
       getUserInformation(prams).then(response => {
         // console.log(response.data.errmsg)
@@ -198,7 +198,7 @@ export default {
     },
     getStudentGrade: function () {
       const prams = {
-        userID: 1
+        userID: 235
       }
       getUserGrade(prams).then(response => {
         this.dataSpaceGrade = response.data.info
@@ -208,7 +208,7 @@ export default {
     },
     getStudentExam: function () {
       const prams = {
-        userID: 1
+        userID: 235
       }
       getExamInformation(prams).then(response => {
         this.dataSpaceExam = response.data.info

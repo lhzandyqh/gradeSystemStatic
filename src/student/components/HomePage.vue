@@ -40,7 +40,7 @@
           </el-col>
           <el-col :span="3" :offset="2">
             <div class="navigationoption">
-              <span>当前用户：卫梦佳</span>
+              <span>当前用户：于天驰</span>
             </div>
           </el-col>
           <el-col :span="1" :offset="2">

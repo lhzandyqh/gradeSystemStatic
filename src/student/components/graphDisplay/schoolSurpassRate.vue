@@ -47,7 +47,7 @@ export default {
   methods: {
     getSurpassRateData: function () {
       const prams = {
-        userID: 1
+        userID: 235
       }
       getSchoolAndClassRate(prams).then(response => {
         this.surpassRate = response.data.info

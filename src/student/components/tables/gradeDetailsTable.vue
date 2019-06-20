@@ -4,7 +4,6 @@
       <el-table
         :data="selfDetails"
         border
-        height="100px"
         style="width: 100%">
         <el-table-column
           align="center"

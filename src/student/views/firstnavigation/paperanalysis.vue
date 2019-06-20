@@ -2,7 +2,7 @@
   <div class="app-container">
 <!--    <h1>这是试卷分析组件</h1>-->
     <el-row>
-      <h4>2017-2018学年第一学期七年级期中考试</h4>
+      <h4>{{this.examName}}</h4>
     </el-row>
     <el-row style="padding-top: 30px">
       <div class="twoButton">
@@ -10,11 +10,8 @@
           <student-exam-analyze></student-exam-analyze>
         </div>
         <div class="buttonContainer">
-
-          <el-button type="success"   icon="el-icon-edit" plain>已保存分析</el-button>
-
-          <el-button type="success" icon="el-icon-edit" @click="dialogVisible = true" plain>已保存分析</el-button>
-
+<!--          <el-button type="success" icon="el-icon-edit" @click="dialogVisible = true" plain>已保存分析</el-button>-->
+          <paper-save-analyze :tableData="tableData"></paper-save-analyze>
         </div>
       </div>
     </el-row>
@@ -37,7 +34,7 @@
                 <el-radio :label="3">英语</el-radio>
                 <el-radio :label="4">物理</el-radio>
                 <el-radio :label="5">化学</el-radio>
-                <el-radio :label="6">政治</el-radio>
+                <el-radio :label="6">生物</el-radio>
                 <el-radio :label="7">历史</el-radio>
                 <el-radio :label="8">地理</el-radio>
                 <el-radio :label="9">政治</el-radio>
@@ -60,7 +57,7 @@
             </div>
           </el-col>
           <el-col :span="3">
-            <el-select v-model="value" placeholder="请选择">
+            <el-select v-model="value"  @change="changeValue" placeholder="请选择">
               <el-option
                 v-for="item in options"
                 :key="item.value"
@@ -118,11 +115,7 @@
         </el-row>
         <el-row style="padding-top: 20px">
           <div class="save">
-
-            <el-button type="primary"  icon="el-icon-finished" plain>保存</el-button>
-
-            <el-button type="primary"  icon="el-icon-finished" @click="notice" plain>保存</el-button>
-
+            <el-button type="primary"  icon="el-icon-finished" @click="saveData" plain>保存</el-button>
           </div>
         </el-row>
       </el-card>
@@ -138,33 +131,108 @@
     <el-button type="primary" @click="dialogVisible = false">提 交</el-button>
   </span>
     </el-dialog>
->>>>>>> newyangqihang
   </div>
 </template>
 
 <script>
 import examPaperAnalysis from '~/components/tables/examPaperAnalysis'
 import studentExamAnalyze from '~/components/dialog/studentExamAnalyze'
+import paperSaveAnalyze from '~/components/dialog/paperSaveAnalyze'
+import {savePaperAnalysis, lookMySaveAnalysis} from '~/api/studentGetData'
 export default {
   name: 'paperanalysis',
-
+  mounted () {
+    this.getMySaveData()
+  },
   methods: {
-    notice: function () {
-      this.$message({
-        message: '功能尚未开通',
-        type: 'warning'
+    saveData: function () {
+      // this.$message({
+      //   message: '功能尚未开通',
+      //   type: 'warning'
+      // })
+      this.switchSubject(this.radio)
+      console.log(this.radio)
+      console.log(this.subject)
+      const prams = {
+        userId: 235,
+        examName: this.examName,
+        examSubject: this.subject,
+        subjectNumber: this.problemNum,
+        subjectType: this.problemType,
+        fullScore: this.full,
+        mySubjectScore: this.myScore,
+        knowledgePoint: this.textareaPoint,
+        mySummary: this.textareaUnderstand
+      }
+      savePaperAnalysis(prams).then(response => {
+        this.$message({
+          message: '保存成功',
+          type: 'success'
+        })
       })
+    },
+    getMySaveData: function () {
+      const prams = {
+        userId: 235,
+        examName: this.examName
+      }
+      lookMySaveAnalysis(prams).then(response => {
+        this.tableData = response.data.info
+        console.log(this.tableData)
+      })
+    },
+    changeValue: function (value) {
+      console.log(value)
+      let obj = {}
+      obj = this.options.find((item) => {
+        return item.value === value
+      })
+      console.log(obj.label)
+      this.problemType = obj.label
+      console.log(this.problemType)
+    },
+    switchSubject: function (subjectNumber) {
+      switch (subjectNumber) {
+        case 1:
+          this.subject = '语文'
+          break
+        case 2:
+          this.subject = '数学'
+          break
+        case 3:
+          this.subject = '英语'
+          break
+        case 4:
+          this.subject = '物理'
+          break
+        case 5:
+          this.subject = '化学'
+          break
+        case 6:
+          this.subject = '生物'
+          break
+        case 7:
+          this.subject = '历史'
+          break
+        case 8:
+          this.subject = '地理'
+          break
+        case 9:
+          this.subject = '政治'
+          break
+      }
     }
   },
-
-  components: {examPaperAnalysis, studentExamAnalyze},
+  components: {examPaperAnalysis, studentExamAnalyze, paperSaveAnalyze},
   data () {
     return {
+      examName: '2017-2018学年第一学期七年级期中考试',
+      problemType: '',
       radio: 1,
-
+      subject: '',
       dialogVisible: false,
-
       problemNum: '',
+      tableData: [],
       options: [{
         value: '选项1',
         label: '选择题'

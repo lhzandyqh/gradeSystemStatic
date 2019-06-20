@@ -107,3 +107,21 @@ export function beyondRateCompare (parems) {
     params: parems
   })
 }
+
+// 保存试卷分析
+export function savePaperAnalysis (parems) {
+  return request({
+    url: '/api/summary/myWrongQuestionSummaryInsert',
+    method: 'post',
+    params: parems
+  })
+}
+
+// 查看我保存的试卷分析
+export function lookMySaveAnalysis (parems) {
+  return request({
+    url: '/api/summary/myWrongQuestionSummaryFoundation',
+    method: 'get',
+    params: parems
+  })
+}

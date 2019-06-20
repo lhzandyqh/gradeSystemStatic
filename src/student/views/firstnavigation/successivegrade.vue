@@ -35,7 +35,7 @@ export default {
   methods: {
     getSuccessiveData: function () {
       const prams = {
-        userID: 1
+        userID: 235
       }
       getSuccessiveGradeTable(prams).then(response => {
         // this.successiveDataSpace.push(response.data.info)

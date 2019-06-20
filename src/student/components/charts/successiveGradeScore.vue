@@ -71,7 +71,7 @@ export default {
   methods: {
     initChart () {
       const prams = {
-        userID: 1
+        userID: 235
       }
       getSuccessiveGradeTable(prams).then(response => {
         var k = ''
