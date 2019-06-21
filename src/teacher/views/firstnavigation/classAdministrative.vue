@@ -11,9 +11,9 @@
   </div>
 </template>
 <script>
-import subjectTable from '@/components/tables/subjectTable';
-import allClassGradeTable from '@/components/tables/allClassGradeTable';
-import { getClassGradeTable } from '@/api/studentGetData';
+import subjectTable from '@/components/tables/subjectTable'
+import allClassGradeTable from '@/components/tables/allClassGradeTable'
+import { getClassGradeTable } from '@/api/studentGetData'
 export default {
   components: {
     allClassGradeTable,

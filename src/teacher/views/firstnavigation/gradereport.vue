@@ -136,7 +136,7 @@ export default {
 
 <style scoped>
 .app-container {
-  width: 93%;
+  width: 95%;
   padding-bottom: 10px;
   background-color: #ffffff;
   margin-left: 4%;
@@ -144,6 +144,6 @@ export default {
 }
 .functioncontainer {
   text-align: center;
-  width: 200px;
+  /* width: 200px; */
 }
 </style>

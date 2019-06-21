@@ -1,10 +1,18 @@
 <template>
-  <div>
+  <div class="appcontainer">
     <el-row>
       <tableTitle :titleList="name"></tableTitle>
     </el-row>
     <el-row>
-      <el-table :data="newList" border style="width: 80%;align-content: center">
+     <p  style="text-align:right"> <el-button icon="el-icon-upload2">导出年级成绩六率分析报表</el-button></p>
+      <div style="padding:10px 0;font-size:14px;color:#333">
+        高分率：90%-100%
+        优秀率：85%-90%
+        良好率：75%-85%
+        及格率：60%-75%
+        低分率：60%-75%超均率：超过平均分概率
+      </div>
+      <el-table :data="newList" border style="width: 100%;align-content: center">
         <el-table-column prop="subjectName" label="学科" width="100"></el-table-column>
         <el-table-column prop="score" label="类别" width="100"></el-table-column>
         <el-table-column prop="classIndex" label="人数" width="100"></el-table-column>
@@ -34,9 +42,11 @@ export default {
   },
   data () {
     return {
-      newList: [{
-        subjectName: '占位'
-      }],
+      newList: [
+        {
+          subjectName: '占位'
+        }
+      ],
       name: '我只想单纯的测试哈名字'
     }
   }
