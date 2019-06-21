@@ -33,7 +33,7 @@ export default {
   methods: {
     getSelfGradeDetails: function () {
       const prams = {
-        userID: 1
+        userID: window.localStorage.getItem('id')
       }
       getUserGrade(prams).then(response => {
         this.selfDetails.push(response.data.info)

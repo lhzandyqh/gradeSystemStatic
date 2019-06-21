@@ -126,11 +126,7 @@
     </el-row>
     <el-row style="padding-top: 30px">
       <div class="submitButton">
-
-        <el-button type="primary"  icon="el-icon-finished" plain>提交总结</el-button>
-
         <el-button type="primary"  icon="el-icon-finished" @click="notice" plain>提交总结</el-button>
-
       </div>
     </el-row>
   </div>

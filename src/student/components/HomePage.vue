@@ -40,7 +40,8 @@
           </el-col>
           <el-col :span="3" :offset="2">
             <div class="navigationoption">
-              <span>当前用户：于天驰</span>
+              <span>当前用户：</span>
+              <span>{{this.studentInformation[0].studentName}}</span>
             </div>
           </el-col>
           <el-col :span="1" :offset="2">
@@ -77,14 +78,35 @@
 </template>
 
 <script>
+import { getUserInformation } from '~/api/studentGetData'
 export default {
   name: 'HomePage',
   data () {
     return {
-      imgUrl: require('../../../static/images/homepagelogo.png')
+      imgUrl: require('../../../static/images/homepagelogo.png'),
+      studentInformation: [{
+        studentName: '',
+        studentNumber: '',
+        id: '',
+        gradeName: '',
+        className: ''
+      }]
     }
   },
+  mounted () {
+    this.getUserName()
+  },
   methods: {
+    getUserName: function () {
+      const prams = {
+        userID: window.localStorage.getItem('id')
+      }
+      getUserInformation(prams).then(response => {
+        this.dataSpace = response.data.info
+        this.$set(this.studentInformation, 0, {studentName: this.dataSpace[0].studentName, studentNumber: this.dataSpace[0].studentNumber, id: this.dataSpace[0].id, gradeName: this.dataSpace[0].gradeName, className: this.dataSpace[0].className})
+        console.log(this.studentInformation)
+      })
+    },
     gofisrtpage: function () {
       // this.$router.go('/fisrtpage')
       this.$router.push('/fisrtpage')

@@ -35,7 +35,7 @@ export default {
   methods: {
     getSubjectData: function () {
       const prams = {
-        userID: 1
+        userID: window.localStorage.getItem('id')
       }
       getSubjectGradeTable(prams).then(response => {
         this.subjectTableData = response.data.info

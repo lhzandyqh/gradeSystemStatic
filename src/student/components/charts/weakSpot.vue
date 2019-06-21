@@ -94,7 +94,7 @@ export default {
     },
     initChart () {
       const prams = {
-        userID: 235
+        userID: window.localStorage.getItem('id')
       }
       getClassGradeByondRate(prams).then(response => {
         // console.log(response.data.info)
@@ -123,7 +123,7 @@ export default {
     },
     initClassChart () {
       const prams = {
-        userID: 235
+        userID: window.localStorage.getItem('id')
       }
       getClassGradeByondRate(prams).then(response => {
         // console.log(response.data.info)
@@ -154,7 +154,7 @@ export default {
     },
     initSchoolChart () {
       const prams = {
-        userID: 235
+        userID: window.localStorage.getItem('id')
       }
       getSchoolGradeByondRate(prams).then(response => {
         // console.log(response.data.info)

@@ -28,7 +28,7 @@ export default {
   methods: {
     getGradeTableData: function () {
       const prams = {
-        userID: 1
+        userID: window.localStorage.getItem('id')
       }
       getClassGradeTable(prams).then(response => {
         this.allGradeTableData = response.data.info

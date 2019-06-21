@@ -54,7 +54,7 @@ export default {
   methods: {
     getBeyondRateData: function () {
       const prams = {
-        userID: 1
+        userID: window.localStorage.getItem('id')
       }
       beyondRateCompare(prams).then(response => {
         console.log('检查输出的数据')

@@ -68,7 +68,10 @@ export default {
           {
             name: '我的得分',
             type: 'bar',
-            data: []
+            data: [],
+            itemStyle: {
+              normal: {color: '#2fb111'}
+            }
           },
           {
             name: '班平均分',
@@ -91,7 +94,7 @@ export default {
   methods: {
     initChart () {
       const prams = {
-        userID: 1
+        userID: window.localStorage.getItem('id')
       }
       getSubjectGradeTable(prams).then(response => {
         this.chartData = response.data.info

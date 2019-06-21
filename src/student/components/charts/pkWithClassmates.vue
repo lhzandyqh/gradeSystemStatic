@@ -64,7 +64,7 @@ export default {
   methods: {
     initChart () {
       const prams = {
-        userID: 1
+        userID: window.localStorage.getItem('id')
       }
       getSubjectGradeTable(prams).then(response => {
         // this.successiveDataSpace.push(response.data.info)

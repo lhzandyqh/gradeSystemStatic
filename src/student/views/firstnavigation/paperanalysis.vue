@@ -173,7 +173,7 @@ export default {
     },
     getMySaveData: function () {
       const prams = {
-        userId: 235,
+        userId: window.localStorage.getItem('id'),
         examName: this.examName
       }
       lookMySaveAnalysis(prams).then(response => {

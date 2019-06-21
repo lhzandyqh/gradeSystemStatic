@@ -86,7 +86,7 @@ export default {
   methods: {
     inquireNewRank: function (index, content) {
       const prams = {
-        userID: 1,
+        userID: window.localStorage.getItem('id'),
         yuwen: this.input[1],
         shuxue: this.input[2],
         yingyu: this.input[3],

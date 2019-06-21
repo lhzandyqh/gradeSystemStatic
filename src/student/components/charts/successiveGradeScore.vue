@@ -52,14 +52,20 @@ export default {
             type: 'line',
             stack: '总量',
             areaStyle: {},
-            data: []
+            data: [],
+            itemStyle: {
+              normal: {color: '#1BB13A'}
+            }
           },
           {
             name: '班级排名',
             type: 'line',
             stack: '总量',
             areaStyle: {},
-            data: []
+            data: [],
+            itemStyle: {
+              normal: {color: '#2c63ce'}
+            }
           }
         ]
       }
@@ -71,7 +77,7 @@ export default {
   methods: {
     initChart () {
       const prams = {
-        userID: 235
+        userID: window.localStorage.getItem('id')
       }
       getSuccessiveGradeTable(prams).then(response => {
         var k = ''

@@ -58,6 +58,8 @@ export default {
       }
       login(prams).then(res => {
         if (res.data.errno === 200) {
+          this.id = res.data.id
+          window.localStorage.setItem('id', this.id) // 把id存入缓存
           if (res.data.rolename === '学生') {
             window.location.href = '/student.html#/fisrtpage'
           }

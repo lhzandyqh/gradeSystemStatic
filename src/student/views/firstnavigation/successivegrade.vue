@@ -35,7 +35,7 @@ export default {
   methods: {
     getSuccessiveData: function () {
       const prams = {
-        userID: 235
+        userID: window.localStorage.getItem('id')
       }
       getSuccessiveGradeTable(prams).then(response => {
         // this.successiveDataSpace.push(response.data.info)

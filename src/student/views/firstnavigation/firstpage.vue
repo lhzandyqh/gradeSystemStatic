@@ -177,8 +177,10 @@ export default {
   },
   methods: {
     getStudentInformation: function () {
+      console.log('输入得到的ID')
+      console.log(window.localStorage.getItem('id'))
       const prams = {
-        userID: 235
+        userID: window.localStorage.getItem('id')
       }
       getUserInformation(prams).then(response => {
         // console.log(response.data.errmsg)
@@ -198,7 +200,7 @@ export default {
     },
     getStudentGrade: function () {
       const prams = {
-        userID: 235
+        userID: window.localStorage.getItem('id')
       }
       getUserGrade(prams).then(response => {
         this.dataSpaceGrade = response.data.info
@@ -208,7 +210,7 @@ export default {
     },
     getStudentExam: function () {
       const prams = {
-        userID: 235
+        userID: window.localStorage.getItem('id')
       }
       getExamInformation(prams).then(response => {
         this.dataSpaceExam = response.data.info
