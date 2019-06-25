@@ -5,7 +5,7 @@
         <div class="informationclass">
 <!--          <span>个人最新成绩</span>-->
           <el-card class="box-card-father">
-            <span class="informationtitle">个人最新成绩信息</span>
+            <span class="informationtitle">最新成绩信息</span>
             <br>
             <el-card class="box-card-son">
               <div class="informationcontent">

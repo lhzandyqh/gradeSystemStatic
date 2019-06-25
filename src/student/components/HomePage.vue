@@ -10,7 +10,7 @@
               <img v-bind:src="imgUrl" width="100%" height="80%">
             </div>
           </el-col>
-          <el-col :span="2" :offset="1">
+          <el-col :span="2" :offset="3">
             <div class="navigationoption">
               <img src="../assets/icon/u133.png">
               <span v-on:click="gofisrtpage">平台首页</span>
@@ -27,7 +27,7 @@
           <el-col :span="2">
             <div class="navigationoption">
               <img src="../assets/icon/u114.png">
-              <span v-on:click="gopaperanalysis">错题总结</span>
+              <span v-on:click="gopaperanalysis">错题记录</span>
 <!--              <router-link to="/paperanalysis">试卷分析</router-link>-->
             </div>
           </el-col>
@@ -38,24 +38,11 @@
 <!--              <router-link to="/userfeedback">用户反馈</router-link>-->
             </div>
           </el-col>
-          <el-col :span="3" :offset="2">
-            <div class="navigationoption">
-              <span>当前用户：</span>
-              <span>{{this.studentInformation[0].studentName}}</span>
-            </div>
-          </el-col>
-          <el-col :span="1" :offset="2">
-              <img src="../assets/icon/u131.png">
-          </el-col>
-          <el-col :span="1">
-            <div class="navigationoption">
-              <img src="../assets/icon/u125.png">
-            </div>
-          </el-col>
-          <el-col :span="1">
-            <div class="navigationoption">
-              <img src="../assets/icon/u127.png">
-            </div>
+          <el-col :span="1" :offset="5">
+<!--            <div class="navigationoption">-->
+<!--              <img src="../assets/icon/u125.png">-->
+<!--            </div>-->
+            <user-setting-popover></user-setting-popover>
           </el-col>
         </el-row>
         </div>
@@ -78,12 +65,16 @@
 </template>
 
 <script>
-import { getUserInformation } from '~/api/studentGetData'
+import { getUserInformation, getClassGradeTable } from '~/api/studentGetData'
+import userSettingPopover from '~/components/user/userSettingPopover'
 export default {
   name: 'HomePage',
+  components: { userSettingPopover },
   data () {
     return {
       imgUrl: require('../../../static/images/homepagelogo.png'),
+      examData: [],
+      examType: '',
       studentInformation: [{
         studentName: '',
         studentNumber: '',
@@ -91,12 +82,25 @@ export default {
         gradeName: '',
         className: ''
       }]
+      // toPopoverData: this.studentInformation[0].studentName
     }
   },
   mounted () {
     this.getUserName()
+    this.getExamType()
   },
   methods: {
+    getExamType: function () {
+      const prams = {
+        userID: window.localStorage.getItem('id')
+      }
+      getClassGradeTable(prams).then(response => {
+        this.examData = response.data.info
+        this.examType = this.examData[0].examType
+        console.log(this.examType)
+        window.localStorage.setItem('examType', this.examType) // 把examType存入缓存
+      })
+    },
     getUserName: function () {
       const prams = {
         userID: window.localStorage.getItem('id')
@@ -105,6 +109,7 @@ export default {
         this.dataSpace = response.data.info
         this.$set(this.studentInformation, 0, {studentName: this.dataSpace[0].studentName, studentNumber: this.dataSpace[0].studentNumber, id: this.dataSpace[0].id, gradeName: this.dataSpace[0].gradeName, className: this.dataSpace[0].className})
         console.log(this.studentInformation)
+        window.localStorage.setItem('studentName', this.studentInformation[0].studentName)
       })
     },
     gofisrtpage: function () {

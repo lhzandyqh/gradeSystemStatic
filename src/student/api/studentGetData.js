@@ -45,7 +45,7 @@ export function getSchoolGradeByondRate (parems) {
   })
 }
 
-// 获取班级成绩
+// 获取班级成绩(也可以用来获取最新的考试名称信息)
 export function getClassGradeTable (parems) {
   return request({
     url: '/api/score/class_score',
@@ -125,3 +125,23 @@ export function lookMySaveAnalysis (parems) {
     params: parems
   })
 }
+
+// 我的成绩单
+export function getMyNewGradeTable (parems) {
+  return request({
+    url: '/api/score/findPreviousGradebyUser_id',
+    method: 'post',
+    params: parems
+  })
+}
+
+// 提交已保存的错题总结
+export function updateSaveSummary (parems) {
+  return request({
+    url: '/api/summary/myWrongQuestionSummarySubmit',
+    method: 'post',
+    params: parems
+  })
+}
+
+// 获取

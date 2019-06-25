@@ -19,6 +19,8 @@ import weakspot from '~/views/firstnavigation/weakspot'
 import surpassrate from '~/views/firstnavigation/surpassrate'
 import gradeandtargetcontent from '~/views/firstnavigation/gradeandtargetcontent'
 import personalGradeDetails from '~/views/firstnavigation/personalGradeDetails'
+import advantageStableSubject from '~/views/firstnavigation/advantageStableSubject'
+import subjectComparativeAnalysis from '~/views/firstnavigation/subjectComparativeAnalysis'
 
 Vue.use(Router)
 
@@ -69,13 +71,19 @@ export default new Router({
           }, {
             path: '/gradereport/gradeanalyzecontent',
             component: gradeanalyzecontent,
-            redirect: '/gradereport/gradeanalyzecontent/surpassrate',
+            redirect: '/gradereport/gradeanalyzecontent/weakspot',
             children: [{
               path: '/gradereport/gradeanalyzecontent/surpassrate',
               component: surpassrate
             }, {
               path: '/gradereport/gradeanalyzecontent/weakspot',
               component: weakspot
+            }, {
+              path: '/gradereport/gradeanalyzecontent/subjectComparativeAnalysis',
+              component: subjectComparativeAnalysis
+            }, {
+              path: '/gradereport/gradeanalyzecontent/advantageStableSubject',
+              component: advantageStableSubject
             }]
           }]},
         {path: '/paperanalysis', component: paperanalysis, name: paperanalysis},

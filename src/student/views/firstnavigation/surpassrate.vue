@@ -2,7 +2,7 @@
 <!--  <h1>这是超越率</h1>-->
   <div class="container">
     <el-row>
-      <h4>2017-2018学年第一学期七年级期中考试</h4>
+      <h4>{{this.examType}}</h4>
       <span style="font-weight: bold;color: #19c237">─成绩超越率─</span>
     </el-row>
     <el-row style="padding-top: 30px">
@@ -26,7 +26,8 @@ export default {
   components: { schoolSurpassRate },
   data () {
     return {
-      imgUrl: require('../../../../static/images/surpassrate.png')
+      imgUrl: require('../../../../static/images/surpassrate.png'),
+      examType: window.localStorage.getItem('examType')
     }
   }
 }

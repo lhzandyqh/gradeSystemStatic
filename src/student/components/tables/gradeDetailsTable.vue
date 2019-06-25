@@ -7,7 +7,7 @@
         style="width: 100%">
         <el-table-column
           align="center"
-          prop="examName"
+          prop="examType"
           label="考试名称"
           width="200">
         </el-table-column>
@@ -31,43 +31,43 @@
         </el-table-column>
         <el-table-column
           align="center"
-          prop="wuliCoversion"
+          prop="wuliConverscore"
           label="物理"
           width="60">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="huaxueCoversion"
+          prop="huaxueConverscore"
           label="化学"
           width="60">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="shengwuCoversion"
+          prop="shengwuConverscore"
           label="生物"
           width="60">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="zhengzhiCoversion"
+          prop="zhengzhiConverscore"
           label="政治"
           width="60">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="diliCoversion"
+          prop="diliConverscore"
           label="地理"
           width="60">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="lishiCoversion"
+          prop="lishiConverscore"
           label="历史"
           width="60">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="coversionTotal"
+          prop="totalScore"
           label="总分"
           width="70">
         </el-table-column>

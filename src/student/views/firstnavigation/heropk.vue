@@ -2,7 +2,7 @@
   <div class="container">
 <!--    <h1>这是英雄PK模块</h1>-->
     <el-row>
-      <h4>2017-2018学年第一学期七年级期中考试</h4>
+      <h4>{{this.examType}}</h4>
       <span style="text-align: center;font-size: 14px;font-weight: bold;color: #19c237;font-weight: bold">-与超越自己的同学PK一下吧-</span>
     </el-row>
     <el-row style="padding-top: 20px">
@@ -134,6 +134,7 @@ export default {
   data () {
     return {
       imgUrl: require('../../../../static/images/herospk.png'),
+      examType: window.localStorage.getItem('examType'),
       dialogVisible: false,
       myScore: [],
       classmateScore: [

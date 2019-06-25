@@ -70,6 +70,7 @@ export default {
 <style scoped>
   .container{
     text-align: center;
+    height: 300px;
   }
   .functionContainer{
     float: left;

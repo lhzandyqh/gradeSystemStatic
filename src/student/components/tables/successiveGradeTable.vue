@@ -1,9 +1,6 @@
 <template>
   <div class="container">
     <el-row>
-      <span style="font-size: 13px;font-weight: bold;float: left">导出学期内历次考试个人成绩</span>
-    </el-row>
-    <el-row>
       <el-table
         :data="successiveData"
         border

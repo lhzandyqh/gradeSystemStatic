@@ -1,11 +1,6 @@
 <template>
   <div class="container">
     <el-row>
-      <div class="output">
-        <span style="font-size: 13px;font-weight: bold">导出全科成绩概况</span>
-      </div>
-    </el-row>
-    <el-row>
         <el-table
           :data="subjectTableData"
           border

@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <el-row style="padding-top: 30px">
-      <span style="font-weight: bold;color: #19c237">个人本次考试详情</span>
-    </el-row>
     <el-row style="padding-top: 80px">
       <div class="tableContainer">
         <section ref="print">
@@ -18,7 +15,7 @@
 
 <script>
 import gradeDetailsTable from '~/components/tables/gradeDetailsTable'
-import {getUserGrade} from '~/api/studentGetData'
+import {getMyNewGradeTable} from '~/api/studentGetData'
 export default {
   name: 'personalGradeDetails',
   components: {gradeDetailsTable},
@@ -33,10 +30,11 @@ export default {
   methods: {
     getSelfGradeDetails: function () {
       const prams = {
-        userID: window.localStorage.getItem('id')
+        user_id: window.localStorage.getItem('id')
       }
-      getUserGrade(prams).then(response => {
-        this.selfDetails.push(response.data.info)
+      getMyNewGradeTable(prams).then(response => {
+        this.selfDetails = response.data.info
+        console.log('测试')
         console.log(this.selfDetails)
       })
     },
@@ -52,5 +50,4 @@ export default {
   .tableContainer{
     text-align: center;
   }
-
 </style>

@@ -2,7 +2,7 @@
   <div class="app-container">
 <!--    <h1>这是用户反馈组件</h1>-->
     <el-row>
-      <h4>2017-2018学年第一学期七年级期中考试考试总结</h4>
+      <h4>{{this.examType}}</h4>
     </el-row>
     <el-row style="padding-top: 30px">
       <div class="buttonContainer">
@@ -137,7 +137,6 @@ import studentSummaryBook from '~/components/dialog/studentSummaryBook'
 export default {
   name: 'userfeedback',
   components: {studentSummaryBook},
-
   methods: {
     notice: function () {
       this.$message({
@@ -146,10 +145,10 @@ export default {
       })
     }
   },
-
   data () {
     return {
       goodSubjectList: [],
+      examType: window.localStorage.getItem('examType'),
       badSubjectList: [],
       Enhance: [],
       nextEnhance: [],

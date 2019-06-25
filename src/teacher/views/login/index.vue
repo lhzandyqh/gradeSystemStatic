@@ -32,7 +32,9 @@ export default {
   data () {
     return {
       username: '',
-      password: ''
+      password: '',
+      examType: '',
+      classGrade: []
     }
   },
   methods: {

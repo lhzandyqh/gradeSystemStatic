@@ -1,7 +1,7 @@
 <template>
   <div class="appcontainer">
     <el-row>
-      <h4>2017-2018学年第一学期七年级期中考试</h4>
+      <h4>{{this.examType}}</h4>
       <span style="font-weight: bold;color: #19c237">─成绩概况─</span>
     </el-row>
     <el-row style="margin-top: 20px">
@@ -30,7 +30,8 @@ export default {
     return {
       radio: 1,
       subjectTableData: [],
-      processedData: []
+      processedData: [],
+      examType: window.localStorage.getItem('examType')
     }
   },
   methods: {

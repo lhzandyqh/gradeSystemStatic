@@ -11,7 +11,7 @@
           :data="tableData"
           border
           stripe
-          style="width: 82%;text-align: center">
+          style="width: 90%;text-align: center">
           <el-table-column
             align="center"
             prop="subject"
@@ -21,7 +21,7 @@
           <el-table-column
             align="center"
             prop="radiodiv"
-            label="超越因子"
+            label="单科贡献率"
             width="200">
           </el-table-column>
           <el-table-column

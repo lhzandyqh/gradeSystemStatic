@@ -2,7 +2,7 @@
   <div class="app-container">
 <!--    <h1>这是试卷分析组件</h1>-->
     <el-row>
-      <h4>{{this.examName}}</h4>
+      <h4>{{this.examType}}</h4>
     </el-row>
     <el-row style="padding-top: 30px">
       <div class="twoButton">
@@ -154,8 +154,8 @@ export default {
       console.log(this.radio)
       console.log(this.subject)
       const prams = {
-        userId: 235,
-        examName: this.examName,
+        userId: window.localStorage.getItem('id'),
+        examName: this.examType,
         examSubject: this.subject,
         subjectNumber: this.problemNum,
         subjectType: this.problemType,
@@ -174,7 +174,7 @@ export default {
     getMySaveData: function () {
       const prams = {
         userId: window.localStorage.getItem('id'),
-        examName: this.examName
+        examName: this.examType
       }
       lookMySaveAnalysis(prams).then(response => {
         this.tableData = response.data.info
@@ -226,7 +226,7 @@ export default {
   components: {examPaperAnalysis, studentExamAnalyze, paperSaveAnalyze},
   data () {
     return {
-      examName: '2017-2018学年第一学期七年级期中考试',
+      examType: window.localStorage.getItem('examType'),
       problemType: '',
       radio: 1,
       subject: '',

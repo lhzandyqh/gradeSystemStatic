@@ -57,13 +57,14 @@
       </div>
       <div slot="footer" class="dialog-footer">
         <el-button @click="outerVisible = false">取 消</el-button>
-        <el-button type="primary" @click="outerVisible = false">提 交</el-button>
+        <el-button type="primary" @click="uploadSave">提 交</el-button>
       </div>
     </el-dialog>
   </div>
 </template>
 
 <script>
+import { updateSaveSummary } from '~/api/studentGetData'
 export default {
   name: 'paperSaveAnalyze',
   props: {
@@ -77,10 +78,21 @@ export default {
       this.index = index
       this.content = content
       this.innerVisible = true
+    },
+    uploadSave: function () {
+      const prams = {
+        userId: window.localStorage.getItem('id'),
+        examName: window.localStorage.getItem('examType')
+      }
+      updateSaveSummary(prams).then(res => {
+        console.log('提交成功')
+      })
     }
   },
   data () {
     return {
+      examName: window.localStorage.getItem('examType'),
+      userId: window.localStorage.getItem('id'),
       outerVisible: false,
       innerVisible: false,
       index: '',

@@ -2,7 +2,7 @@
   <div class="container">
     <!--    <h1>这是超越自我模块</h1>-->
     <el-row>
-      <h4>2017-2018学年第一学期七年级期中考试</h4>
+      <h4>{{this.examType}}</h4>
       <span style="font-weight: bold;color: #19c237">─理想成绩─</span><br><br>
       <span style="text-align: center;font-size: 14px;font-weight: bolder">总结失误，提升准确率，提高考试成绩！</span><br>
     </el-row>
@@ -29,7 +29,8 @@ export default {
   data () {
     return {
       imgUrl: require('../../../../static/images/beyondself.png'),
-      subjectTableData: []
+      subjectTableData: [],
+      examType: window.localStorage.getItem('examType')
     }
   },
   methods: {
