@@ -33,7 +33,7 @@
               </template>
               <el-menu-item-group>
                 <el-menu-item index="/gradereport/newestAnalysis">最新成绩分析</el-menu-item>
-                <el-menu-item >历次成绩分析</el-menu-item>
+                <el-menu-item index="/gradereport/allPrevious">历次成绩分析</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="3">

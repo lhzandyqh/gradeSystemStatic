@@ -47,7 +47,7 @@ export default {
           subjectName: '占位'
         }
       ],
-      name: '我只想单纯的测试哈名字'
+      name: '年级成绩六率分析'
     }
   }
 }
