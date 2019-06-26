@@ -12,7 +12,7 @@
       </el-dialog>
       <div class="zonjie">
         <el-table
-          :data="tableData"
+          :data="updateData"
           height="250"
           stripe
           style="width: 100%">
@@ -23,7 +23,7 @@
             width="140">
           </el-table-column>
           <el-table-column
-            prop="title"
+            prop="examName"
             label="总结标题"
             align="center"
             width="400">
@@ -45,17 +45,36 @@
 </template>
 
 <script>
+import {getUpdateWrongNumber} from '~/api/studentGetData'
 export default {
   name: 'studentSummaryBook',
+  props: {
+    updateData: {
+      type: Array,
+      required: true
+    }
+  },
   methods: {
     readSummary: function (index, content) {
-      this.index = index
-      this.content = content
-      this.innerVisible = true
+      console.log('输出content')
+      console.log(content.examName)
+      const prams = {
+        userId: window.localStorage.getItem('id'),
+        examName: content.examName
+      }
+      getUpdateWrongNumber(prams).then(response => {
+        this.finalData = response.data.info
+        console.log('输出finaldata')
+        console.log(response.data.info)
+        this.index = this.finalData[0].examSubject
+        this.content = this.finalData[0].knowledgePoint
+        this.innerVisible = true
+      })
     }
   },
   data () {
     return {
+      finalData: [],
       outerVisible: false,
       innerVisible: false,
       index: '',

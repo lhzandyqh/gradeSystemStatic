@@ -7,7 +7,7 @@
     <el-row style="padding-top: 30px">
       <div class="twoButton">
         <div class="buttonContainer">
-          <student-exam-analyze></student-exam-analyze>
+          <student-exam-analyze :updateData="updateData"></student-exam-analyze>
         </div>
         <div class="buttonContainer">
 <!--          <el-button type="success" icon="el-icon-edit" @click="dialogVisible = true" plain>已保存分析</el-button>-->
@@ -138,13 +138,21 @@
 import examPaperAnalysis from '~/components/tables/examPaperAnalysis'
 import studentExamAnalyze from '~/components/dialog/studentExamAnalyze'
 import paperSaveAnalyze from '~/components/dialog/paperSaveAnalyze'
-import {savePaperAnalysis, lookMySaveAnalysis} from '~/api/studentGetData'
+import {savePaperAnalysis, lookMySaveAnalysis, getExamName} from '~/api/studentGetData'
 export default {
   name: 'paperanalysis',
   mounted () {
     this.getMySaveData()
+    this.getUpdateData()
   },
   methods: {
+    getUpdateData: function () {
+      getExamName().then(response => {
+        this.updateData = response.data.info
+        console.log('我是要给提交组件的数据')
+        console.log(this.updateData)
+      })
+    },
     saveData: function () {
       // this.$message({
       //   message: '功能尚未开通',
@@ -227,6 +235,7 @@ export default {
   data () {
     return {
       examType: window.localStorage.getItem('examType'),
+      updateData: [],
       problemType: '',
       radio: 1,
       subject: '',

@@ -4,10 +4,12 @@
 
 <script>
 import echarts from 'echarts'
+import { getSingleSubjectTimeData } from '~/api/studentGetData'
 export default {
   name: 'singleSubjectAnalysis',
   data () {
     return {
+      getData: [],
       option: {
         title: {
           text: '某地区蒸发量和降水量',
@@ -17,7 +19,7 @@ export default {
           trigger: 'axis'
         },
         legend: {
-          data: ['蒸发量', '降水量', '储量']
+          data: [] // '蒸发量', '降水量', '储量'
         },
         toolbox: {
           show: true,
@@ -32,7 +34,7 @@ export default {
         xAxis: [
           {
             type: 'category',
-            data: ['1月', '2月', '3月', '4月', '5月', '6月']
+            data: [] // '1月', '2月', '3月', '4月', '5月', '6月'
           }
         ],
         yAxis: [
@@ -42,14 +44,14 @@ export default {
         ],
         series: [
           {
-            name: '储量',
+            name: '', // 储量
             type: 'bar',
             itemStyle: {
               normal: {
                 color: '#31655A'
               }
             },
-            data: [3.0, 6.9, 12.0, 20.2, 35.6, 68.7],
+            data: [3.0, 6.9, 12.0, 20.2, 35.6, 68.7], // 3.0, 6.9, 12.0, 20.2, 35.6, 68.7
             markPoint: {
               data: [
                 {type: 'max', name: '最大值'},
@@ -63,14 +65,14 @@ export default {
             }
           },
           {
-            name: '蒸发量',
+            name: '', // 蒸发量
             type: 'bar',
             itemStyle: {
               normal: {
                 color: '#AED75D'
               }
             },
-            data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7],
+            data: [], // 2.0, 4.9, 7.0, 23.2, 25.6, 76.7
             markPoint: {
               data: [
                 {type: 'max', name: '最大值'},
@@ -84,14 +86,14 @@ export default {
             }
           },
           {
-            name: '降水量',
+            name: '', // 降水量
             type: 'bar',
             itemStyle: {
               normal: {
                 color: '#E0EC89'
               }
             },
-            data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7],
+            data: [], // 2.6, 5.9, 9.0, 26.4, 28.7, 70.7
             markPoint: {
               data: [
                 {name: '年最高', value: 182.2, xAxis: 7, yAxis: 183},
@@ -113,6 +115,20 @@ export default {
   },
   methods: {
     initChart: function () {
+      const prams = {
+        user_id: window.localStorage.getItem('id')
+      }
+      getSingleSubjectTimeData(prams).then(response => {
+        this.getData = response.data.info
+        let i = 0
+        while (i < this.getData.length) {
+          // this.option.legend.data.push(this.getData[i].subject)
+          this.option.xAxis[0].data.push(this.getData[i].subject)
+          i = i + 1
+        }
+        console.log('检测值')
+        console.log(this.option.series[0].data)
+      })
       this.chart = echarts.init(document.getElementById('singleAnalysis'))
       this.chart.setOption(this.option)
     }

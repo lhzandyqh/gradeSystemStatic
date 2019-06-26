@@ -13,23 +13,32 @@
     <el-row style="margin-top: 20px">
       <successive-grade-score style="margin-left: 25%"></successive-grade-score>
     </el-row>
+    <el-row style="padding-top: 40px">
+      <span style="font-weight: bold;color: #19c237;font-size: 20px">─学期内历次单科成绩─</span>
+    </el-row>
+    <el-row style="padding-top: 20px">
+      <preivious-subject-grade-table :singleData="singleData" style="margin-left: 5%"></preivious-subject-grade-table>
+    </el-row>
   </div>
 </template>
 
 <script>
 import successiveGradeTable from '~/components/tables/successiveGradeTable'
+import preiviousSubjectGradeTable from '~/components/tables/preiviousSubjectGradeTable'
 import successiveGradeScore from '~/components/charts/successiveGradeScore'
-import { getSuccessiveGradeTable } from '~/api/studentGetData'
+import { getSuccessiveGradeTable, getSingleSubjectSuccessivegrade } from '~/api/studentGetData'
 export default {
   name: 'successivegrade',
-  components: {successiveGradeTable, successiveGradeScore},
+  components: {successiveGradeTable, successiveGradeScore, preiviousSubjectGradeTable},
   mounted () {
     this.getSuccessiveData()
+    this.getSingleData()
   },
   data () {
     return {
       successiveData: [],
-      successiveDataSpace: []
+      successiveDataSpace: [],
+      singleData: []
     }
   },
   methods: {
@@ -42,6 +51,14 @@ export default {
         // this.successiveData.push(this.successiveDataSpace[0])
         this.successiveData = response.data.info
         console.log(this.successiveData)
+      })
+    },
+    getSingleData: function () {
+      const prams = {
+        user_id: window.localStorage.getItem('id')
+      }
+      getSingleSubjectSuccessivegrade(prams).then(response => {
+        this.singleData = response.data.info
       })
     }
   }

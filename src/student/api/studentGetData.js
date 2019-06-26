@@ -144,4 +144,47 @@ export function updateSaveSummary (parems) {
   })
 }
 
-// 获取
+// 获取单科历次成绩
+export function getSingleSubjectSuccessivegrade (parems) {
+  return request({
+    url: '/api/score/findAllPrevious',
+    method: 'get',
+    params: parems
+  })
+}
+
+// 获取单科时序对比分析图数据
+export function getSingleSubjectTimeData (parems) {
+  return request({
+    url: '/api/score/findSingleSequenceDiagram',
+    method: 'post',
+    params: parems
+  })
+}
+
+// 获取考试名称
+export function getExamName (parems) {
+  return request({
+    url: '/api/summary/findSubmitExamId',
+    method: 'post',
+    params: parems
+  })
+}
+
+// 获取已提交的试卷错题总结
+export function getUpdateWrongNumber (parems) {
+  return request({
+    url: '/api/summary/myWrongQuestionSummarySubmitFoundation',
+    method: 'post',
+    params: parems
+  })
+}
+
+// 获取成绩排名变化的接口
+export function getRankChangeData (parems) {
+  return request({
+    url: '/api/score/getProgressAndBackDetail',
+    method: 'get',
+    params: parems
+  })
+}

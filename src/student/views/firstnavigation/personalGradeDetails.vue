@@ -7,6 +7,13 @@
         </section>
       </div>
     </el-row>
+    <el-row style="padding-top: 80px">
+      <div class="tableContainer">
+        <section ref="print">
+          <rank-change-table :rankChangeData="rankChangeData" style="margin-left: 0%"></rank-change-table>
+        </section>
+      </div>
+    </el-row>
     <el-row style="padding-top: 20px">
       <el-button type="success" @click="printTable" plain>打印成绩单</el-button>
     </el-row>
@@ -15,16 +22,18 @@
 
 <script>
 import gradeDetailsTable from '~/components/tables/gradeDetailsTable'
-import {getMyNewGradeTable} from '~/api/studentGetData'
+import rankChangeTable from '~/components/tables/rankChangeTable'
+import {getMyNewGradeTable, getRankChangeData} from '~/api/studentGetData'
 export default {
   name: 'personalGradeDetails',
-  components: {gradeDetailsTable},
+  components: {gradeDetailsTable, rankChangeTable},
   mounted () {
     this.getSelfGradeDetails()
   },
   data () {
     return {
-      selfDetails: []
+      selfDetails: [],
+      rankChangeData: []
     }
   },
   methods: {
@@ -36,6 +45,9 @@ export default {
         this.selfDetails = response.data.info
         console.log('测试')
         console.log(this.selfDetails)
+      })
+      getRankChangeData(prams).then(response => {
+        this.rankChangeData.push(response.data.info)
       })
     },
     printTable: function () {

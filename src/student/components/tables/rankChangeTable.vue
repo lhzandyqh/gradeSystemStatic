@@ -1,60 +1,60 @@
 <template>
-  <div class="app_container">
+  <div class="container">
     <el-row>
       <el-table
-        :data="singleData"
+        :data="rankChangeData"
         border
-        style="width: 100%;align-content: center">
+        style="width: 120%">
         <el-table-column
-          prop="examType"
           align="center"
-          width="250"
-          label="考试名称">
-        </el-table-column>
-        <el-table-column
-          prop="yuwenScore"
-          align="center"
-          label="语文">
-        </el-table-column>
-        <el-table-column
-          prop="shuxueScore"
-          align="center"
-          label="数学">
-        </el-table-column>
-        <el-table-column
-          prop="yingyuScore"
-          align="center"
-          label="英语">
+          prop="schoolindexprogess"
+          width="150"
+          label="总成绩排名">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="wuliCoversion"
-          label="物理">
+          prop="yuwenprogess"
+          label="语文排名">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="huaxueCoversion"
-          label="化学">
+          prop="shuxueprogess"
+          label="数学排名">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="shengwuCoversion"
-          label="生物">
+          prop="yingyuprogess"
+          label="英语排名">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="lishiCoversion"
-          label="历史">
+          prop="wuliprogess"
+          label="物理排名">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="diliCoversion"
-          label="地理">
+          prop="huaxueprogess"
+          label="化学排名">
         </el-table-column>
         <el-table-column
           align="center"
-          prop="zhengzhiCoversion"
-          label="政治">
+          prop="shengwuprogess"
+          label="生物排名">
+        </el-table-column>
+        <el-table-column
+          align="center"
+          prop="zhengzhiprogess"
+          label="政治排名">
+        </el-table-column>
+        <el-table-column
+          align="center"
+          prop="diliprogess"
+          label="地理排名">
+        </el-table-column>
+        <el-table-column
+          align="center"
+          prop="lishiprogess"
+          label="历史排名">
         </el-table-column>
       </el-table>
     </el-row>
@@ -63,16 +63,11 @@
 
 <script>
 export default {
-  name: 'preiviousSubjectGradeTable',
+  name: 'rankChangeTable',
   props: {
-    singleData: {
+    rankChangeData: {
       type: Array,
       required: true
-    }
-  },
-  data () {
-    return {
-      tableData: []
     }
   }
 }
