@@ -11,8 +11,12 @@
         <el-table-column prop="classArg" label="标准差"></el-table-column>
       </el-table>
     </el-row>
-    <el-row>
-      <histogram></histogram>
+    <el-row >
+ <span style="font-weight: bold;color: #18a689">─ 学期内年级历次总成绩变化趋势图 ─</span>
+     <div style="padding-left:25%;margin-top:20px">
+      
+        <histogram :chartData='chartData'></histogram>
+     </div>
     </el-row>
   </div>
 </template>
@@ -31,7 +35,8 @@ export default {
         {
           date: "2019-6-25"
         }
-      ]
+      ],
+      chartData:{},
     };
   }
 };
