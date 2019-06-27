@@ -25,7 +25,6 @@ service.interceptors.request.use(
     Promise.reject(error)
   }
 )
-
 // response interceptor
 service.interceptors.response.use(
   response => response,
