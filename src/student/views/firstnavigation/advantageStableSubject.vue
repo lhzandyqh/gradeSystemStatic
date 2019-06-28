@@ -1,7 +1,8 @@
 <template>
   <div class="app-container">
-    <h1>这是优势及稳定学科</h1>
-    <advantage-and-stable></advantage-and-stable>
+    <el-row style="padding-top: 30px">
+      <advantage-and-stable></advantage-and-stable>
+    </el-row>
   </div>
 </template>
 

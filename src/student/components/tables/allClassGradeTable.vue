@@ -17,11 +17,11 @@
         label="考号"
         width="70">
       </el-table-column>
-      <el-table-column
-        prop="studentName"
-        label="姓名"
-        width="65">
-      </el-table-column>
+<!--      <el-table-column-->
+<!--        prop="studentName"-->
+<!--        label="姓名"-->
+<!--        width="65">-->
+<!--      </el-table-column>-->
       <el-table-column
         prop="classId"
         label="班级/行政班"
@@ -37,11 +37,11 @@
         label="班名次"
         width="65">
       </el-table-column>
-      <el-table-column
-        prop="advancefall"
-        label="进步/后退"
-        width="100">
-      </el-table-column>
+<!--      <el-table-column-->
+<!--        prop="advancefall"-->
+<!--        label="进步/后退"-->
+<!--        width="100">-->
+<!--      </el-table-column>-->
       <el-table-column
         prop="yuwenScore"
         label="语文"
@@ -63,7 +63,7 @@
         width="100">
       </el-table-column>
       <el-table-column
-        prop="physics"
+        prop="wuliCoversion"
         label="物理"
         width="70">
       </el-table-column>

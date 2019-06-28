@@ -110,6 +110,7 @@ export default {
         this.$set(this.studentInformation, 0, {studentName: this.dataSpace[0].studentName, studentNumber: this.dataSpace[0].studentNumber, id: this.dataSpace[0].id, gradeName: this.dataSpace[0].gradeName, className: this.dataSpace[0].className})
         console.log(this.studentInformation)
         window.localStorage.setItem('studentName', this.studentInformation[0].studentName)
+        window.localStorage.setItem('studentNumber', this.studentInformation[0].studentNumber)
       })
     },
     gofisrtpage: function () {

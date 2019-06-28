@@ -188,3 +188,39 @@ export function getRankChangeData (parems) {
     params: parems
   })
 }
+
+// 获取优势及稳定学科的数据
+export function getAdvantageAndStableData (parems) {
+  return request({
+    url: '/api/score/findAdvantageAndStability',
+    method: 'post',
+    params: parems
+  })
+}
+
+// 修改密码
+export function changePassword (parems) {
+  return request({
+    url: '/accout/editpassword',
+    method: 'post',
+    params: parems
+  })
+}
+
+// 获取需要提高科目列表
+export function getNeedEnhanceSubjectData (parems) {
+  return request({
+    url: '/api/score/getMostBackSubject',
+    method: 'get',
+    params: parems
+  })
+}
+
+// 获取进步最快科目数据
+export function getMostEnhancedData (parems) {
+  return request({
+    url: '/api/score/getMostProgressSubject',
+    method: 'get',
+    params: parems
+  })
+}

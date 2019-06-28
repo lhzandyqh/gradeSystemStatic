@@ -4,7 +4,7 @@
       <el-table
         :data="selfDetails"
         border
-        style="width: 100%">
+        style="width: 98%">
         <el-table-column
           align="center"
           prop="examType"

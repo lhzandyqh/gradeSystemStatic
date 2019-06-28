@@ -11,13 +11,13 @@
               <div class="informationcontent">
                 <span>本次成绩</span>
                 <br>
-                <span>{{this.gradeInformation[0].coversionTotal}}</span>
+                <span style="font-size: 20px;font-weight: bolder">{{this.gradeInformation[0].coversionTotal}}</span>
               </div>
             </el-card>
             <el-card class="box-card-son">
               <div class="informationcontent">
                 <span>班级占位</span><br>
-                <span style="font-size: 20px">{{this.gradeInformation[0].classIndex}}</span><br>
+                <span style="font-size: 20px;font-weight: bolder">{{this.gradeInformation[0].classIndex}}</span><br>
                 <span>年级占位:{{this.gradeInformation[0].schoolIndex}}</span>
               </div>
             </el-card>
@@ -25,14 +25,18 @@
               <div class="informationcontent">
                 <span>进步最快学科</span><br>
                 <br>
-                <span style="font-size: 20px">数学</span>
+                <span style="font-size: 18px;font-weight: bolder">{{this.mostEnhance[0].one }}</span>
+                <span style="font-size: 18px;font-weight: bolder">{{this.mostEnhance[0].two}}</span>
+                <span style="font-size: 18px;font-weight: bolder">{{this.mostEnhance[0].three}}</span>
               </div>
             </el-card>
             <el-card class="box-card-son">
               <div class="informationcontent">
                 <span>需提高科目</span><br>
                 <br>
-                <span style="font-size: 20px">化学</span>
+                <span style="font-size: 18px;font-weight: bolder">{{this.needEnhance[0].one}}</span>
+                <span style="font-size: 18px;font-weight: bolder">{{this.needEnhance[0].two}}</span>
+                <span style="font-size: 18px;font-weight: bolder">{{this.needEnhance[0].three}}</span>
               </div>
             </el-card>
           </el-card>
@@ -118,45 +122,6 @@
                     </div>
                   </div>
                 </el-timeline-item>
-                <el-timeline-item>
-                  <div class="timelinecontainer">
-                    <div class="exam">
-                      <span style="font-weight: bold">{{activities[2].content}}</span>
-                    </div>
-                    <div class="timestamp">
-                      <span style="font-weight: bold">{{activities[2].timestamp}}</span>
-                    </div>
-                    <div class="report">
-                      <span style="padding-right: 100px">查看报告</span>
-                    </div>
-                  </div>
-                </el-timeline-item>
-                <el-timeline-item>
-                  <div class="timelinecontainer">
-                    <div class="exam">
-                      <span style="font-weight: bold">{{activities[3].content}}</span>
-                    </div>
-                    <div class="timestamp">
-                      <span style="font-weight: bold">{{activities[3].timestamp}}</span>
-                    </div>
-                    <div class="report">
-                      <span style="padding-right: 100px">查看报告</span>
-                    </div>
-                  </div>
-                </el-timeline-item>
-                <el-timeline-item>
-                  <div class="timelinecontainer">
-                    <div class="exam">
-                      <span style="font-weight: bold">{{activities[4].content}}</span>
-                    </div>
-                    <div class="timestamp">
-                      <span style="font-weight: bold">{{activities[4].timestamp}}</span>
-                    </div>
-                    <div class="report">
-                      <span style="padding-right: 100px">查看报告</span>
-                    </div>
-                  </div>
-                </el-timeline-item>
               </el-timeline>
             </div>
           </el-card>
@@ -167,15 +132,35 @@
 </template>
 
 <script>
-import { getUserInformation, getUserGrade, getExamInformation } from '~/api/studentGetData'
+import { getUserInformation, getUserGrade, getExamInformation, getNeedEnhanceSubjectData, getMostEnhancedData } from '~/api/studentGetData'
 export default {
   name: 'firstpage',
   mounted () {
     this.getStudentInformation()
     this.getStudentGrade()
     this.getStudentExam()
+    this.getSubjectList()
   },
   methods: {
+    getSubjectList: function () {
+      const prams = {
+        user_id: window.localStorage.getItem('id')
+      }
+      getNeedEnhanceSubjectData(prams).then(response => {
+        this.enhanceSpace = response.data.info
+        console.log('测试enhanceSpace')
+        console.log(this.enhanceSpace)
+        this.$set(this.needEnhance, 0, {one: this.enhanceSpace[0], two: this.enhanceSpace[1], three: this.enhanceSpace[2]})
+        console.log(this.needEnhance)
+      })
+      getMostEnhancedData(prams).then(response => {
+        this.mostSpace = response.data.info
+        console.log('测试mostSpace')
+        console.log(this.mostSpace)
+        this.$set(this.mostEnhance, 0, {one: this.mostSpace[0], two: this.mostSpace[1], three: this.mostSpace[2]})
+        console.log(this.mostEnhance)
+      })
+    },
     getStudentInformation: function () {
       console.log('输入得到的ID')
       console.log(window.localStorage.getItem('id'))
@@ -267,6 +252,18 @@ export default {
         gradeName: '',
         className: ''
       }],
+      // 需要提高的科目列表
+      needEnhance: [{
+        one: '',
+        two: '',
+        three: ''
+      }],
+      // 提升最快的科目列表
+      mostEnhance: [{
+        one: '',
+        two: '',
+        three: ''
+      }],
       // 考试信息
       examInformation: [],
       // 个人信息数据暂存表
@@ -274,7 +271,11 @@ export default {
       // 成绩数据暂存表
       dataSpaceGrade: [],
       // 成绩信息暂存表
-      dataSpaceExam: []
+      dataSpaceExam: [],
+      // 需要提高信息暂存表
+      enhanceSpace: [],
+      // 提高最快信息暂存表
+      mostSpace: []
     }
   }
 }
