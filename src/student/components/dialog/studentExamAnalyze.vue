@@ -18,7 +18,7 @@
           style="width: 100%">
           <el-table-column
             prop="date"
-            label="总结日期"
+             label="记录日期"
             align="center"
             width="140">
           </el-table-column>

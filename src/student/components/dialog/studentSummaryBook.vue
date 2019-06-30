@@ -12,19 +12,23 @@
       </el-dialog>
       <div class="zonjie">
         <el-table
-          :data="tableData"
+          :data="sumData"
           height="250"
           stripe
           style="width: 100%">
           <el-table-column
             prop="date"
-            label="总结日期"
+            label="编号"
             align="center"
             width="140">
+            <template slot-scope="scope">
+              <!--            // 自动生成序号-->
+              {{scope.$index+1}}
+            </template>
           </el-table-column>
           <el-table-column
-            prop="title"
-            label="总结标题"
+            prop="examName"
+            label="考试名称"
             align="center"
             width="400">
           </el-table-column>
@@ -47,6 +51,12 @@
 <script>
 export default {
   name: 'studentSummaryBook',
+  props: {
+    sumData: {
+      type: Array,
+      required: true
+    }
+  },
   methods: {
     readSummary: function (index, content) {
       this.index = index
@@ -60,34 +70,7 @@ export default {
       innerVisible: false,
       index: '',
       content: '',
-      tableData: [{
-        date: '2016-11-02',
-        title: '2016-2017学年第二学期七年级十一月月考考试总结'
-      }, {
-        date: '2016-10-04',
-        title: '2016-2017学年第二学期七年级十月月考考试总结'
-      }, {
-        date: '2016-09-04',
-        title: '2016-2017学年第二学期七年级九月月考考试总结'
-      }, {
-        date: '2016-06-04',
-        title: '2016-2017学年第一学期七年级期末考试考试总结'
-      }, {
-        date: '2016-05-04',
-        title: '2016-2017学年第一学期七年级五月月考考试总结'
-      }, {
-        date: '2016-04-04',
-        title: '2016-2017学年第一学期七年级四月月考考试总结'
-      }, {
-        date: '2016-03-04',
-        title: '2016-2017学年第一学期七年级期中考试总结'
-      }, {
-        date: '2016-02-04',
-        title: '2016-2017学年第一学期七年级二月月考考试总结'
-      }, {
-        date: '2016-01-04',
-        title: '2016-2017学年第一学期七年级一月月考考试总结'
-      }]
+      tableData: []
     }
   }
 }

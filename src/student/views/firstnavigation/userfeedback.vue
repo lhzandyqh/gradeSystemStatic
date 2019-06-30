@@ -7,7 +7,7 @@
     <el-row style="padding-top: 30px">
       <div class="buttonContainer">
 <!--        <el-button type="success"  icon="el-icon-notebook-1" plain>查看我的总结</el-button>-->
-        <student-summary-book></student-summary-book>
+        <student-summary-book :sumData="sumData"></student-summary-book>
       </div>
     </el-row>
     <el-row :gutter="5" style="padding-top: 30px">
@@ -24,9 +24,9 @@
           <el-checkbox label="物理"></el-checkbox>
           <el-checkbox label="化学"></el-checkbox>
           <el-checkbox label="生物"></el-checkbox>
-          <el-checkbox label="政治" disabled></el-checkbox>
-          <el-checkbox label="历史" disabled></el-checkbox>
-          <el-checkbox label="生物" disabled></el-checkbox>
+          <el-checkbox label="政治"></el-checkbox>
+          <el-checkbox label="历史"></el-checkbox>
+          <el-checkbox label="地理"></el-checkbox>
         </el-checkbox-group>
       </el-col>
     </el-row>
@@ -44,9 +44,9 @@
           <el-checkbox label="物理"></el-checkbox>
           <el-checkbox label="化学"></el-checkbox>
           <el-checkbox label="生物"></el-checkbox>
-          <el-checkbox label="政治" disabled></el-checkbox>
-          <el-checkbox label="历史" disabled></el-checkbox>
-          <el-checkbox label="生物" disabled></el-checkbox>
+          <el-checkbox label="政治"></el-checkbox>
+          <el-checkbox label="历史"></el-checkbox>
+          <el-checkbox label="地理"></el-checkbox>
         </el-checkbox-group>
       </el-col>
     </el-row>
@@ -64,9 +64,9 @@
           <el-checkbox label="物理"></el-checkbox>
           <el-checkbox label="化学"></el-checkbox>
           <el-checkbox label="生物"></el-checkbox>
-          <el-checkbox label="政治" disabled></el-checkbox>
-          <el-checkbox label="历史" disabled></el-checkbox>
-          <el-checkbox label="生物" disabled></el-checkbox>
+          <el-checkbox label="政治"></el-checkbox>
+          <el-checkbox label="历史"></el-checkbox>
+          <el-checkbox label="地理"></el-checkbox>
         </el-checkbox-group>
       </el-col>
     </el-row>
@@ -84,9 +84,9 @@
           <el-checkbox label="物理"></el-checkbox>
           <el-checkbox label="化学"></el-checkbox>
           <el-checkbox label="生物"></el-checkbox>
-          <el-checkbox label="政治" disabled></el-checkbox>
-          <el-checkbox label="历史" disabled></el-checkbox>
-          <el-checkbox label="生物" disabled></el-checkbox>
+          <el-checkbox label="政治"></el-checkbox>
+          <el-checkbox label="历史"></el-checkbox>
+          <el-checkbox label="地理"></el-checkbox>
         </el-checkbox-group>
       </el-col>
     </el-row>
@@ -126,7 +126,7 @@
     </el-row>
     <el-row style="padding-top: 30px">
       <div class="submitButton">
-        <el-button type="primary"  icon="el-icon-finished" @click="notice" plain>提交总结</el-button>
+        <el-button type="primary"  icon="el-icon-finished" @click="uploadSummary" plain>提交总结</el-button>
       </div>
     </el-row>
   </div>
@@ -134,15 +134,55 @@
 
 <script>
 import studentSummaryBook from '~/components/dialog/studentSummaryBook'
+import {uploadMyExamSummary, getMyExamSummaryData} from '~/api/studentGetData'
 export default {
   name: 'userfeedback',
   components: {studentSummaryBook},
+  mounted () {
+    this.getSummaryData()
+  },
   methods: {
     notice: function () {
       this.$message({
         message: '功能尚未开通',
         type: 'warning'
       })
+    },
+    getSummaryData: function () {
+      const prams = {
+        user_id: window.localStorage.getItem('id')
+      }
+      getMyExamSummaryData(prams).then(response => {
+        this.sumData = response.data.info
+        console.log('测试数据有没有拿到')
+        console.log(this.sumData)
+      })
+    },
+    uploadSummary: function () {
+      console.log('我来把数组转化成字符串')
+      console.log(this.goodSubjectList.join())
+      const prams = {
+        userId: window.localStorage.getItem('id'),
+        goodSubject: this.goodSubjectList.join(),
+        notGoodSubject: this.badSubjectList.join(),
+        improveSubject: this.Enhance.join(),
+        toImprove: this.nextEnhance.join(),
+        problemExisting: this.problem.join(),
+        mySummary: this.textarea
+      }
+      uploadMyExamSummary(prams).then(
+        console.log('提交成功'),
+        this.$message({
+          message: '提交成功',
+          type: 'success'
+        }),
+        this.goodSubjectList = [],
+        this.badSubjectList = [],
+        this.Enhance = [],
+        this.nextEnhance = [],
+        this.problem = [],
+        this.textarea = ''
+      )
     }
   },
   data () {
@@ -152,7 +192,9 @@ export default {
       badSubjectList: [],
       Enhance: [],
       nextEnhance: [],
-      textarea: ''
+      problem: [],
+      textarea: '',
+      sumData: []
     }
   }
 }

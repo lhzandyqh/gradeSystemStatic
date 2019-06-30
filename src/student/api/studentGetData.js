@@ -224,3 +224,21 @@ export function getMostEnhancedData (parems) {
     params: parems
   })
 }
+
+// 提交我的考试总结
+export function uploadMyExamSummary (parems) {
+  return request({
+    url: '/api/summary/examSummaryInsert',
+    method: 'post',
+    params: parems
+  })
+}
+
+// 获取我的考试总结
+export function getMyExamSummaryData (parems) {
+  return request({
+    url: '/api/summary/examSummaryFoundation',
+    method: 'post',
+    params: parems
+  })
+}
