@@ -40,6 +40,7 @@ export default {
 
   },
   methods: {
+    
     // 登录
     loginBtn () {
       if (this.username === '') {
