@@ -1,30 +1,37 @@
 <template>
   <div class="appcontainer">
-    <!-- 科目类别 + 查询 -->
     <el-row>
-      <subjectTable></subjectTable>
+      <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tab-pane label="成绩单" name="first">
+           <tableTitle :titleList="name"></tableTitle>
+            <el-row style="margin-top: 20px;">
+      <all-class-grade-table :allGradeTableData="allGradeTableData" :tableHeader="tableInfo"></all-class-grade-table>\
+      <Administration></Administration>
     </el-row>
-
-    <!-- 列表 -->
-    <el-row style="margin-top: 20px;">
-      <all-class-grade-table :allGradeTableData="allGradeTableData" :tableHeader="tableInfo"></all-class-grade-table>
+        </el-tab-pane>
+        <el-tab-pane label="重点关注" name="second">配置管理</el-tab-pane>
+        <el-tab-pane label="班校对比" name="third">角色管理</el-tab-pane>
+        <el-tab-pane label="等级分布" name="fourth">定时任务补偿</el-tab-pane>
+        <el-tab-pane label="历次对比" name="fourth1">定时任务补偿</el-tab-pane>
+      </el-tabs>
     </el-row>
   </div>
 </template>
-
 <script>
+import tableTitle from '@/components/tables/tableTitle'
 import allClassGradeTable from '@/components/tables/allClassGradeTable'
-import subjectTable from '@/components/tables/subjectTable'
 import { getClassGradeTable } from '@/api/studentGetData'
+import Administration from '@/components/charts/Administration'
 export default {
-  name: 'classgradetable',
-  components: { allClassGradeTable, subjectTable },
-  mounted () {
-    this.getGradeTableData()
+  components: {
+    tableTitle,
+    allClassGradeTable,
+    Administration
   },
   data () {
     return {
-      radio: 1,
+      activeName: 'first',
+      name: '行政班各科分析表',
       allGradeTableData: [],
       tableInfo: [
         { prop: 'id', lable: '序号' },
@@ -57,9 +64,11 @@ export default {
         this.allGradeTableData = response.data.info
       })
     }
+  },
+  mounted () {
+    this.getGradeTableData()
   }
 }
 </script>
-
-<style scoped>
+<style>
 </style>

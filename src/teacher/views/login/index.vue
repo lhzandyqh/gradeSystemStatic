@@ -34,10 +34,15 @@ export default {
       username: '',
       password: '',
       examType: '',
-      classGrade: []
+      classGrade: [],
+      id: null
     }
   },
+  mounted () {
+
+  },
   methods: {
+
     // 登录
     loginBtn () {
       if (this.username === '') {
@@ -60,34 +65,11 @@ export default {
       }
       login(prams).then(res => {
         if (res.data.errno === 200) {
-          this.id = res.data.id
-          window.localStorage.setItem('id', this.id) // 把id存入缓存
           if (res.data.rolename === '学生') {
             window.location.href = '/student.html#/fisrtpage'
           }
           if (res.data.rolename === '任课教师') {
             window.location.href = '/teacher.html#/fisrtpage'
-          }
-          this.$message({
-            message: '恭喜你，登录成功',
-            type: 'success',
-            duration: 5000
-          })
-        } else {
-          if (this.username === '' || this.password === '') {
-            this.$message({
-              message: '账号和密码不能为空',
-              type: 'warning',
-              duration: 3000
-            })
-          } else {
-            if (res.data.errmsg === '密码错误') {
-              this.$message({
-                message: '密码错误',
-                type: 'warning',
-                duration: 3000
-              })
-            }
           }
         }
       })

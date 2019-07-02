@@ -22,7 +22,7 @@
           width="240">
         </el-table-column>
         <el-table-column
-          prop="fullscore"
+          prop="sumtotal"
           align="center"
           label="满分值"
           width="80">
@@ -40,7 +40,7 @@
           width="80">
         </el-table-column>
         <el-table-column
-          prop="schoolIndex"
+          prop="studentschoolIndex"
           align="center"
           label="本校排名">
         </el-table-column>
