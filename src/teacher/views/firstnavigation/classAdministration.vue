@@ -20,7 +20,7 @@
 <script>
 import tableTitle from "@/components/tables/tableTitle";
 import allClassGradeTable from '@/components/tables/allClassGradeTable'
-import { getClassGradeTable } from '@/api/studentGetData'
+import { getClassGradeTable,AdminClassClassScore } from '@/api/studentGetData'
 import Administration from '@/components/charts/Administration'
 export default {
     components:{
@@ -40,7 +40,7 @@ export default {
         { prop: 'classId', lable: '班级/行政班' },
         { prop: 'coversionTotal', lable: '总分' },
         { prop: 'classIndex', lable: '班名次' },
-        { prop: 'classIndex', lable: '校名次' },
+        { prop: 'schoolIndex', lable: '校名次' },
         { prop: 'advancefall', lable: '进步/后退' },
         { prop: 'yuwenScore', lable: '语文' },
         { prop: 'shuxueScore', lable: '数学' },
@@ -57,10 +57,12 @@ export default {
   },
   methods:{
        getGradeTableData: function () {
+         
       const prams = {
-        userID: 1
+        classname: '1',
+        gradename:'高二'
       }
-      getClassGradeTable(prams).then(response => {
+      AdminClassClassScore(prams).then(response => {
         this.allGradeTableData = response.data.info
       })
     }

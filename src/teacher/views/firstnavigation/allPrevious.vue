@@ -5,10 +5,10 @@
     </el-row>
     <el-row>
       <el-table :data="newList" border style="width: 50%;align-content: center;margin:20px auto;">
-        <el-table-column prop="date" label="日期"></el-table-column>
-        <el-table-column prop="score" label="考试名称"></el-table-column>
-        <el-table-column prop="classIndex" label="平均分"></el-table-column>
-        <el-table-column prop="classArg" label="标准差"></el-table-column>
+        <el-table-column prop="exam_date" align="center" label="日期"></el-table-column>
+        <el-table-column prop="exam_type" align="center" label="考试名称"></el-table-column>
+        <el-table-column prop="pingjun" align="center" label="平均分"></el-table-column>
+        <el-table-column prop="biaozhun" align="center" label="标准差"></el-table-column>
       </el-table>
     </el-row>
     <el-row >
@@ -23,6 +23,7 @@
 <script>
 import tableTitle from "@/components/tables/tableTitle";
 import histogram from "@/components/charts/histogram";
+import { gradePreviousAnalysis } from "@/api/studentGetData";
 export default {
   components: {
     tableTitle,
@@ -38,6 +39,21 @@ export default {
       ],
       chartData:{},
     };
+  },
+  mounted(){
+
+  },
+  created(){
+this.getList()
+  },
+  methods:{
+    getList(){
+      gradePreviousAnalysis().then(res =>{
+        if(res.status === 200){
+          this.newList = res.data.json
+        }
+      })
+    }
   }
 };
 </script>

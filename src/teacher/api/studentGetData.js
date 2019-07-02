@@ -1,109 +1,136 @@
 
 import request from '@/utils/request'
 // 获取用户信息
-export function getUserInformation (parems) {
+export function getUserInformation (params) {
   return request({
     url: '/api/index/student_info',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 获取用户成绩信息
-export function getUserGrade (parems) {
+export function getUserGrade (params) {
   return request({
     url: '/api/index/score_info',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 获取考试信息
-export function getExamInformation (parems) {
+export function getExamInformation (params) {
   return request({
     url: '/api/index/exam_info',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 获取班级成绩超越率
-export function getClassGradeByondRate (parems) {
+export function getClassGradeByondRate (params) {
   return request({
     url: '/api/byondrate/class_byond_rate',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 获取学校成绩超越率
-export function getSchoolGradeByondRate (parems) {
+export function getSchoolGradeByondRate (params) {
   return request({
     url: '/api/byondrate/school_byond_rate',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 获取班级成绩
-export function getClassGradeTable (parems) {
+export function getClassGradeTable (params) {
   return request({
     url: '/api/score/class_score',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 获取全科成绩
-export function getSubjectGradeTable (parems) {
+export function getSubjectGradeTable (params) {
   return request({
     url: '/api/score/single_score',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 获取历次成绩
-export function getSuccessiveGradeTable (parems) {
+export function getSuccessiveGradeTable (params) {
   return request({
     url: '/api/score/exams_score',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 获取学校和班级的超越率
-export function getSchoolAndClassRate (parems) {
+export function getSchoolAndClassRate (params) {
   return request({
     url: '/api/byondrate/total_byond_rate',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 输入成绩信息重新排名
-export function getNewGradeRank (parems) {
+export function getNewGradeRank (params) {
   return request({
     url: '/api/score/aims_score_rank',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
 // 个人成绩详情查询
-export function getSelfGradeDetails (parems) {
+export function getSelfGradeDetails (params) {
   return request({
     url: '/importinit/findPreviousGradebyUser_id',
     method: 'get',
-    params: parems
+    params: params
   })
 }
 
-export function login (parems) {
+export function login (params) {
   // 登录
   return request({
     url: '/accout/login',
     method: 'POST',
-    params: parems
+    params: params
+  })
+}
+
+export function AdminClassClassScore (params) {
+  // 班级分析-行政班-成绩单
+  return request({
+    url: '/api/classanalysis/AdminClassClassScore',
+    method: 'POST',
+    params
+  })
+}
+
+export function gradeExamTotal (params) {
+  // 年级成绩
+  return request({
+    url: '/api/grade/gradeExamTotal',
+    method: 'get',
+    params: params
+  })
+}
+
+export function gradePreviousAnalysis (params) {
+  // 历次年级成绩
+  return request({
+    url: '/api/grade/gradePreviousAnalysis',
+    method: 'get',
+    params: params
   })
 }

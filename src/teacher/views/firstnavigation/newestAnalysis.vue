@@ -4,7 +4,9 @@
       <tableTitle :titleList="name"></tableTitle>
     </el-row>
     <el-row>
-     <p  style="text-align:right"> <el-button icon="el-icon-upload2">导出年级成绩六率分析报表</el-button></p>
+      <p style="text-align:right">
+        <el-button icon="el-icon-upload2">导出年级成绩六率分析报表</el-button>
+      </p>
       <div style="padding:10px 0;font-size:14px;color:#333">
         高分率：90%-100%
         优秀率：85%-90%
@@ -35,22 +37,37 @@
   </div>
 </template>
 <script>
-import tableTitle from '@/components/tables/tableTitle'
+import { gradeExamTotal } from "@/api/studentGetData";
+import tableTitle from "@/components/tables/tableTitle";
 export default {
   components: {
     tableTitle
   },
-  data () {
+  data() {
     return {
       newList: [
         {
-          subjectName: '占位'
+          subjectName: "占位"
         }
       ],
-      name: '年级成绩六率分析'
+      name: "年级成绩六率分析"
+    };
+  },
+  mounted() {},
+  created() {
+    this.getList();
+  },
+  methods: {
+    getList() {
+      gradeExamTotal().then(res => {
+        if (res.data.errno === 0) {
+          this.newList = res.data.info;
+        }
+        console.log(res, 5555555555);
+      });
     }
   }
-}
+};
 </script>
 <style>
 </style>
