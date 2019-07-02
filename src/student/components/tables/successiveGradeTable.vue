@@ -4,7 +4,7 @@
       <el-table
         :data="successiveData"
         border
-        style="width: 82%">
+        style="width: 75%">
         <el-table-column
           prop="number"
           align="center"
@@ -31,12 +31,6 @@
           prop="coversionTotal"
           align="center"
           label="我的得分"
-          width="80">
-        </el-table-column>
-        <el-table-column
-          prop="ratedscore"
-          align="center"
-          label="等级分"
           width="80">
         </el-table-column>
         <el-table-column

@@ -4,7 +4,7 @@
       <single-subject-analysis></single-subject-analysis>
     </el-row>
     <el-row style="padding-top: 20px">
-      <h4>单科时序对比分析图展示单科近三次考试的成绩及各单科趋势走向</h4>
+      <span style="font-size: 15px;font-weight: bolder">单科时序对比分析图展示单科近三次考试的成绩及各单科趋势走向</span>
     </el-row>
   </div>
 </template>
