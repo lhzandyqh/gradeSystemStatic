@@ -94,7 +94,7 @@ export default {
       }
       getSubjectGradeTable(prams).then(response => {
         this.chartData = response.data.info
-        console.log(this.chartData)
+       
         // eslint-disable-next-line no-unused-vars
         var k = ''
         for (k in response.data.info) {

@@ -98,11 +98,9 @@ export default {
     };
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    handleOpen () {
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    handleClose () {
     }
     // toNew () {
     //   this.$router.push({

@@ -2,7 +2,7 @@
   <div class="appcontainer">
     <!-- 科目 -->
     <el-row>
-      <subjectTable></subjectTable>
+      <subjectTable ></subjectTable>
     </el-row>
     <!-- 列表 -->
     <el-row>

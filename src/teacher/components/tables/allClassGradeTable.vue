@@ -3,7 +3,7 @@
     <span style="font-size: 12px;">向上的红色箭头“↑5”表示前进5名 向下的绿色箭头“↓5”表示后退5名 “0”表示排名无变化 “--”表示未获得上次考试信息</span>
     <el-table
       :data="allGradeTableData"
-      :align="center"
+      align="center"
       border
       height="400"
       style="width: 100%;margin-top:10px;"
