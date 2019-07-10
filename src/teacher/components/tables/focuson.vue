@@ -6,20 +6,11 @@
         <table width="400" border="1">
           <tr>
             <td>分数</td>
-            <td>665</td>
-            <td>444</td>
-            <td>333</td>
-            <td>222</td>
-            <td>111</td>
-            <td>000</td>
+            <td v-for="item in list" :key="item">{{item.scoretotal}}</td>
           </tr>
           <tr>
             <td>姓名</td>
-            <td>汪汪</td>
-            <td>呵呵</td>
-            <td>嘿嘿</td>
-            <td>呵呵呵</td>
-            <td>哈哈哈</td>
+            <td v-for="item in list" :key="item">{{item.studentname}}</td>
           </tr>
         </table>
       </div>
@@ -28,20 +19,11 @@
         <table width="400" border="1">
           <tr>
             <td>分数</td>
-            <td>665</td>
-            <td>444</td>
-            <td>333</td>
-            <td>222</td>
-            <td>111</td>
-            <td>000</td>
+            <td v-for="item in FractionList" :key="item">{{item.scoretotal}}</td>
           </tr>
           <tr>
             <td>姓名</td>
-            <td>汪汪</td>
-            <td>呵呵</td>
-            <td>嘿嘿</td>
-            <td>呵呵呵</td>
-            <td>哈哈哈</td>
+            <td v-for="item in FractionList" :key="item">{{item.studentname}}</td>
           </tr>
         </table>
       </div>
@@ -73,8 +55,8 @@
         <table width="400" border="1">
           <tr>
             <td>分数</td>
-            <td>665</td>
-            <td>444</td>
+            <td>55</td>
+            <td>6666</td>
             <td>333</td>
             <td>222</td>
             <td>111</td>
@@ -109,12 +91,17 @@
       <el-table-column prop="date" label="班级/行政班" align="center"></el-table-column>
       <el-table-column prop="name" label="校前100名人数" align="center"></el-table-column>
       <el-table-column prop="province" label="校100-200名" align="center"></el-table-column>
-      <el-table-column label="校200-300名"  align="center"> </el-table-column>
+      <el-table-column label="校200-300名" align="center"></el-table-column>
     </el-table>
   </div>
 </template>
 <script>
 import focusonline from "@/components/charts/focuson-line";
+// import AdminClassLastFiveScore from "@/api/studentGetData"
+import {
+  AdminClassLastFiveScore,
+  AdminClassTopFiveScore
+} from "@/api/studentGetData";
 export default {
   components: {
     focusonline
@@ -122,8 +109,43 @@ export default {
   data() {
     return {
       chartData: {},
-      tableData:[],
+      tableData: [],
+      FractionList: [], // 后五名
+      list: [] //前五名
     };
+  },
+  created() {
+    this.getLastList();
+    this.getTopFiveList();
+  },
+  methods: {
+    // 最后5名
+    getLastList() {
+      let parmas = {
+        classname: 1,
+        gradename: "高二"
+      };
+      AdminClassLastFiveScore(parmas).then(res => {
+        if (res.data.errno === 200) {
+          this.FractionList = res.data.info;
+          console.log(this.FractionList, 66666);
+        }
+      });
+    },
+    getTopFiveList() {
+      let parmas = {
+        classname: 1,
+        gradename: "高二"
+      };
+      AdminClassTopFiveScore(parmas).then(res => {
+        console.log(res, "qianeu");
+        if (res.data.errno === 200) {
+         
+          this.list = res.data.info;
+           console.log(this.list,665588)
+        }
+      });
+    }
   }
 };
 </script>

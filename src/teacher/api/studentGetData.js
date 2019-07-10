@@ -134,3 +134,20 @@ export function gradePreviousAnalysis (params) {
     params: params
   })
 }
+
+export function AdminClassLastFiveScore (params) {
+  // 重点关注--选择班级后五名
+  return request({
+    url: '/api/classanalysis/AdminClassLastFiveScore',
+    method: 'post',
+    params: params
+  })
+}
+export function AdminClassTopFiveScore (params) {
+  // 重点关注--选择班级后五名
+  return request({
+    url: '/api/classanalysis/AdminClassTopFiveScore',
+    method: 'post',
+    params: params
+  })
+}
