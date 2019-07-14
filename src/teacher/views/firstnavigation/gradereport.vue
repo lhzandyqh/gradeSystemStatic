@@ -22,8 +22,8 @@
               </template>
               <el-menu-item-group>
                 <el-menu-item index="/gradereport/gradereportcontent">年级成绩单</el-menu-item>
-                <el-menu-item index="/gradereport/classAdministrative">行政班单科成绩</el-menu-item>
-                <el-menu-item index="/gradereport/classTeaching">教学班单科成绩</el-menu-item>
+                <el-menu-item index="/gradereport/classAdministrative">单科成绩单</el-menu-item>
+                <!-- <el-menu-item index="/gradereport/classTeaching">教学班单科成绩</el-menu-item> -->
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="2">
@@ -32,7 +32,7 @@
                 <span>年级分析</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="/gradereport/newestAnalysis">最新成绩分析</el-menu-item>
+                <el-menu-item index="/gradereport/newestAnalysis">年级六率</el-menu-item>
                 <el-menu-item index="/gradereport/allPrevious">历次成绩分析</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
@@ -43,7 +43,7 @@
               </template>
               <el-menu-item-group>
                 <el-menu-item index="/gradereport/classAdministration">行政班</el-menu-item>
-                <el-menu-item index="3-2">物理教学班</el-menu-item>
+                <el-menu-item index="/gradereport/teachingClass">教学班</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="4">
@@ -52,8 +52,8 @@
                 <span>班级对比</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="4-1">行政班</el-menu-item>
-                <el-menu-item index="4-2">物理教学班</el-menu-item>
+                <el-menu-item index="/gradereport/classComparison">行政班</el-menu-item>
+                <el-menu-item index="4-2">教学班</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="5">

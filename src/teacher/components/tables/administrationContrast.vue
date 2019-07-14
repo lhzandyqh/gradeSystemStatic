@@ -7,25 +7,25 @@
     </el-row>
     <el-row>
       <el-table :data="list" border style="width: 100%;align-content: center;margin:20px auto;">
-        <el-table-column prop="hh" label="学科"></el-table-column>
-        <el-table-column prop="score" label="类别"></el-table-column>
+        <el-table-column prop="subjecttype" label="学科"></el-table-column>
+        <el-table-column prop="gradename" label="类别"></el-table-column>
         <el-table-column prop="classIndex" label="人数"></el-table-column>
         <el-table-column prop="classArg" label="平均分"></el-table-column>
         <el-table-column prop="date" label="等级分"></el-table-column>
-        <el-table-column prop="score" label="高分人数"></el-table-column>
-        <el-table-column prop="classIndex" label="高分率"></el-table-column>
-        <el-table-column prop="classArg" label="优秀人数"></el-table-column>
-        <el-table-column prop="date" label="优秀率"></el-table-column>
-        <el-table-column prop="score" label="良好人数"></el-table-column>
+        <el-table-column prop="highnum" label="高分人数"></el-table-column>
+        <el-table-column prop="高分率" label="高分率"></el-table-column>
+        <el-table-column prop="goodnumbers" label="优秀人数"></el-table-column>
+        <el-table-column prop="优秀率" label="优秀率"></el-table-column>
+        <el-table-column prop="mediumnum" label="良好人数"></el-table-column>
 
-        <el-table-column prop="classIndex" label="良好率"></el-table-column>
-        <el-table-column prop="classArg" label="及格人数"></el-table-column>
-        <el-table-column prop="date" label="及格率"></el-table-column>
-        <el-table-column prop="score" label="低分人数"></el-table-column>
+        <el-table-column prop="良好率" label="良好率"></el-table-column>
+        <el-table-column prop="passnumbers" label="及格人数"></el-table-column>
+        <el-table-column prop="及格率" label="及格率"></el-table-column>
+        <el-table-column prop="failnum" label="低分人数"></el-table-column>
 
-        <el-table-column prop="classIndex" label="低分率"></el-table-column>
-        <el-table-column prop="classArg" label="超均人数"></el-table-column>
-        <el-table-column prop="classArg" label="超均率"></el-table-column>
+        <el-table-column prop="低分率" label="低分率"></el-table-column>
+        <el-table-column prop="beyondnum" label="超均人数"></el-table-column>
+        <el-table-column prop="超均率" label="超均率"></el-table-column>
       </el-table>
     </el-row>
     <el-row>
@@ -62,6 +62,7 @@
 <script>
 import tableTitle from "@/components/tables/tableTitle";
 import csline from "@/components/charts/cs-line";
+import { AdminClassAllcompare } from "@/api/studentGetData";
 export default {
   components: { csline, tableTitle },
   data() {
@@ -106,20 +107,20 @@ export default {
         }
       ],
       list: [
-        {
-          hh: "全科"
-        },
-        {
-          hh: "语文"
-        },
-        {
-          hh: "数学"
-        },
-        {
-          hh: "英语"
-        }
       ]
     };
+  },
+  methods:{
+    getList(){
+      AdminClassAllcompare().then(res =>{
+       if(res.data.errno===200){
+         this.list = res.data.info
+       }
+      })
+    }
+  },
+  mounted(){
+    this.getList()
   }
 };
 </script>

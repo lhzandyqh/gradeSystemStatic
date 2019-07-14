@@ -151,3 +151,48 @@ export function AdminClassTopFiveScore (params) {
     params: params
   })
 }
+
+export function termexamInfo (params) {
+  // 首页考试列表
+  return request({
+    url: '/api/teacherIndex/term_exam_info',
+    method: 'get',
+    params: params
+  })
+}
+
+export function teacherInfo (params) {
+  // 首页考试列表
+  return request({
+    url: '/api/teacherIndex/teacher_info',
+    method: 'get',
+    params: params
+  })
+}
+
+export function teachClassSingleSubjectScore (params) {
+  // 首页考试列表
+  return request({
+    url: '/api/grade/teachClassSingleSubjectScore',
+    method: 'post',
+    params: params
+  })
+}
+
+export function teachClassTotalSubjectContrast (params) {
+  // 年级分析--年级六率
+  return request({
+    url: '/api/grade/teachClassTotalSubjectContrast',
+    method: 'get',
+    params: params
+  })
+}
+
+export function AdminClassAllcompare (params) {
+  // 班级分析--班校对比
+  return request({
+    url: '/api/classanalysis/AdminClassAllcompare',
+    method: 'get',
+    params: params
+  })
+}

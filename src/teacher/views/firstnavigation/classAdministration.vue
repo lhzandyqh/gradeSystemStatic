@@ -1,11 +1,21 @@
 <template>
   <div class="appcontainer">
-    <el-row>
+    <el-row >
+      <div style="width:200px">
+        <el-select v-model="value" placeholder="请选择班级">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          ></el-option>
+        </el-select>
+      </div>
       <el-tabs v-model="activeName">
         <el-tab-pane label="成绩单" name="first">
           <tableTitle :titleList="name"></tableTitle>
           <el-row style="margin-top: 20px;">
-            <all-class-grade-table :allGradeTableData="allGradeTableData" :tableHeader="tableInfo"></all-class-grade-table>\
+            <all-class-grade-table :allGradeTableData="allGradeTableData" :tableHeader="tableInfo"></all-class-grade-table>
             <Administration :chartData="dataList"></Administration>
           </el-row>
         </el-tab-pane>
@@ -48,6 +58,29 @@ export default {
   },
   data() {
     return {
+      options: [
+        {
+          value: "选项1",
+          label: "黄金糕"
+        },
+        {
+          value: "选项2",
+          label: "双皮奶"
+        },
+        {
+          value: "选项3",
+          label: "蚵仔煎"
+        },
+        {
+          value: "选项4",
+          label: "龙须面"
+        },
+        {
+          value: "选项5",
+          label: "北京烤鸭"
+        }
+      ],
+      value: "",
       chartData: {},
       dataList: {},
       activeName: "first",

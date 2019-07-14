@@ -25,6 +25,8 @@ import weakspot from '@/views/firstnavigation/weakspot'
 import surpassrate from '@/views/firstnavigation/surpassrate'
 import gradeandtargetcontent from '@/views/firstnavigation/gradeandtargetcontent'
 import personalGradeDetails from '@/views/firstnavigation/personalGradeDetails'
+import teachingClass from '@/views/firstnavigation/teachingClass' 
+import classComparison from '@/views/firstnavigation/classComparison'
 
 Vue.use(Router)
 
@@ -102,6 +104,14 @@ export default new Router({
             {
               path: '/gradereport/classAdministration', // 班级分析-->行政班
               component: classAdministration
+            },
+            {
+              path: '/gradereport/teachingClass', // 班级分析-->教学
+              component: teachingClass
+            },
+            {
+              path: '/gradereport/classComparison', // 班级对比-->行政班
+              component: classComparison 
             },
             {
               path: '/gradereport/gradeandtargetcontent',

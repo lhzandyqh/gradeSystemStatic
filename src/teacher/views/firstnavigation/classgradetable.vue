@@ -15,7 +15,7 @@
 <script>
 import allClassGradeTable from '@/components/tables/allClassGradeTable'
 import subjectTable from '@/components/tables/subjectTable'
-import { getClassGradeTable } from '@/api/studentGetData'
+import { gradeExamTotal } from '@/api/studentGetData'
 export default {
   name: 'classgradetable',
   components: { allClassGradeTable, subjectTable },
@@ -50,10 +50,9 @@ export default {
   },
   methods: {
     getGradeTableData: function () {
-      const prams = {
-        userID: 1
-      }
-      getClassGradeTable(prams).then(response => {
+     
+      gradeExamTotal().then(response => {
+        console.log(response,99111)
         this.allGradeTableData = response.data.info
       })
     }

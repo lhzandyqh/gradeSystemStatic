@@ -3,6 +3,9 @@
     <el-row>
       <tableTitle :titleList="name"></tableTitle>
     </el-row>
+     <el-row>
+      <subjectTable ></subjectTable>
+    </el-row>
     <el-row>
       <el-table :data="newList" border style="width: 50%;align-content: center;margin:20px auto;">
         <el-table-column prop="exam_date" align="center" label="日期"></el-table-column>
@@ -23,11 +26,13 @@
 <script>
 import tableTitle from "@/components/tables/tableTitle";
 import histogram from "@/components/charts/histogram";
+import subjectTable from '@/components/tables/subjectTable'
 import { gradePreviousAnalysis } from "@/api/studentGetData";
 export default {
   components: {
     tableTitle,
-    histogram
+    histogram,
+    subjectTable
   },
   data() {
     return {

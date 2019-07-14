@@ -15,29 +15,29 @@
         低分率：60%-75%超均率：超过平均分概率
       </div>
       <el-table :data="newList" border style="width: 100%;align-content: center">
-        <el-table-column prop="subjectName" label="学科" width="100"></el-table-column>
+        <el-table-column prop="subjectname" label="学科" width="100"></el-table-column>
         <el-table-column prop="score" label="类别" width="100"></el-table-column>
         <el-table-column prop="classIndex" label="人数" width="100"></el-table-column>
         <el-table-column prop="classArg" label="平均分" width="100"></el-table-column>
-        <el-table-column prop="schoolIndex" label="等级分" width="100"></el-table-column>
-        <el-table-column prop="schoolArg" label="高分人数"></el-table-column>
-        <el-table-column prop="subjectName" label="高分率" width="100"></el-table-column>
-        <el-table-column prop="score" label="优秀人数" width="100"></el-table-column>
-        <el-table-column prop="classIndex" label="优秀率" width="100"></el-table-column>
-        <el-table-column prop="classArg" label="良好人数" width="100"></el-table-column>
-        <el-table-column prop="schoolIndex" label="良好率" width="100"></el-table-column>
-        <el-table-column prop="schoolArg" label="及格人数"></el-table-column>
-        <el-table-column prop="score" label="及格率" width="100"></el-table-column>
-        <el-table-column prop="classIndex" label="低分人数" width="100"></el-table-column>
-        <el-table-column prop="classArg" label="低分率" width="100"></el-table-column>
-        <el-table-column prop="schoolIndex" label="超均人数" width="100"></el-table-column>
-        <el-table-column prop="schoolArg" label="超均率"></el-table-column>
+        <el-table-column prop="schoolIndex" label="标准差" width="100"></el-table-column>
+        <el-table-column prop="highnum" label="高分人数"></el-table-column>
+        <el-table-column prop="高分率" label="高分率" width="100"></el-table-column>
+        <el-table-column prop="goodnumbers" label="优秀人数" width="100"></el-table-column>
+        <el-table-column prop="优秀率" label="优秀率" width="100"></el-table-column>
+        <el-table-column prop="mediumnum" label="良好人数" width="100"></el-table-column>
+        <el-table-column prop="良好率" label="良好率" width="100"></el-table-column>
+        <el-table-column prop="passnumbers" label="及格人数"></el-table-column>
+        <el-table-column prop="及格率" label="及格率" width="100"></el-table-column>
+        <el-table-column prop="failnum" label="低分人数" width="100"></el-table-column>
+        <el-table-column prop="低分率" label="低分率" width="100"></el-table-column>
+        <el-table-column prop="beyondnum" label="超均人数" width="100"></el-table-column>
+        <el-table-column prop="超均率" label="超均率"></el-table-column>
       </el-table>
     </el-row>
   </div>
 </template>
 <script>
-import { gradeExamTotal } from "@/api/studentGetData";
+import { teachClassTotalSubjectContrast } from "@/api/studentGetData";
 import tableTitle from "@/components/tables/tableTitle";
 export default {
   components: {
@@ -45,11 +45,7 @@ export default {
   },
   data() {
     return {
-      newList: [
-        {
-          subjectName: "占位"
-        }
-      ],
+      newList: [],
       name: "年级成绩六率分析"
     };
   },
@@ -59,11 +55,12 @@ export default {
   },
   methods: {
     getList() {
-      gradeExamTotal().then(res => {
-        if (res.data.errno === 0) {
+      teachClassTotalSubjectContrast().then(res => {
+        if (res.data.errno === 200) {
           this.newList = res.data.info;
+
+       
         }
-        console.log(res, 5555555555);
       });
     }
   }
