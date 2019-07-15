@@ -122,10 +122,8 @@ export default {
       console.log(this.chartData)
     }
   }
-
 }
 </script>
 
 <style scoped>
-
 </style>
