@@ -26,6 +26,15 @@ import surpassrate from '@/views/firstnavigation/surpassrate'
 import gradeandtargetcontent from '@/views/firstnavigation/gradeandtargetcontent'
 import personalGradeDetails from '@/views/firstnavigation/personalGradeDetails'
 
+// 单科班级分析组件引入
+import yuwenAnalysis from '@/views/firstnavigation/classAnalysis/yuwenAnalysis'
+import shuxueAnalysis from '@/views/firstnavigation/classAnalysis/shuxueAnalysis'
+import singleSubjectClassAnalysis from '@/views/firstnavigation/classAnalysis/singleSubjectClassAnalysis'
+
+// 单科班级对比组件引入
+import singleSubjectClassComparison from '@/views/firstnavigation/classComparison/singleSubjectClassComparison'
+import yuwenComparison from '@/views/firstnavigation/classComparison/yuwenComparison'
+
 Vue.use(Router)
 
 export default new Router({
@@ -130,6 +139,30 @@ export default new Router({
                 {
                   path: '/gradereport/gradeanalyzecontent/weakspot',
                   component: weakspot
+                }
+              ]
+            },
+            {
+              path: '/gradereport/singleSubjectClassAnalysis',
+              component: singleSubjectClassAnalysis,
+              children: [
+                { // 单科班级分析
+                  path: '/gradereport/singleSubjectClassAnalysis/yuwenAnalysis',
+                  component: yuwenAnalysis
+                },
+                {
+                  path: '/gradereport/singleSubjectClassAnalysis/shuxueAnalysis',
+                  component: shuxueAnalysis
+                }
+              ]
+            },
+            {
+              path: '/gradeport/singleSubjectClassComparison',
+              component: singleSubjectClassComparison,
+              children: [
+                {
+                  path: '/gradeport/singleSubjectClassComparison/yuwenComparison',
+                  component: yuwenComparison
                 }
               ]
             }

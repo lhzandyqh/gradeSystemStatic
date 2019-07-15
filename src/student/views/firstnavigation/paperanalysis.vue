@@ -163,6 +163,7 @@ export default {
       console.log(this.subject)
       const prams = {
         userId: window.localStorage.getItem('id'),
+        examTime: '默认',
         examName: this.examType,
         examSubject: this.subject,
         subjectNumber: this.problemNum,

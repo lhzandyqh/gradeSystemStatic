@@ -92,7 +92,7 @@ export default {
         yingyu: this.input[3],
         wuli: this.input[4],
         huaxue: this.input[5],
-        shenguw: this.input[6],
+        shengwu: this.input[6],
         dili: this.input[7],
         lishi: this.input[8],
         zhengzhi: this.input[9]

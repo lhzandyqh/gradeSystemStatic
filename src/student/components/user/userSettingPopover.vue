@@ -94,8 +94,8 @@ export default {
     },
     logout: function () {
       window.localStorage.clear()
-      window.location.href = '/teacher.html#/login'
-      location.replace('/teacher.html#/login')
+      window.location.href = './teacher.html#/login'
+      location.replace('./teacher.html#/login')
       // this.$router.back(-1)
       // this.$router.push('/login')
     },

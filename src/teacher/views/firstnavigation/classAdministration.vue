@@ -5,9 +5,9 @@
         <el-tab-pane label="成绩单" name="first">
            <tableTitle :titleList="name"></tableTitle>
             <el-row style="margin-top: 20px;">
-      <all-class-grade-table :allGradeTableData="allGradeTableData" :tableHeader="tableInfo"></all-class-grade-table>\
-      <Administration></Administration>
-    </el-row>
+             <all-class-grade-table :allGradeTableData="allGradeTableData" :tableHeader="tableInfo"></all-class-grade-table>\
+             <Administration></Administration>
+            </el-row>
         </el-tab-pane>
         <el-tab-pane label="重点关注" name="second">配置管理</el-tab-pane>
         <el-tab-pane label="班校对比" name="third">角色管理</el-tab-pane>

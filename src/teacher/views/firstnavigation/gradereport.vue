@@ -62,7 +62,15 @@
                 <span>单科班级分析</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="5-1">语文/数学/英语</el-menu-item>
+                <el-menu-item index="/gradereport/singleSubjectClassAnalysis/yuwenAnalysis">语文</el-menu-item>
+                <el-menu-item index="/gradereport/singleSubjectClassAnalysis/shuxueAnalysis">数学</el-menu-item>
+                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">英语</el-menu-item>
+                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">物理</el-menu-item>
+                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">化学</el-menu-item>
+                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">生物</el-menu-item>
+                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">政治</el-menu-item>
+                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">历史</el-menu-item>
+                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">地理</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="6">
@@ -71,8 +79,15 @@
                 <span>单科班级对比</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="6-1">语文/数学/英语</el-menu-item>
-                <el-menu-item index="6-2">物理等六科</el-menu-item>
+                <el-menu-item index="/gradeport/singleSubjectClassComparison/yuwenComparison">语文</el-menu-item>
+                <el-menu-item index="6-2">数学</el-menu-item>
+                <el-menu-item index="6-1">英语</el-menu-item>
+                <el-menu-item index="6-2">物理</el-menu-item>
+                <el-menu-item index="6-1">化学</el-menu-item>
+                <el-menu-item index="6-2">生物</el-menu-item>
+                <el-menu-item index="6-1">政治</el-menu-item>
+                <el-menu-item index="6-2">历史</el-menu-item>
+                <el-menu-item index="6-2">地理</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-menu-item index="7">
