@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="login-all">
-      <img src="../../assets/jpg/login-logo.png" class="login-logo" alt>
+      <img src="../../assets/jpg/login-logo.png" class="login-logo" alt />
 
-      <img src="../../assets/jpg/login_b_t.jpg" class="login-bg" alt>
+      <img src="../../assets/jpg/login_b_t.jpg" class="login-bg" alt />
       <div class="login-input" style="opacity: .9;">
         <div class="loginTitle">用户登录</div>
         <div class="login-center">
@@ -27,55 +27,54 @@
   </div>
 </template>
 <script>
-import { login } from '@/api/studentGetData'
+import { login } from "@/api/studentGetData";
 export default {
-  data () {
+  data() {
     return {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       id: null
-    }
+    };
   },
-  mounted () {
-
-  },
+  mounted() {},
   methods: {
-    
     // 登录
-    loginBtn () {
-      if (this.username === '') {
+    loginBtn() {
+      if (this.username === "") {
         this.$message({
-          message: '请输入用户名',
-          type: 'warning'
-        })
-        return
+          message: "请输入用户名",
+          type: "warning"
+        });
+        return;
       }
-      if (this.password === '') {
+      if (this.password === "") {
         this.$message({
-          message: '请输入密码',
-          type: 'warning'
-        })
-        return
+          message: "请输入密码",
+          type: "warning"
+        });
+        return;
       }
       const prams = {
         username: this.username,
         password: this.password
-      }
+      };
       login(prams).then(res => {
+        // console.log(res,666666)
         if (res.data.errno === 200) {
-          this.id = res.data.id
-          window.localStorage.setItem('id', this.id) // 把id存入缓存
-          if (res.data.rolename === '学生') {
-            window.location.href = '/student.html#/fisrtpage'
+          this.id = res.data.id;
+          window.localStorage.setItem("id", this.id); // 把id存入缓存
+          console.log(this.id, 3698741);
+          if (res.data.rolename === "学生") {
+            window.location.href = "/student.html#/fisrtpage";
           }
-          if (res.data.rolename === '任课教师') {
-            window.location.href = '/teacher.html#/fisrtpage'
+          if (res.data.rolename === "任课教师") {
+            window.location.href = "/teacher.html#/fisrtpage";
           }
         }
-      })
+      });
     }
   }
-}
+};
 </script>
 <style >
 .subBtn {

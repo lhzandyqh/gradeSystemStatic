@@ -4,7 +4,7 @@
       <tableTitle :titleList="name"></tableTitle>
     </el-row>
      <el-row>
-      <subjectTable ></subjectTable>
+      <!-- <subjectTable ></subjectTable> -->
     </el-row>
     <el-row>
       <el-table :data="newList" border style="width: 50%;align-content: center;margin:20px auto;">

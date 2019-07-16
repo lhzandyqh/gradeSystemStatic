@@ -196,3 +196,22 @@ export function AdminClassAllcompare (params) {
     params: params
   })
 }
+
+
+export function AdminClassTotalContrast (params) {
+  // 班级对比 班级六率对比
+  return request({
+    url: '/class/AdminClassTotalContrast',
+    method: 'get',
+    params: params
+  })
+}
+
+export function AdminClassTotalRankClass (params) {
+  // 班级对比 全校前N名上线分布表
+  return request({
+    url: '/class/AdminClassTotalRankClass',
+    method: 'get',
+    params: params
+  })
+}

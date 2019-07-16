@@ -28,7 +28,7 @@
             <el-col :span="2">
               <div class="navigationoption">
                 <img src="../assets/icon/u114.png">
-                <span v-on:click="gopaperanalysis">试卷分析</span>
+                <span v-on:click="gopaperanalysis">错题记录</span>
                 <!--              <router-link to="/paperanalysis">试卷分析</router-link>-->
               </div>
             </el-col>

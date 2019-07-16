@@ -24,7 +24,7 @@
               <table class="table" style="margin: auto;">
                 <tr>
                   <td style="text-align: left">
-                    <span>姓名：</span>
+                    <span>姓名：{{teacherinfo.teacherName}}</span>
                   </td>
                   <td>
                     <span style="color: #18a689">{{this.studentInformation[0].studentName}}</span>
@@ -32,7 +32,7 @@
                 </tr>
                 <tr>
                   <td style="text-align: left">
-                    <span>工号：</span>
+                    <span>工号：{{teacherinfo.cardId}} </span>
                   </td>
                   <td>
                     <span style="color: #18a689">{{this.studentInformation[0].studentNumber}}</span>
@@ -40,7 +40,7 @@
                 </tr>
                 <tr>
                   <td style="text-align: left">
-                    <span>年级：</span>
+                    <span>年级：{{teacherinfo.className}}</span>
                   </td>
                   <td>
                     <span style="color: #18a689">{{this.studentInformation[0].id}}</span>
@@ -48,7 +48,7 @@
                 </tr>
                 <tr>
                   <td style="text-align: left">
-                    <span>所属科目：</span>
+                    <span>所属科目：{{teacherinfo.subjectName}}</span>
                   </td>
                   <td>
                     <span style="color: #18a689">{{this.studentInformation[0].gradeName}}</span>
@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                   <td style="text-align: left">
-                    <span>所带班级：</span>
+                    <span>所带班级：{{teacherinfo.gradeName}}</span>
                   </td>
                   <td>
                     <span style="color: #18a689">{{this.studentInformation[0].className}}</span>
@@ -182,7 +182,7 @@ export default {
   data() {
     return {
       chartData: {},
-      newestClassList:[],
+      newestClassList: [],
       list: [
         {
           date: "111"
@@ -288,12 +288,18 @@ export default {
           amount3: "79"
         }
       ],
-      examinationList: []
+      examinationList: [],
+      id:'',// 教师id
+      teacherinfo:''// 教师详情
     };
   },
   mounted() {
     this.getExamList();
     this.getTeacherInfo();
+  },
+  created() {
+    this.id = window.localStorage.getItem('id'); // 获取登录页面存的id
+    console.log(id,'idididiid')
   },
   methods: {
     objectSpanMethod({ row, column, rowIndex, columnIndex }) {
@@ -322,9 +328,12 @@ export default {
     getTeacherInfo() {
       // 获取教师信息
       let parmas = {
-        userID: 1
+        userID: this.id
       };
       teacherInfo(parmas).then(res => {
+        if(res.data.errno===200){
+          this.teacherinfo = res.data.info
+        }
         console.log(res, 99999999);
       });
     }
