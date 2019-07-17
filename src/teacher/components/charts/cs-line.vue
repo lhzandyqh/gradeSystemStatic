@@ -1,9 +1,10 @@
 <template>
-  <div :class="className" :style="{height:height,width:width}"/>
+  <div :class="className" :style="{height:height,width:width}" />
 </template>
 
 <script>
 import echarts from "echarts";
+import { AdminClassSubjectCompareChooseClass } from "@/api/studentGetData";
 require("echarts/theme/macarons"); // echarts theme
 
 export default {
@@ -33,7 +34,8 @@ export default {
   data() {
     return {
       chart: null,
-      sidebarElm: null
+      sidebarElm: null,
+      myScore:[],
     };
   },
   watch: {
@@ -81,6 +83,21 @@ export default {
     this.chart = null;
   },
   methods: {
+    initChart() {
+      let parmas = {
+        classname: 1,
+        gradename: "高二"
+      };
+      AdminClassSubjectCompareChooseClass(parmas).then(res => {
+        if(res.data.errno===200){
+this.myScore = res.data.info
+        console.log(res, 666666888888999999);
+        this.chart = echarts.init(this.$el, "macarons");
+       this.setOptions(this.chartData);
+        }
+        
+      });
+    },
     sidebarResizeHandler(e) {
       if (e.propertyName === "width") {
         this.__resizeHandler();
@@ -89,49 +106,49 @@ export default {
 
     setOptions({ expectedData, actualData } = {}) {
       this.chart.setOption({
-        color: ['#3398DB'],
-    tooltip : {
-        trigger: 'axis',
-        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-        }
-    },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis : [
-        {
-            type : 'category',
-            data : ['语文', '数学', '英语'],
+        color: ["#3398DB"],
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            // 坐标轴指示器，坐标轴触发有效
+            type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+          }
+        },
+        grid: {
+          left: "3%",
+          right: "4%",
+          bottom: "3%",
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: "category",
+            data: ["语文", "数学", "英语"],
             axisTick: {
-                alignWithLabel: true
+              alignWithLabel: true
             }
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value'
-        }
-    ],
-    series : [
-        {
-            name:'直接访问',
-            type:'bar',
-            barWidth: '60%',
-            data:[10, 52, 200]
-        }
-    ]
-        
+          }
+        ],
+        yAxis: [
+          {
+            type: "value"
+          }
+        ],
+        series: [
+          {
+            name: "直接访问",
+            type: "bar",
+            barWidth: "60%",
+            data: [this.myScore[0].failnum, this.myScore[0].beyondnum, this.myScore[0].passnumbers]
+          }
+        ]
       });
     },
-    
-    initChart() {
-      this.chart = echarts.init(this.$el, "macarons");
-      this.setOptions(this.chartData);
-    }
+
+    // initChart() {
+    //   this.chart = echarts.init(this.$el, "macarons");
+    //   this.setOptions(this.chartData);
+    // }
   }
 };
 </script>

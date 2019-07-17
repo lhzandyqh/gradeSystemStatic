@@ -25,7 +25,9 @@
         </el-tab-pane>
         <el-tab-pane label="班校对比" name="third">
           <tableTitle :titleList="name3"></tableTitle>
-          <administrationContrast></administrationContrast>
+         
+            <administrationContrast></administrationContrast>
+        
         </el-tab-pane>
         <el-tab-pane label="等级分布" name="fourth">
           <tableTitle :titleList="name4"></tableTitle>

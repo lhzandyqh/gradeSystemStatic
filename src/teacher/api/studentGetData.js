@@ -215,3 +215,12 @@ export function AdminClassTotalRankClass (params) {
     params: params
   })
 }
+
+export function AdminClassSubjectCompareChooseClass (params) {
+  // 班校对比 科目六率对比图
+  return request({
+    url: '/api/classanalysis/AdminClassSubjectCompareChooseClass',
+    method: 'get',
+    params: params
+  })
+}

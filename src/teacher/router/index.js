@@ -27,6 +27,7 @@ import gradeandtargetcontent from '@/views/firstnavigation/gradeandtargetcontent
 import personalGradeDetails from '@/views/firstnavigation/personalGradeDetails'
 import teachingClass from '@/views/firstnavigation/teachingClass' 
 import classComparison from '@/views/firstnavigation/classComparison'
+import contrastTeachingClass from '@/views/firstnavigation/contrastTeachingClass'// 班级对比  教学班
 
 Vue.use(Router)
 
@@ -112,7 +113,12 @@ export default new Router({
             {
               path: '/gradereport/classComparison', // 班级对比-->行政班
               component: classComparison 
-            },
+            }, 
+            {
+              path: '/gradereport/contrastTeachingClass', // 班级对比-->教学班
+              component: contrastTeachingClass 
+            }, 
+            
             {
               path: '/gradereport/gradeandtargetcontent',
               component: gradeandtargetcontent,

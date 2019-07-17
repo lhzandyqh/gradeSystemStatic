@@ -6,7 +6,7 @@
       </div>
     </el-row>
     <el-row>
-      <el-table :data="list" border style="width: 100%;align-content: center;margin:20px auto;">
+      <el-table  height="600" :data="list" border style="width: 100%;align-content: center;margin:20px auto;">
         <el-table-column prop="subjecttype" label="学科"></el-table-column>
         <el-table-column prop="gradename" label="类别"></el-table-column>
         <el-table-column prop="classIndex" label="人数"></el-table-column>
@@ -39,11 +39,11 @@
         ></el-option>
       </el-select>
       <div style="margin:0 auto">
-        <csline></csline>
+        <csline :chartData="stateList"></csline>
       </div>
     </el-row>
     <el-row>
-      <tableTitle :titleList="name"></tableTitle>
+      <tableTitle :titleList="name1"></tableTitle>
       <el-select v-model="value" placeholder="请选择对比类别：">
         <el-option
           v-for="item in sixList"
@@ -69,7 +69,8 @@ export default {
     return {
       name: "各科目班校对比图",
       name1: "各科六率班校对比图",
-      list: {},
+      list: {},// 各科六率班校对比图
+      stateList:{}, //各科目班校对比图
       options: [
         {
           value: "1",

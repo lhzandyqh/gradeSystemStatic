@@ -53,7 +53,7 @@
               </template>
               <el-menu-item-group>
                 <el-menu-item index="/gradereport/classComparison">行政班</el-menu-item>
-                <el-menu-item index="4-2">教学班</el-menu-item>
+                <el-menu-item index="/gradereport/contrastTeachingClass">教学班</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="5">
