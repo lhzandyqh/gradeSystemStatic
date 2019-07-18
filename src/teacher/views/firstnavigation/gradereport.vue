@@ -80,14 +80,14 @@
               </template>
               <el-menu-item-group>
                 <el-menu-item index="/gradeport/singleSubjectClassComparison/yuwenComparison">语文</el-menu-item>
-                <el-menu-item index="6-2">数学</el-menu-item>
-                <el-menu-item index="6-1">英语</el-menu-item>
-                <el-menu-item index="6-2">物理</el-menu-item>
-                <el-menu-item index="6-1">化学</el-menu-item>
-                <el-menu-item index="6-2">生物</el-menu-item>
-                <el-menu-item index="6-1">政治</el-menu-item>
-                <el-menu-item index="6-2">历史</el-menu-item>
-                <el-menu-item index="6-2">地理</el-menu-item>
+                <el-menu-item index="/gradeport/singleSubjectClassComparison/shuxueComparison">数学</el-menu-item>
+                <el-menu-item index="/gradeport/singleSubjectClassComparison/yingyuComparison">英语</el-menu-item>
+                <el-menu-item index="/gradeport/singleSubjectClassComparison/wuliComparison">物理</el-menu-item>
+                <el-menu-item index="/gradeport/singleSubjectClassComparison/huaxueComparison">化学</el-menu-item>
+                <el-menu-item index="/gradeport/singleSubjectClassComparison/shengwuComparison">生物</el-menu-item>
+                <el-menu-item index="/gradeport/singleSubjectClassComparison/zhengzhiComparison">政治</el-menu-item>
+                <el-menu-item index="/gradeport/singleSubjectClassComparison/lishiComparison">历史</el-menu-item>
+                <el-menu-item index="/gradeport/singleSubjectClassComparison/diliComparison">地理</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-menu-item index="7">

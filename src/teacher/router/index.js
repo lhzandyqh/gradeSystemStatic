@@ -41,6 +41,14 @@ import singleSubjectClassAnalysis from '@/views/firstnavigation/classAnalysis/si
 // 单科班级对比组件引入
 import singleSubjectClassComparison from '@/views/firstnavigation/classComparison/singleSubjectClassComparison'
 import yuwenComparison from '@/views/firstnavigation/classComparison/yuwenComparison'
+import shuxueComparison from '@/views/firstnavigation/classComparison/shuxueComparison'
+import yingyuComparison from '@/views/firstnavigation/classComparison/yingyuComparison'
+import wuliComparison from '@/views/firstnavigation/classComparison/wuliComparison'
+import huaxueComparison from '@/views/firstnavigation/classComparison/huaxueComparison'
+import shengwuComparison from '@/views/firstnavigation/classComparison/shengwuComparison'
+import zhengzhiComparison from '@/views/firstnavigation/classComparison/zhengzhiComparison'
+import lishiComparison from '@/views/firstnavigation/classComparison/lishiComparison'
+import diliComparison from '@/views/firstnavigation/classComparison/diliComparison'
 
 Vue.use(Router)
 
@@ -192,12 +200,44 @@ export default new Router({
               ]
             },
             {
-              path: '/gradeport/singleSubjectClassComparison',
+              path: '/gradeport/singleSubjectClassComparison', // 单科班级分析
               component: singleSubjectClassComparison,
               children: [
                 {
                   path: '/gradeport/singleSubjectClassComparison/yuwenComparison',
                   component: yuwenComparison
+                },
+                {
+                  path: '/gradeport/singleSubjectClassComparison/shuxueComparison',
+                  component: shuxueComparison
+                },
+                {
+                  path: '/gradeport/singleSubjectClassComparison/yingyuComparison',
+                  component: yingyuComparison
+                },
+                {
+                  path: '/gradeport/singleSubjectClassComparison/wuliComparison',
+                  component: wuliComparison
+                },
+                {
+                  path: '/gradeport/singleSubjectClassComparison/huaxueComparison',
+                  component: huaxueComparison
+                },
+                {
+                  path: '/gradeport/singleSubjectClassComparison/shengwuComparison',
+                  component: shengwuComparison
+                },
+                {
+                  path: '/gradeport/singleSubjectClassComparison/zhengzhiComparison',
+                  component: zhengzhiComparison
+                },
+                {
+                  path: '/gradeport/singleSubjectClassComparison/lishiComparison',
+                  component: lishiComparison
+                },
+                {
+                  path: '/gradeport/singleSubjectClassComparison/diliComparison',
+                  component: diliComparison
                 }
               ]
             }
