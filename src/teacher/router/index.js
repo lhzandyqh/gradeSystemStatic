@@ -29,6 +29,13 @@ import personalGradeDetails from '@/views/firstnavigation/personalGradeDetails'
 // 单科班级分析组件引入
 import yuwenAnalysis from '@/views/firstnavigation/classAnalysis/yuwenAnalysis'
 import shuxueAnalysis from '@/views/firstnavigation/classAnalysis/shuxueAnalysis'
+import wuliAnalysis from '@/views/firstnavigation/classAnalysis/wuliAnalysis'
+import yingyuAnalysis from '@/views/firstnavigation/classAnalysis/yingyuAnalysis'
+import huaxueAnalysis from '@/views/firstnavigation/classAnalysis/huaxueAnalysis'
+import shengwuAnalysis from '@/views/firstnavigation/classAnalysis/shengwuAnalysis'
+import diliAnalysis from '@/views/firstnavigation/classAnalysis/diliAnalysis'
+import zhengzhiAnalysis from '@/views/firstnavigation/classAnalysis/zhengzhiAnalysis'
+import lishiAnalysis from '@/views/firstnavigation/classAnalysis/lishiAnalysis'
 import singleSubjectClassAnalysis from '@/views/firstnavigation/classAnalysis/singleSubjectClassAnalysis'
 
 // 单科班级对比组件引入
@@ -153,6 +160,34 @@ export default new Router({
                 {
                   path: '/gradereport/singleSubjectClassAnalysis/shuxueAnalysis',
                   component: shuxueAnalysis
+                },
+                {
+                  path: '/gradereport/singleSubjectClassAnalysis/yingyuAnalysis',
+                  component: yingyuAnalysis
+                },
+                {
+                  path: '/gradereport/singleSubjectClassAnalysis/wuliAnalysis',
+                  component: wuliAnalysis
+                },
+                {
+                  path: '/gradereport/singleSubjectClassAnalysis/huaxueAnalysis',
+                  component: huaxueAnalysis
+                },
+                {
+                  path: '/gradereport/singleSubjectClassAnalysis/shengwuAnalysis',
+                  component: shengwuAnalysis
+                },
+                {
+                  path: '/gradereport/singleSubjectClassAnalysis/lishiAnalysis',
+                  component: lishiAnalysis
+                },
+                {
+                  path: '/gradereport/singleSubjectClassAnalysis/diliAnalysis',
+                  component: diliAnalysis
+                },
+                {
+                  path: '/gradereport/singleSubjectClassAnalysis/zhengzhiAnalysis',
+                  component: zhengzhiAnalysis
                 }
               ]
             },

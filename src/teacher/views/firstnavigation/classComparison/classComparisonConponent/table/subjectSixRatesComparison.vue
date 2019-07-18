@@ -1,0 +1,144 @@
+<template>
+  <div class="app-container">
+    <el-table
+      :data="tableData"
+      border
+      style="width: 100%">
+      <el-table-column
+        prop="date"
+        align="center"
+        label="年级"
+        width="60">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        align="center"
+        label="科目"
+        width="60">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        align="center"
+        label="班级"
+        width="60">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        align="center"
+        label="高分人数"
+        width="80">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="高分率"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="高分率排名"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        align="center"
+        label="优秀人数"
+        width="85">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="优秀率"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="优秀率排名"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        align="center"
+        label="良好人数"
+        width="80">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="良好率"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="良好率排名"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        align="center"
+        label="及格人数"
+        width="100">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="及格率"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="及格率排名"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        align="center"
+        label="低分人数"
+        width="80">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        align="center"
+        label="低分率"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="低分率排名"
+        width="70">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        align="center"
+        label="超均人数"
+        width="80">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        align="center"
+        label="超均率">
+      </el-table-column>
+      <el-table-column
+        prop="date"
+        align="center"
+        label="超均率排名"
+        width="70">
+      </el-table-column>
+    </el-table>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'subjectSixRatesComparison'
+}
+</script>
+
+<style scoped>
+
+</style>

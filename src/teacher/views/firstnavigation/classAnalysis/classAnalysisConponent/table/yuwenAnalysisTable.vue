@@ -1,11 +1,5 @@
 <template>
   <div class="appContainer">
-    <div class="examName">
-      <span style="font-size: 20px;font-weight: bolder">2017-2018学年第一学期七年级期中考试</span>
-    </div>
-    <div class="title">
-      <span style="font-weight: bold;color: #19c237">─成绩概况─</span>
-    </div>
     <div class="tableContent">
       <div>
         <el-table

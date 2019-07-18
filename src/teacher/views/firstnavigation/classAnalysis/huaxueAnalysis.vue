@@ -26,19 +26,19 @@
                 <span style="font-size: 20px;font-weight: bolder">2017-2018学年第一学期七年级期中考试</span>
               </div>
               <div class="title">
-                <span style="font-weight: bold;color: #19c237">─语文单科成绩─</span>
+                <span style="font-weight: bold;color: #19c237">─化学单科成绩─</span>
               </div>
-<!--              <yuwen-analysis-table></yuwen-analysis-table>-->
+              <!--              <yuwen-analysis-table></yuwen-analysis-table>-->
               <div style="margin-top: 20px;margin-left: 5%">
                 <single-subject-grade-table></single-subject-grade-table>
               </div>
             </div>
-<!--            <div style="padding-top: 40px">-->
-<!--              <div class="title">-->
-<!--                <span style="font-weight: bold;color: #19c237">─10分一档统计表─</span>-->
-<!--              </div>-->
-<!--              <ten-score-statis-chart></ten-score-statis-chart>-->
-<!--            </div>-->
+            <!--            <div style="padding-top: 40px">-->
+            <!--              <div class="title">-->
+            <!--                <span style="font-weight: bold;color: #19c237">─10分一档统计表─</span>-->
+            <!--              </div>-->
+            <!--              <ten-score-statis-chart></ten-score-statis-chart>-->
+            <!--            </div>-->
           </el-tab-pane>
           <el-tab-pane label="重点关注" name="second">
             <div>

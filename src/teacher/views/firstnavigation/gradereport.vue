@@ -64,13 +64,13 @@
               <el-menu-item-group>
                 <el-menu-item index="/gradereport/singleSubjectClassAnalysis/yuwenAnalysis">语文</el-menu-item>
                 <el-menu-item index="/gradereport/singleSubjectClassAnalysis/shuxueAnalysis">数学</el-menu-item>
-                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">英语</el-menu-item>
-                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">物理</el-menu-item>
-                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">化学</el-menu-item>
-                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">生物</el-menu-item>
-                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">政治</el-menu-item>
-                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">历史</el-menu-item>
-                <el-menu-item index="/gradereport/gradeanalyzecontent/yuwenAnalysis">地理</el-menu-item>
+                <el-menu-item index="/gradereport/singleSubjectClassAnalysis/yingyuAnalysis">英语</el-menu-item>
+                <el-menu-item index="/gradereport/singleSubjectClassAnalysis/wuliAnalysis">物理</el-menu-item>
+                <el-menu-item index="/gradereport/singleSubjectClassAnalysis/huaxueAnalysis">化学</el-menu-item>
+                <el-menu-item index="/gradereport/singleSubjectClassAnalysis/shengwuAnalysis">生物</el-menu-item>
+                <el-menu-item index="/gradereport/singleSubjectClassAnalysis/zhengzhiAnalysis">政治</el-menu-item>
+                <el-menu-item index="/gradereport/singleSubjectClassAnalysis/lishiAnalysis">历史</el-menu-item>
+                <el-menu-item index="/gradereport/singleSubjectClassAnalysis/diliAnalysis">地理</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="6">

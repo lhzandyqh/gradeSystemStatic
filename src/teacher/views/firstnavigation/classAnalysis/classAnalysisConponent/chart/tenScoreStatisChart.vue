@@ -1,8 +1,5 @@
 <template>
   <div class="app-container">
-    <div class="title">
-      <span style="font-weight: bold;color: #19c237">─10分一档统计表─</span>
-    </div>
     <div id="ten" style="width:100%;height: 400px"></div>
   </div>
 </template>

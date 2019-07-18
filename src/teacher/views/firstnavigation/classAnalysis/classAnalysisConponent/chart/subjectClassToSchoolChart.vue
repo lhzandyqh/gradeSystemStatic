@@ -1,12 +1,6 @@
 <template>
   <div class="app-container">
     <el-row>
-      <div class="examName">
-      <span style="font-size: 20px;font-weight: bolder">2017-2018学年第一学期七年级期中考试</span>
-    </div>
-      <div class="title">
-        <span style="font-weight: bold;color: #19c237">─科目班校对比图─</span>
-      </div>
     </el-row>
     <el-row style="padding-top: 20px">
       <div id="classtoschool" style="width:1200%;height: 400px"></div>

@@ -1,10 +1,6 @@
 <template>
   <div class="app-container">
     <el-row>
-      <div class="title">
-        <div> <span style="font-weight: bold;color: #19c237">─全校前N名分布─</span></div>
-        <div style="padding-top: 20px"><span style="font-size: 15px;font-weight: bolder;">班级： 共70 人   全校： 共500人</span></div>
-      </div>
     </el-row>
     <el-row>
       <el-col :span="12">
